@@ -23,6 +23,17 @@ export default function IndexPage() {
     <DefaultLayout>
       <HeroSection />
       <AnimatedCarousel images={images} />
+      <div className="mx-auto max-w-full p-6 xl:p-12">
+        <h1 className="mb-6 font-Mongoose text-6xl font-bold">Hot Playlists</h1>
+      </div>
+
+      <div className="mx-auto max-w-full p-6 xl:p-12">
+        <h1 className="mb-6 font-Mongoose text-6xl font-bold">Trending Artistes</h1>
+      </div>
+
+      <div className="mx-auto max-w-full p-6 xl:p-12">
+        <h1 className="mb-6 font-Mongoose text-6xl font-bold">FAQs</h1>
+      </div>
     </DefaultLayout>
   );
 }

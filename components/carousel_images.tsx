@@ -17,13 +17,13 @@ export default function AnimatedCarousel({ images }: { images: string[] }) {
                             className="flex min-w-full shrink-0 animate-scroll items-center justify-around gap-10"
                         >
                             {[...images, ...images].map((src, index) => (
-                                <div className="mx-1 " key={index}>
+                                <div className="mx-3" key={index}>
                                     <Image
-                                        className=" object-contain rounded-lg"
+                                        className="h-auto w-auto object-contain rounded-lg"
                                         src={src}
                                         alt={`Slide ${index + 1}`}
-                                        width={400}
-                                        height={400}
+                                        width={315}
+                                        height={344}
                                     />
                                 </div>
                             ))}
