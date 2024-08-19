@@ -13,6 +13,9 @@ module.exports = {
       colors: {
         "footer-bg": "#1e676a",
       },
+      fontFamily: {
+        'roboto': ['Roboto', 'sans-serif'],
+      },
     },
     keyframes: {
       scroll: {
