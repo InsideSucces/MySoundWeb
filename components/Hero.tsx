@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export const HeroSection = () => {
     return (
-        <section className="relative md:min-h-screen lg:min-h-screen flex items-center overflow-hidden py-20">
+        <section className="relative lg:min-h-screen flex items-center overflow-hidden py-20">
             <div className="absolute inset-0 bg-gradient-to-br from-[#0f5881] via-[#0a4d74] to-[#2fabf3] z-10"></div>
 
             <div className="absolute right-0 h-full w-1/2 md:w-1/3 z-20">
@@ -14,8 +14,8 @@ export const HeroSection = () => {
             </div>
 
             <div className="absolute inset-0 flex flex-col justify-center items-center z-20 overflow-hidden">
-                <div className="text-[#FEFEFE] text-[40vw] md:text-[50vw] lg:text-[570px] font-bold opacity-10 mt-20 leading-none">MUSIC</div>
-                <div className="text-[#FEFEFE] text-[40vw] md:text-[50vw] lg:text-[570px] font-bold opacity-10 mt-10 leading-none">MYSOUND</div>
+                <div className="text-[#FEFEFE] text-[20vw]  lg:text-[570px] font-bold opacity-10 mt-20 leading-none">MUSIC</div>
+                <div className="text-[#FEFEFE] text-[20vw]  lg:text-[570px] font-bold opacity-10 mt-10 leading-none">MYSOUND</div>
             </div>
 
             <div className="container mx-auto px-16 z-40 relative md:px-16 lg:px-20">
