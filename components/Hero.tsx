@@ -1,6 +1,6 @@
 export const HeroSection = () => {
     return (
-        <section className="relative min-h-screen flex items-center overflow-hidden md:py-0">
+        <section className="relative md:min-h-screen lg:min-h-screen flex items-center overflow-hidden py-40">
             <div className="absolute inset-0 bg-gradient-to-br from-[#0f5881] via-[#0a4d74] to-[#2fabf3] z-10"></div>
 
             <div className="absolute right-0 h-full w-1/2 md:w-1/3 lg:w-1/2 z-20">

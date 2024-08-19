@@ -62,9 +62,6 @@ export const Navbar = () => {
           </NextLink>
         </NavbarBrand>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-        <div className="hidden lg:flex gap-4 justify-start ml-2">
-          
-        </div>
       </NavbarContent>
 
       <NavbarContent
@@ -72,18 +69,10 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-         
           <ThemeSwitch />
         </NavbarItem>
-       
         <NavbarItem className="hidden md:flex">
         </NavbarItem>
-      </NavbarContent>
-
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-   
-        <ThemeSwitch />
-        <NavbarMenuToggle />
       </NavbarContent>
     </NextUINavbar>
   );
