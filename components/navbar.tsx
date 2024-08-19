@@ -26,7 +26,12 @@ import {
   Logo,
 } from "@/components/icons";
 
+import { CollapsableSideNav } from "@/components/side_tab";
+import { useState } from "react";
+
 export const Navbar = () => {
+  const [sideNavOpen, setSideNavOpen] = useState(false);
+
   const searchInput = (
     <Input
       aria-label="Search"
@@ -49,9 +54,9 @@ export const Navbar = () => {
   );
 
   return (
-    <NextUINavbar maxWidth="full" position="sticky">
+    <NextUINavbar maxWidth="full" position="sticky" className="z-50">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarMenuToggle />
+      <NavbarMenuToggle onToggle={() =>setSideNavOpen(!sideNavOpen)} onClick={() => setSideNavOpen(!sideNavOpen)} />
         <NavbarBrand className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <img
@@ -65,15 +70,16 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
+        className="sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden sm:flex gap-2">
+        <NavbarItem className="sm:flex gap-2">
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden md:flex">
         </NavbarItem>
       </NavbarContent>
+      <CollapsableSideNav isOpen={sideNavOpen} />
     </NextUINavbar>
   );
 };

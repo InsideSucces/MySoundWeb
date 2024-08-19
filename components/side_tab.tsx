@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 
 interface NavItemProps {
@@ -22,10 +23,14 @@ const NavItem: React.FC<NavItemProps> = ({ text, active = false, badge }) => (
     </div>
 );
 
-export const CollapesableSideNav: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false);
+export const CollapsableSideNav: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
     return (
-        <div className="h-auto md:h-96 px-2 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8 bg-[#40d5d5]/50 flex flex-col justify-between items-start w-full md:w-auto">
+        <motion.div
+            initial={{ x: -300, opacity: 0 }}
+            animate={{ x: isOpen ? 0 : -300, opacity: isOpen ? 1 : 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className={`fixed top-0 left-0 h-screen z-50 md:hidden bg-[#40d5d5]/50 flex flex-col justify-between items-start w-full md:w-auto ${isOpen ? 'w-full' : 'w-0'}`}
+        >
             <div className="flex flex-col justify-start items-start gap-6 md:gap-12 w-full">
                 <div className="flex flex-col justify-start items-start gap-2 sm:gap-4 w-full">
                     <NavItem text="Home" active />
@@ -38,6 +43,6 @@ export const CollapesableSideNav: React.FC = () => {
             <div className="mt-6 md:mt-0 w-full">
                 <NavItem text="Logout" active />
             </div>
-        </div>
+        </motion.div>
     );
 }
