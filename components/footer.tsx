@@ -11,8 +11,8 @@ export const Footer: FC<FooterType> = ({ className }) => {
         <footer className={['bg-[#2dcece] text-foreground py-12 md:py-16 lg:py-20', className].join(" ")}>
             <div className={'container text-white mx-auto px-4 md:px-6 lg:px-8'}>
                 <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'}>
-                    <div className="flex flex-col items-start">
-                        <Link href="#" className="mb-4" prefetch={false}>
+                    <div className="flex flex-col items-start md:items-center mr-24">
+                        <Link href="#" className="w-44 h-20 mb-4" prefetch={false}>
                             <img
                                 className={styles.mysoundNewLogo8}
                                 loading="lazy"
@@ -20,25 +20,25 @@ export const Footer: FC<FooterType> = ({ className }) => {
                                 src="/mysound-logo.png"
                             />
                         </Link>
-                        <p className="text-muted-foreground text-sm">
+                        <p className="w-80 text-[#0c0c0c]/80 text-lg font-normal font-['Poppins'] leading-loose">
                             Transform the way you experience music
                         </p>
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col text-center">
                         <h3 className="text-[#0d0d0d] text-base font-semibold font-['Poppins'] mb-4">Explore</h3>
                         <Link href="#" className="text-[#0d0d0d] text-base font-normal font-['Poppins'] capitalize leading-9" prefetch={false}>Home</Link>
                         <Link href="#" className="text-[#0d0d0d] text-base font-normal font-['Poppins'] capitalize leading-9" prefetch={false}>Playlists</Link>
                         <Link href="#" className="text-[#0d0d0d] text-base font-normal font-['Poppins'] capitalize leading-9" prefetch={false}>Artists</Link>
                     </div>
 
-                    <div className="flex flex-col">
+                    <div className="flex flex-col text-center">
                         <h3 className="text-[#0d0d0d] text-base font-semibold font-['Poppins'] mb-4">Contact Us</h3>
                         <Link href="#" className="text-[#0d0d0d] text-base font-normal font-['Poppins'] capitalize leading-9" prefetch={false}>Support</Link>
                         <Link href="#" className="text-[#0d0d0d] text-base font-normal font-['Poppins'] capitalize leading-9" prefetch={false}>FAQ</Link>
                         <Link href="#" className="text-[#0d0d0d] text-base font-normal font-['Poppins'] capitalize leading-9" prefetch={false}>Feedback</Link>
                     </div>
 
-                    <div className="flex flex-col">
+                    <div className="flex flex-col items-center">
                         <h3 className="text-[#0d0d0d] text-base font-semibold font-['Poppins'] mb-4">Get In Touch</h3>
                         <div className="flex space-x-4">
                             <Link href="#" className="text-white hover:text-primary transition-colors">
