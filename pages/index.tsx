@@ -1,5 +1,4 @@
 import React from "react";
-import { Accordion, AccordionItem } from "@nextui-org/react";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
