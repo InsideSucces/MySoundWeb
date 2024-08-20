@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardBody, Image } from "@nextui-org/react";
+import { Card, Image } from "@nextui-org/react";
 import { motion } from 'framer-motion';
 
 
