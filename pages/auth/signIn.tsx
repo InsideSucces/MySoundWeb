@@ -101,9 +101,9 @@ export default function SignInPage() {
                     key="outside-left"
                     type="password"
                     value={password}
-                    labelPlacement="outside"
+                    // labelPlacement="outside"
                     placeholder="Enter your email"
-                    variant="flat"
+                    // variant="flat"
                     onChange={(e) => setPassword(e.target.value)}
                     style={{ color: "white" }}
                   />

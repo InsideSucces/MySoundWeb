@@ -259,8 +259,8 @@ export const ArrowIcon = ({
   ...props
 }: IconSvgProps) => (
   <svg width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M38.3778 44.916L46.5971 36.6594L38.3778 28.4028" stroke={color} stroke-width="4" stroke-linecap="round"
-      stroke-linejoin="round" />
+    <path d="M38.3778 44.916L46.5971 36.6594L38.3778 28.4028" stroke={color} strokeWidth="4" strokeLinecap="round"
+      strokeLinejoin="round" />
   </svg>
 );
 
@@ -273,7 +273,7 @@ export const ArrowIconOpen = ({
 }: IconSvgProps) => (
   <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="25.4876" cy="25.9939" r="25.3309" fill="#29BABA" />
-    <path d="M17.231 22.8848L25.4875 31.104L33.7441 22.8848" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M17.231 22.8848L25.4875 31.104L33.7441 22.8848" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 
 );

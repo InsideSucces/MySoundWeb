@@ -18,6 +18,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/dashboard/ <Navbar.Content showIn=\"md\">                     <BurguerButton />                 </Navbar.Content>"],
   "exclude": ["node_modules"]
 }

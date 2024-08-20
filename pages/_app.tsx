@@ -3,17 +3,29 @@ import type { AppProps } from "next/app";
 import { NextUIProvider } from "@nextui-org/system";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { useRouter } from "next/router";
+import { ReactElement, ReactNode } from 'react'
+import type { NextPage } from 'next'
 
 import { fontSans, fontMono, inter, poppins } from "@/config/fonts";
 import "@/styles/globals.css";
 
-export default function App({ Component, pageProps }: AppProps) {
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page)
   const router = useRouter();
+
 
   return (
     <NextUIProvider navigate={router.push}>
       <NextThemesProvider>
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
       </NextThemesProvider>
     </NextUIProvider>
   );
