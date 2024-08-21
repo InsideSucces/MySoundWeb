@@ -1,12 +1,18 @@
 import * as React from "react";
 
-import { IconSvgProps } from "@/types_models";
+import { IconSvgProps } from "@/types";
 
 export const Logo: React.FC<IconSvgProps> = ({
   size = 36,
   height,
   ...props
-}) => <img loading="lazy" alt="" src="/mysound-logo.png" />;
+}) => (
+  <img
+    loading="lazy"
+    alt=""
+    src="/mysound-logo.png"
+  />
+);
 
 export const DiscordIcon: React.FC<IconSvgProps> = ({
   size = 24,
@@ -198,6 +204,7 @@ export const NextUILogo: React.FC<IconSvgProps> = (props) => {
   );
 };
 
+
 export const FacebookIcon = ({
   size = 24,
   width,
@@ -219,6 +226,7 @@ export const FacebookIcon = ({
     />
   </svg>
 );
+
 
 export const InstagramIcon = ({
   size = 24,
@@ -242,6 +250,7 @@ export const InstagramIcon = ({
   </svg>
 );
 
+
 export const ArrowIcon = ({
   size = 24,
   width,
@@ -249,20 +258,9 @@ export const ArrowIcon = ({
   color,
   ...props
 }: IconSvgProps) => (
-  <svg
-    width="83"
-    height="83"
-    viewBox="0 0 83 83"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M38.3778 44.916L46.5971 36.6594L38.3778 28.4028"
-      stroke={color}
-      strokeWidth="4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+  <svg width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M38.3778 44.916L46.5971 36.6594L38.3778 28.4028" stroke={color} strokeWidth="4" strokeLinecap="round"
+      strokeLinejoin="round" />
   </svg>
 );
 
@@ -273,20 +271,9 @@ export const ArrowIconOpen = ({
   color,
   ...props
 }: IconSvgProps) => (
-  <svg
-    width="51"
-    height="52"
-    viewBox="0 0 51 52"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="25.4876" cy="25.9939" r="25.3309" fill="#29BABA" />
-    <path
-      d="M17.231 22.8848L25.4875 31.104L33.7441 22.8848"
-      stroke="white"
-      strokeWidth="4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M17.231 22.8848L25.4875 31.104L33.7441 22.8848" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
+
 );
