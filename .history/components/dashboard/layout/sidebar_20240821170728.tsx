@@ -103,11 +103,11 @@ export const SidebarWrapper = () => {
           <Sidebar.Footer>
             <SidebarMenu title="GET MOBILE APP">
               <Flex css={{ gap: "20px" }}>
-                <img
+                <Image
                   className="w-28 h-10 rounded-md"
                   src="https://via.placeholder.com/115x39"
                 />
-                <img
+                <Image
                   className="w-28 h-10 rounded-md"
                   src="https://via.placeholder.com/115x39"
                 />

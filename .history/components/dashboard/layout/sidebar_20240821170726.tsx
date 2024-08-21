@@ -32,7 +32,7 @@ export const SidebarWrapper = () => {
       {collapsed ? <Sidebar.Overlay onClick={setCollapsed} /> : null}
       <Sidebar collapsed={collapsed}>
         <Sidebar.Header>
-          <img
+          <
             className="w-58 h-30"
             src="/assets/mysound_web-logo.png"
             alt="MySound Web Logo"
@@ -103,11 +103,11 @@ export const SidebarWrapper = () => {
           <Sidebar.Footer>
             <SidebarMenu title="GET MOBILE APP">
               <Flex css={{ gap: "20px" }}>
-                <img
+                <Image
                   className="w-28 h-10 rounded-md"
                   src="https://via.placeholder.com/115x39"
                 />
-                <img
+                <Image
                   className="w-28 h-10 rounded-md"
                   src="https://via.placeholder.com/115x39"
                 />
