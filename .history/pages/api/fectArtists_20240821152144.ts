@@ -1,0 +1,10 @@
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import type { NextApiRequest, NextApiResponse } from "next";
+import api_service from "@/lib/api_service"
+
+export default function Handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  
+}

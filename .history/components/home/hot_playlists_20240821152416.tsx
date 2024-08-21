@@ -1,0 +1,4 @@
+
+type Data = {
+  name: string;
+};

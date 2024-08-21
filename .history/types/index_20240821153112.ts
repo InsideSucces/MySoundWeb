@@ -8,6 +8,5 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
 export type ArtistData = {
   id: number;
   name: string;
-  bio: string;
   image: string;
 };

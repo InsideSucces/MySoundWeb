@@ -27,7 +27,6 @@ const faqItems = [
   { title: "What should I do if I forget my password?", content: "You can create a playlist by selecting “Playlist” from your stream dashboard. Add songs by clicking the button on any track. You can rename, reorder or delete playlists from your library." },
   { title: "How can I get help if I encounter a problem?", content: "You can create a playlist by selecting “Playlist” from your stream dashboard. Add songs by clicking the button on any track. You can rename, reorder or delete playlists from your library." },
 ];
-
 export default function IndexPage() {
   return (
     <DefaultLayout>
@@ -36,7 +35,9 @@ export default function IndexPage() {
       <HotPlaylists />
       <TrendingArtistes />
       <ArtistProfile />
+
       <CTA />
+
       <CustomAccordion items={faqItems} />
     </DefaultLayout>
   );

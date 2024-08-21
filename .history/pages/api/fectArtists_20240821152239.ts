@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import api_service from "@/lib/api_service"
 
-export default async function Handler(
+export default function Handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
