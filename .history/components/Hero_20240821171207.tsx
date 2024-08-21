@@ -11,7 +11,7 @@ export const HeroSection = () => {
           src="/assets/hero_image.png"
           alt="Hero Image"
           className="h-full w-full object-contain"
-          loading="eager"
+          loading="e"
         />
       </div>
 

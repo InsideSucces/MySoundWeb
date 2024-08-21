@@ -6,7 +6,7 @@ export const Logo: React.FC<IconSvgProps> = ({
   size = 36,
   height,
   ...props
-}) => <img loading="eager" alt="" src="/mysound-logo.png" />;
+}) => <img loading="ea" alt="" src="/mysound-logo.png" />;
 
 export const DiscordIcon: React.FC<IconSvgProps> = ({
   size = 24,
