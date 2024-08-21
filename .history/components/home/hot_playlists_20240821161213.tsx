@@ -11,7 +11,7 @@ export const HotPlaylists = ({ playlists }: HotPlaylistsProps) => {
       <div className="overflow-x-auto">
         <div className="flex flex-nowrap gap-8 pb-4">
           {playlists.map((playlist) => (
-            <div className="flex-none w-60 md:w-80 bg-[#2dcece] rounded-lg">
+            <div className="flex-none w-64 md:w-80 bg-[#2dcece] rounded-lg">
               <img
                 src={playlist.image}
                 srcSet={playlist.image}

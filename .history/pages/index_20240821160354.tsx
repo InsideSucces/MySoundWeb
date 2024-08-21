@@ -43,21 +43,13 @@ export default function IndexPage() {
       });
     });
   }, []);
-  useEffect(() => {
-    fetch("/api/fetchPlaylists").then((response) => {
-      response.json().then((data) => {
-        setHotPlaylists(data);
-        // log response
-        console.log(data);
-      });
-    });
-  }, []);
+
 
   return (
     <DefaultLayout>
       <HeroSection />
       <AnimatedCarousel images={images} />
-      <HotPlaylists playlists={hot_playlists}/>
+      <HotPlaylists />
       <TrendingArtistes artists={trending_artists}/>
       <ArtistProfile />
       <CTA />

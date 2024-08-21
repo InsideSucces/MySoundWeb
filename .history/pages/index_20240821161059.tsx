@@ -44,9 +44,9 @@ export default function IndexPage() {
     });
   }, []);
   useEffect(() => {
-    fetch("/api/fetchPlaylists").then((response) => {
+    fetch("/api/fetchPlays").then((response) => {
       response.json().then((data) => {
-        setHotPlaylists(data);
+        setTrendingArtist(data);
         // log response
         console.log(data);
       });

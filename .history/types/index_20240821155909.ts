@@ -11,10 +11,9 @@ export type ArtistData = {
   bio: string;
   image: string;
 };
-export type  = {
+export type PlaylistData = {
   id: number;
   user_id: string;
-  name: string;
-  description: string;
+  bio: string;
   image: string;
 };

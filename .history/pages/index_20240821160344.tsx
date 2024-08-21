@@ -11,7 +11,7 @@ import { HotPlaylists } from "@/components/home/hot_playlists";
 import { TrendingArtistes } from "@/components/home/trending_artists";
 import { ArtistProfile } from "@/components/home/artist_profile";
 import { CTA } from "@/components/home/cta";
-import { ArtistData, PlaylistData } from "@/types";
+import { ArtistData } from "@/types";
 
 const images = [
   "/assets/artist_1.jpg",
@@ -32,7 +32,7 @@ const faqItems = [
 
 export default function IndexPage() {
   const [trending_artists, setTrendingArtist] = useState<ArtistData[]>([])
-  const [hot_playlists, setHotPlaylists] = useState<PlaylistData[]>([])
+  const [hot_playlists, setHotPlaylists] = useState<ArtistData[]>([])
 
   useEffect(() => {
     fetch("/api/fetchArtists").then((response) => {
@@ -43,21 +43,13 @@ export default function IndexPage() {
       });
     });
   }, []);
-  useEffect(() => {
-    fetch("/api/fetchPlaylists").then((response) => {
-      response.json().then((data) => {
-        setHotPlaylists(data);
-        // log response
-        console.log(data);
-      });
-    });
-  }, []);
+
 
   return (
     <DefaultLayout>
       <HeroSection />
       <AnimatedCarousel images={images} />
-      <HotPlaylists playlists={hot_playlists}/>
+      <HotPlaylists />
       <TrendingArtistes artists={trending_artists}/>
       <ArtistProfile />
       <CTA />
