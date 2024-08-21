@@ -1,8 +1,7 @@
 import React from 'react';
 import { Box, Flex } from './styles';
-import { Input, Link, Text} from '@nextui-org/react';
+import { Input, Link, Text, ar } from '@nextui-org/react';
 import { BurguerButton } from './burger-btn';
-import { Navbar, NavbarContent } from '@nextui-org/navbar';
 interface Props {
     children: React.ReactNode;
 }
@@ -25,20 +24,31 @@ export const NavbarWrapper = (props: Props) => {
         >
             <Navbar
                 defaultValue={`Dashboard`}
-                style={{
+                css={{
                     'borderBottom': '1px solid $border',
                     'justifyContent': 'space-between',
                     background: '$transparent',
                     'width': '100%',
-                    
+                    '@md': {
+                        justifyContent: 'space-between',
+                    },
 
-                   
+                    '& .nextui-navbar-container': {
+                        'border': 'none',
+                        'maxWidth': '100%',
+
+                        'gap': '$6',
+                        '@md': {
+                            justifyContent: 'space-between',
+                        },
+                    },
                 }}
             >
-                <NavbarContent >
+                <Navbar.Content showIn="md">
                     <BurguerButton />
-                </NavbarContent>
-                <NavbarContent>
+                </Navbar.Content>
+                <Navbar.Content>
+
                     <Flex css={{ gap: '96px', alignItems: 'center' }}>
                         <Flex css={{ gap: '20px', alignItems: 'center' }}>
                             <Text
@@ -63,8 +73,8 @@ export const NavbarWrapper = (props: Props) => {
                         </Flex>
 
                     </Flex>
-                </NavbarContent>
-                <NavbarContent>
+                </Navbar.Content>
+                <Navbar.Content>
                     <Flex css={{ gap: '17px', alignItems: 'center' }}>
                         <img className="w-52 h-52 relative rounded-xl" src="https://s3-alpha-sig.figma.com/img/6315/0ee4/95ff5313f4dac6958d3a7838bbfa7012?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QADyDBQPTUBHngfcx-5Ho0~r2ZsrWFx66z46iCT9hec9LF5XrIh5uI2DsrBfW5h57ImOjre0beHB6AVsWj9p4gRhMROmrzFmrrzyj0UzvZ9XjziNEwCW7IDwQa8NaM3-47AKGJ~eKW4Zu5-hfMk4IAhtz~d5zgpwp1bxZt1tydKlJN~fSm4pZCE0~BhlQyd9ZeRuui5gYBY2nfoxQHoDISGK6CMYtd-lLTs1x96vhlizW2G9ypoMYRfVsuzmUcBsxsQOtLsaoX8DXjW55XCKyFya2BDc0pXm75BUwPO1TlRLEVBVlazgqwqCB-PY1jkPsbVMWcIbh675IbCTDjYJbg__" srcSet="https://s3-alpha-sig.figma.com/img/6315/0ee4/95ff5313f4dac6958d3a7838bbfa7012?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QADyDBQPTUBHngfcx-5Ho0~r2ZsrWFx66z46iCT9hec9LF5XrIh5uI2DsrBfW5h57ImOjre0beHB6AVsWj9p4gRhMROmrzFmrrzyj0UzvZ9XjziNEwCW7IDwQa8NaM3-47AKGJ~eKW4Zu5-hfMk4IAhtz~d5zgpwp1bxZt1tydKlJN~fSm4pZCE0~BhlQyd9ZeRuui5gYBY2nfoxQHoDISGK6CMYtd-lLTs1x96vhlizW2G9ypoMYRfVsuzmUcBsxsQOtLsaoX8DXjW55XCKyFya2BDc0pXm75BUwPO1TlRLEVBVlazgqwqCB-PY1jkPsbVMWcIbh675IbCTDjYJbg__" />
                         <Flex css={{ gap: '10px', alignItems: 'center' }}>
@@ -97,7 +107,7 @@ export const NavbarWrapper = (props: Props) => {
                             </div>
                         </Flex>
                     </Flex>
-                </NavbarContent>
+                </Navbar.Content>
             </Navbar>
 
             {props.children}

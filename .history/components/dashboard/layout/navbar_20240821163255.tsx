@@ -32,13 +32,22 @@ export const NavbarWrapper = (props: Props) => {
                     'width': '100%',
                     
 
-                   
+                    '& .nextui-navbar-container': {
+                        'border': 'none',
+                        'maxWidth': '100%',
+
+                        'gap': '$6',
+                        '@md': {
+                            justifyContent: 'space-between',
+                        },
+                    },
                 }}
             >
-                <NavbarContent >
+                <Navbar.Content showIn="md">
                     <BurguerButton />
-                </NavbarContent>
+                </Navbar.Content>
                 <NavbarContent>
+
                     <Flex css={{ gap: '96px', alignItems: 'center' }}>
                         <Flex css={{ gap: '20px', alignItems: 'center' }}>
                             <Text

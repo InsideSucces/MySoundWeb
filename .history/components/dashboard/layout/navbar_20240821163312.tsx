@@ -39,6 +39,7 @@ export const NavbarWrapper = (props: Props) => {
                     <BurguerButton />
                 </NavbarContent>
                 <NavbarContent>
+
                     <Flex css={{ gap: '96px', alignItems: 'center' }}>
                         <Flex css={{ gap: '20px', alignItems: 'center' }}>
                             <Text

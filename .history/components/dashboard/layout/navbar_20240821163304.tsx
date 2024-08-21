@@ -35,10 +35,11 @@ export const NavbarWrapper = (props: Props) => {
                    
                 }}
             >
-                <NavbarContent >
+                <Navbar.Content showIn="md">
                     <BurguerButton />
-                </NavbarContent>
+                </Navbar.Content>
                 <NavbarContent>
+
                     <Flex css={{ gap: '96px', alignItems: 'center' }}>
                         <Flex css={{ gap: '20px', alignItems: 'center' }}>
                             <Text

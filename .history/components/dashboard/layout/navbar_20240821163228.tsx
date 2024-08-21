@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Flex } from './styles';
 import { Input, Link, Text} from '@nextui-org/react';
 import { BurguerButton } from './burger-btn';
-import { Navbar, NavbarContent } from '@nextui-org/navbar';
+import { NavbarContent } from '@nextui-org/navbar';
 interface Props {
     children: React.ReactNode;
 }
@@ -25,20 +25,31 @@ export const NavbarWrapper = (props: Props) => {
         >
             <Navbar
                 defaultValue={`Dashboard`}
-                style={{
+                css={{
                     'borderBottom': '1px solid $border',
                     'justifyContent': 'space-between',
                     background: '$transparent',
                     'width': '100%',
-                    
+                    '@md': {
+                        justifyContent: 'space-between',
+                    },
 
-                   
+                    '& .nextui-navbar-container': {
+                        'border': 'none',
+                        'maxWidth': '100%',
+
+                        'gap': '$6',
+                        '@md': {
+                            justifyContent: 'space-between',
+                        },
+                    },
                 }}
             >
-                <NavbarContent >
+                <Navbar.Content showIn="md">
                     <BurguerButton />
-                </NavbarContent>
+                </Navbar.Content>
                 <NavbarContent>
+
                     <Flex css={{ gap: '96px', alignItems: 'center' }}>
                         <Flex css={{ gap: '20px', alignItems: 'center' }}>
                             <Text
