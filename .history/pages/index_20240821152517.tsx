@@ -34,40 +34,40 @@ export default function IndexPage() {
         <div className="overflow-x-auto">
           <div className="flex flex-nowrap gap-8 py-8">
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
 
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
 
@@ -83,7 +83,7 @@ export default function IndexPage() {
         </div>
 
         <div className="w-full lg:w-1/3 flex justify-center">
-          <img className="w-full max-w-[354px] h-auto" src="https://via.placeholder.com/354x384" alt="Gilly Mu" />
+          <Image className="w-full max-w-[354px] h-auto" src="https://via.placeholder.com/354x384" alt="Gilly Mu" />
         </div>
 
         <div className="w-full lg:w-1/3 p-4 lg:p-8 bg-transparent rounded-[13.59px] backdrop-blur-[13.59px] flex flex-col justify-start items-center gap-6">
@@ -95,7 +95,7 @@ export default function IndexPage() {
             {/* Repeat this block for each song */}
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-4">
-                <img className="w-12 h-12 rounded-[9.06px]" src="https://via.placeholder.com/48x48" alt="Album cover" />
+                <Image className="w-12 h-12 rounded-[9.06px]" src="https://via.placeholder.com/48x48" alt="Album cover" />
                 <div>
                   <p className="text-white text-base font-medium font-roboto">Sweet & Sour</p>
                   <p className="text-[#99938f] text-sm font-medium font-roboto">Gilly Mu</p>
@@ -110,7 +110,7 @@ export default function IndexPage() {
             </div>
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-4">
-                <img className="w-12 h-12 rounded-[9.06px]" src="https://via.placeholder.com/48x48" alt="Album cover" />
+                <Image className="w-12 h-12 rounded-[9.06px]" src="https://via.placeholder.com/48x48" alt="Album cover" />
                 <div>
                   <p className="text-white text-base font-medium font-roboto">Sweet & Sour</p>
                   <p className="text-[#99938f] text-sm font-medium font-roboto">Gilly Mu</p>
@@ -125,7 +125,7 @@ export default function IndexPage() {
             </div>
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-4">
-                <img className="w-12 h-12 rounded-[9.06px]" src="https://via.placeholder.com/48x48" alt="Album cover" />
+                <Image className="w-12 h-12 rounded-[9.06px]" src="https://via.placeholder.com/48x48" alt="Album cover" />
                 <div>
                   <p className="text-white text-base font-medium font-roboto">Sweet & Sour</p>
                   <p className="text-[#99938f] text-sm font-medium font-roboto">Gilly Mu</p>
@@ -140,7 +140,7 @@ export default function IndexPage() {
             </div>
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-4">
-                <img className="w-12 h-12 rounded-[9.06px]" src="https://via.placeholder.com/48x48" alt="Album cover" />
+                <Image className="w-12 h-12 rounded-[9.06px]" src="https://via.placeholder.com/48x48" alt="Album cover" />
                 <div>
                   <p className="text-white text-base font-medium font-roboto">Sweet & Sour</p>
                   <p className="text-[#99938f] text-sm font-medium font-roboto">Gilly Mu</p>
@@ -165,10 +165,10 @@ export default function IndexPage() {
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 p-6 lg:p-12 bg-[#161616]/70 rounded-3xl">
         <div className="relative w-full max-w-[302px] h-[462px]">
           <div className="absolute left-0 top-0 w-[177px] h-[366px]">
-            <img className="absolute left-3 top-0 w-[154px] h-[366px]" src="https://via.placeholder.com/155x366" alt="Phone 1" />
+            <Image className="absolute left-3 top-0 w-[154px] h-[366px]" src="https://via.placeholder.com/155x366" alt="Phone 1" />
           </div>
           <div className="absolute left-[120px] top-[84px] w-[182px] h-[378px]">
-            <img className="absolute left-1 top-1 w-[175px] h-[372px]" src="https://via.placeholder.com/175x372" alt="Phone 2" />
+            <Image className="absolute left-1 top-1 w-[175px] h-[372px]" src="https://via.placeholder.com/175x372" alt="Phone 2" />
           </div>
         </div>
 

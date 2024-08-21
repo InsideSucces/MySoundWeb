@@ -14,7 +14,7 @@ export const TrendingArtistes = ({ artists }: TrendingArtistesProps) => {
         <div className="flex flex-nowrap gap-8 py-8">
           {artists.map((artist) => (
             <div className="flex-none w-48">
-              <img
+              <Image
                 className="w-48 h-48 rounded-full"
                 src={artist.image}
                 alt={artist.name}

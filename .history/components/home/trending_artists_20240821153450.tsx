@@ -5,40 +5,40 @@ export const TrendingArtistes = () => {
         <div className="overflow-x-auto">
           <div className="flex flex-nowrap gap-8 py-8">
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48"
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
 
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
             <div className="flex-none w-48">
-              <img className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
+              <Image className="w-48 h-48 rounded-full" src="https://via.placeholder.com/300x300" alt="7ucky 7vn" />
               <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">7ucky 7vn</p>
             </div>
 

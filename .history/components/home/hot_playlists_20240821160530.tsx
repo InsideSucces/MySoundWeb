@@ -11,7 +11,7 @@ export const HotPlaylists = ({playlists}:HotPlaylistsProps) => {
           <div className="flex flex-nowrap gap-8 pb-4">
             {playlists.map((playlist) => (
               <div className="flex-none w-64 md:w-80 bg-[#2dcece] rounded-lg">
-                <img src={playlist.} className="h-48 md:h-64 bg-gray-300" />
+                <Image src={playlist.} className="h-48 md:h-64 bg-gray-300" />
                 <div className="p-3">
                   <h3 className="mt-4 text-[#0d0d0d] text-xl md:text-2xl font-medium font-roboto">Back in Time</h3>
                   <p className="mt-2 text-[#393939] text-sm md:text-base font-bold font-roboto opacity-80">Time travel with this 2010s hip hop mix.</p>
@@ -29,10 +29,10 @@ export const HotPlaylists = ({playlists}:HotPlaylistsProps) => {
             {/* <!-- Playlist Item 2 --> */}
             <div className="flex-none w-64 md:w-80 bg-[#2dcece] rounded-lg">
               <div className="grid grid-cols-2">
-                <img className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 1" />
-                <img className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 2" />
-                <img className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 3" />
-                <img className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 4" />
+                <Image className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 1" />
+                <Image className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 2" />
+                <Image className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 3" />
+                <Image className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 4" />
               </div>
               <div className="p-3">
                 <h3 className="mt-4 text-[#0d0d0d] text-xl md:text-2xl font-medium font-roboto">We Love R&B</h3>

@@ -21,10 +21,10 @@ export const HotPlaylists = ({}:) => {
             {/* <!-- Playlist Item 2 --> */}
             <div className="flex-none w-64 md:w-80 bg-[#2dcece] rounded-lg">
               <div className="grid grid-cols-2">
-                <img className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 1" />
-                <img className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 2" />
-                <img className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 3" />
-                <img className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 4" />
+                <Image className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 1" />
+                <Image className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 2" />
+                <Image className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 3" />
+                <Image className="w-full h-24 md:h-32 object-cover" src="https://via.placeholder.com/172x179" alt="R&B 4" />
               </div>
               <div className="p-3">
                 <h3 className="mt-4 text-[#0d0d0d] text-xl md:text-2xl font-medium font-roboto">We Love R&B</h3>

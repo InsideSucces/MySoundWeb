@@ -38,10 +38,10 @@ export default function IndexPage() {
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 p-6 lg:p-12 bg-[#161616]/70 rounded-3xl">
         <div className="relative w-full max-w-[302px] h-[462px]">
           <div className="absolute left-0 top-0 w-[177px] h-[366px]">
-            <img className="absolute left-3 top-0 w-[154px] h-[366px]" src="https://via.placeholder.com/155x366" alt="Phone 1" />
+            <Image className="absolute left-3 top-0 w-[154px] h-[366px]" src="https://via.placeholder.com/155x366" alt="Phone 1" />
           </div>
           <div className="absolute left-[120px] top-[84px] w-[182px] h-[378px]">
-            <img className="absolute left-1 top-1 w-[175px] h-[372px]" src="https://via.placeholder.com/175x372" alt="Phone 2" />
+            <Image className="absolute left-1 top-1 w-[175px] h-[372px]" src="https://via.placeholder.com/175x372" alt="Phone 2" />
           </div>
         </div>
 

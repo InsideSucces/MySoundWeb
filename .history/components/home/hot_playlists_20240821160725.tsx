@@ -12,7 +12,11 @@ export const HotPlaylists = ({ playlists }: HotPlaylistsProps) => {
         <div className="flex flex-nowrap gap-8 pb-4">
           {playlists.map((playlist) => (
             <div className="flex-none w-64 md:w-80 bg-[#2dcece] rounded-lg">
-              <img src={playlist.image} srcSet={playlist} className="h-48 md:h-64 bg-gray-300" />
+              <Image
+                src={playlist.image}
+                srcSet={playlist}
+                className="h-48 md:h-64 bg-gray-300"
+              />
               <div className="p-3">
                 <h3 className="mt-4 text-[#0d0d0d] text-xl md:text-2xl font-medium font-roboto">
                   {playlist.name}
