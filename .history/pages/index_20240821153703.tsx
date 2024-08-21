@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
@@ -11,7 +11,6 @@ import { HotPlaylists } from "@/components/home/hot_playlists";
 import { TrendingArtistes } from "@/components/home/trending_artists";
 import { ArtistProfile } from "@/components/home/artist_profile";
 import { CTA } from "@/components/home/cta";
-import { ArtistData } from "@/types";
 
 const images = [
   "/assets/artist_1.jpg",
@@ -31,25 +30,13 @@ const faqItems = [
 
 
 export default function IndexPage() {
-  const [trending_artists, setTrendingArtist] = useState<ArtistData[]>([])
-
-  useEffect(() => {
-    fetch("/api/fetchArtists").then((response) => {
-      response.json().then((data) => {
-        setTrendingArtist(data);
-        // log response
-        console.log(data);
-      });
-    });
-  }, []);
-
-
+  const [trending_artists, ]
   return (
     <DefaultLayout>
       <HeroSection />
       <AnimatedCarousel images={images} />
       <HotPlaylists />
-      <TrendingArtistes artists={trending_artists}/>
+      <TrendingArtistes />
       <ArtistProfile />
       <CTA />
       <CustomAccordion items={faqItems} />

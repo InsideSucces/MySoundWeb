@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
@@ -33,17 +33,7 @@ const faqItems = [
 export default function IndexPage() {
   const [trending_artists, setTrendingArtist] = useState<ArtistData[]>([])
 
-  useEffect(() => {
-    fetch("/api/fetchArtists").then((response) => {
-      response.json().then((data) => {
-        setTrendingArtist(data);
-        // log response
-        console.log(data);
-      });
-    });
-  }, []);
-
-
+  use
   return (
     <DefaultLayout>
       <HeroSection />

@@ -12,7 +12,7 @@ class ApiService {
     this.instance.interceptors.request.use(
       (config) => {
         // Add any request interceptors here
-        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2MiwiaWF0IjoxNzIzNTM5MDY3LCJleHAiOjE4ODEyMTkwNjd9.9_7ORA1bKtSEB33Guxb-rGGs7WiXBOWXn9bwYpvWDiw"
+        const token = localStorage.getItem("token");
         if (token) {
           config.headers["Authorization"] = `Bearer ${token}`;
         }
@@ -27,7 +27,7 @@ class ApiService {
     this.instance.interceptors.response.use(
       (response) => {
         // Add any response interceptors here
-        return response.data;
+        return response;
       },
       (error) => {
         // Handle response errors here

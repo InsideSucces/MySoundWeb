@@ -33,15 +33,13 @@ const faqItems = [
 export default function IndexPage() {
   const [trending_artists, setTrendingArtist] = useState<ArtistData[]>([])
 
-  useEffect(() => {
-    fetch("/api/fetchArtists").then((response) => {
+  useEffect(async () => {
+    await fetch("/api/fetchArtists").then((response) => {
       response.json().then((data) => {
-        setTrendingArtist(data);
-        // log response
-        console.log(data);
-      });
-    });
-  }, []);
+        setTrendingArtist(data)
+      })
+    })
+  });
 
 
   return (

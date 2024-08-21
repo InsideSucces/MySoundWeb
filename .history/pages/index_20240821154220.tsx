@@ -38,10 +38,10 @@ export default function IndexPage() {
       response.json().then((data) => {
         setTrendingArtist(data);
         // log response
-        console.log(data);
+        
       });
     });
-  }, []);
+  }, [trending_artists]);
 
 
   return (

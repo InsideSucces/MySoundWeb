@@ -41,7 +41,7 @@ export default function IndexPage() {
         console.log(data);
       });
     });
-  }, []);
+  } []);
 
 
   return (

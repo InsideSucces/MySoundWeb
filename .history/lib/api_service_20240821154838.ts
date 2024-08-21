@@ -27,7 +27,7 @@ class ApiService {
     this.instance.interceptors.response.use(
       (response) => {
         // Add any response interceptors here
-        return response.data;
+        return response;
       },
       (error) => {
         // Handle response errors here

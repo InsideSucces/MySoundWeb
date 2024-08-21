@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
@@ -31,25 +31,13 @@ const faqItems = [
 
 
 export default function IndexPage() {
-  const [trending_artists, setTrendingArtist] = useState<ArtistData[]>([])
-
-  useEffect(() => {
-    fetch("/api/fetchArtists").then((response) => {
-      response.json().then((data) => {
-        setTrendingArtist(data);
-        // log response
-        console.log(data);
-      });
-    });
-  }, []);
-
-
+  const [trending_artists, setTrendingArtist] = useState<ArtistData[]>()
   return (
     <DefaultLayout>
       <HeroSection />
       <AnimatedCarousel images={images} />
       <HotPlaylists />
-      <TrendingArtistes artists={trending_artists}/>
+      <TrendingArtistes />
       <ArtistProfile />
       <CTA />
       <CustomAccordion items={faqItems} />
