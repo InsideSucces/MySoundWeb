@@ -1,4 +1,0 @@
-;
-type Data = {
-  name: string;
-};

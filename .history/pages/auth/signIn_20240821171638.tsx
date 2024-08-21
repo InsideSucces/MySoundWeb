@@ -63,7 +63,7 @@ export default function SignInPage() {
             </button>
             <button className="w-full h-12 px-40 pt-2.5 pb-2 bg-[#f9f9f9] rounded-3xl border border-[#333333] justify-center items-center inline-flex">
               <div className="flex items-center gap-4">
-                <img
+                <s
                   src="https://www.svgrepo.com/show/475656/facebook-color.svg"
                   className="w-5"
                   alt="google logo"

@@ -63,11 +63,11 @@ export const Navbar = () => {
         <NavbarBrand className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <img
-              loading="eager"
+              loading="lazy"
               alt="MySound Logo"
               src="/assets/mysound_web-logo.png"
-              // width={200}
-              // height={100}
+              width={200}
+              height={100}
             />
           </NextLink>
         </NavbarBrand>

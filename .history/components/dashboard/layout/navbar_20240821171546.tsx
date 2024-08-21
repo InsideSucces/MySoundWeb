@@ -61,7 +61,7 @@ export const NavbarWrapper = (props: Props) => {
         </NavbarContent>
         <NavbarContent>
           <Flex css={{ gap: "17px", alignItems: "center" }}>
-            <Image
+            <im
               className="w-52 h-52 relative rounded-xl"
               src="/assets/mysound_web-logo.png"
               alt="MySound Logo"

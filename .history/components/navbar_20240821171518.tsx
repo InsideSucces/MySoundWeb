@@ -66,8 +66,8 @@ export const Navbar = () => {
               loading="eager"
               alt="MySound Logo"
               src="/assets/mysound_web-logo.png"
-              // width={200}
-              // height={100}
+              width={200}
+              height={100}
             />
           </NextLink>
         </NavbarBrand>
