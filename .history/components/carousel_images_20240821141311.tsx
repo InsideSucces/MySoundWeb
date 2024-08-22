@@ -18,10 +18,12 @@ export default function AnimatedCarousel({ images }: { images: string[] }) {
                         >
                             {[...images, ...images].map((src, index) => (
                                 <div className="mx-3" key={index}>
-                                    <img
-                                        className="h-56 w-56 md:h-64 md:w-64 object-cover rounded-lg"
+                                    <Image
+                                        className="h-auto w-auto object-contain rounded-lg"
                                         src={src}
                                         alt={`Slide ${index + 1}`}
+                                        width={315}
+                                        height={344}
                                     />
                                 </div>
                             ))}

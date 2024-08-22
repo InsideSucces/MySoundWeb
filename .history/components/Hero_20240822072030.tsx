@@ -16,10 +16,10 @@ export const HeroSection = () => {
       </div>
 
       <div className="absolute inset-0 flex flex-col justify-center items-center z-20 overflow-hidden">
-        <div className="text-[#FEFEFE] text-[29vw]  lg:text-[570px] font-bold opacity-10 mt-20 leading-none">
+        <div className="text-[#FEFEFE] text-[30vw]  lg:text-[570px] font-bold opacity-10 mt-20 leading-none">
           MUSIC
         </div>
-        <div className="text-[#FEFEFE] text-[29vw]  lg:text-[570px] font-bold opacity-10 mt-10 leading-none">
+        <div className="text-[#FEFEFE] text-[26vw]  lg:text-[570px] font-bold opacity-10 mt-10 leading-none">
           MYSOUND
         </div>
       </div>
