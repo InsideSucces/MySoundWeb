@@ -20,7 +20,7 @@ export const TrendingArtistes = ({ artists }: TrendingArtistesProps) => {
                 src={artist.image}
                 alt={artist.name}
               />
-              <p className="mt-4 text-white text-lg font-semibold font-roboto text-center md:text-xl">
+              <p className="mt-4 text-white text- font-semibold font-roboto text-center sm:text-xl">
                 {artist.name}
               </p>
             </div>

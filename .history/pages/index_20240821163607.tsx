@@ -50,36 +50,22 @@ export default function IndexPage() {
   const [hot_playlists, setHotPlaylists] = useState<PlaylistData[]>([]);
 
   useEffect(() => {
-    fetch("/api/fetchArtists")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
+    fetch("/api/fetchArtists").then((response) => {
+      response.json().then((data) => {
         setTrendingArtist(data);
+        // log response
         console.log(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching artists:", error);
       });
+    });
   }, []);
   useEffect(() => {
-    fetch("/api/fetchPlaylists")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
+    fetch("/api/fetchPlaylists").then((response) => {
+      response.json().then((data) => {
         setHotPlaylists(data);
+        // log response
         console.log(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching playlists:", error);
       });
+    });
   }, []);
 
   return (

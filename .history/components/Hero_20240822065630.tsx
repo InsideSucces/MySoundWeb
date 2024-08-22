@@ -37,7 +37,7 @@ export const HeroSection = () => {
             <Link href={"/dashboard"}>
               <button
                 type="button"
-                onClick={() => {}}
+                onClick={}
                 className="w-40 h-11 bg-gradient-to-tl from-teal-300 to-sky-500 rounded-3xl text-neutral-900 font-bold py-3 px-8 hover:opacity-90 transition duration-300"
               >
                 Listen Now

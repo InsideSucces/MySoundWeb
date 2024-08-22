@@ -16,11 +16,11 @@ export const TrendingArtistes = ({ artists }: TrendingArtistesProps) => {
           {artists.map((artist) => (
             <div className="flex-none w-50">
               <img
-                className="w-40 h-40 rounded-full md:w-64 md:h-64"
+                className="w-64 h-64 rounded-full"
                 src={artist.image}
                 alt={artist.name}
               />
-              <p className="mt-4 text-white text-lg font-semibold font-roboto text-center md:text-xl">
+              <p className="mt-4 text-white text-xl font-semibold font-roboto text-center">
                 {artist.name}
               </p>
             </div>
