@@ -23,37 +23,19 @@ export const NavbarWrapper = (props: Props) => {
           wrapper: "w-full max-w-full",
         }}
       >
-        <NavbarContent justify="start">
+        <NavbarContent justify="start" style={{justifyItems: "center"}}>
           <Text
             h1
             size={34}
             weight={"bold"}
-            css={{
-              fontFamily: "$sans",
-              color: "$white",
-              "@sm": {
-                size: 28,
-              },
-              "@md": {
-                size: 24,
-              },
-            }}
+            css={{ fontFamily: "$sans", color: "$white" }}
           >
-            Discover
+            Discover{" "}
           </Text>
           <Text
             size={16}
             weight={"medium"}
-            css={{
-              fontFamily: "$sans",
-              color: "$accents7",
-              "@sm": {
-                size: 14,
-              },
-              "@md": {
-                size: 12,
-              },
-            }}
+            css={{ fontFamily: "$sans", color: "$accents7", textAlign:"center" }}
           >
             Recently Played
           </Text>
