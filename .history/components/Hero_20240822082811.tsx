@@ -33,14 +33,14 @@ export const HeroSection = () => {
             <span className="text-[#61C1C9]">Discover</span> Your Favorite
             Sounds
           </p>
-          <div className="flex flex-col md:flex-row items-center px-3 gap-4 md:gap-8 mt-12 md:mt-24">
+          <div className="flex flex-row items-center px-3 md:px-9 lg:px-9 gap-8 md:gap-16 lg:gap-28 mt-12 md:mt-24">
             <Link href={"/dashboard"}>
               <button
                 type="button"
                 onClick={() => {
-                  console.log("Listen Now Clicked!!!!");
+                  console.log("")
                 }}
-                className="px-8 py-3 bg-gradient-to-tl from-teal-300 to-sky-500 rounded-3xl text-neutral-900 font-bold hover:opacity-90 transition duration-300 z-50"
+                className="w-40 h-11 bg-gradient-to-tl from-teal-300 to-sky-500 rounded-3xl text-neutral-900 font-bold py-3 px-8 hover:opacity-90 transition duration-300"
               >
                 Listen Now
               </button>
@@ -48,7 +48,7 @@ export const HeroSection = () => {
             <Link href={"/auth/signUp"}>
               <button
                 type="button"
-                className="px-8 py-3 bg-transparent text-white border-2 border-[#61C1C9] font-bold rounded-3xl hover:bg-opacity-80 transition duration-300"
+                className="w-40 h-11 bg-transparent text-white border-2 border-[#61C1C9] font-bold py-3 px-8 rounded-3xl hover:bg-opacity-80 transition duration-300"
               >
                 Sign Up
               </button>

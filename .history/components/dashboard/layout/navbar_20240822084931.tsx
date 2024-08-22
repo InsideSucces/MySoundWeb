@@ -25,6 +25,7 @@ export const NavbarWrapper = (props: Props) => {
       >
         <NavbarContent justify="start" style={{ justifyItems: "center" }}>
           <Text
+            h1
             size={34}
             weight={"bold"}
             className=""
@@ -59,7 +60,7 @@ export const NavbarWrapper = (props: Props) => {
             <Flex css={{ gap: "10px" }}>
               <Flex css={{ flexDirection: "column" }}>
                 <Text
-                  size={16}
+                  size={14}
                   weight={"semibold"}
                   css={{
                     fontFamily: "$sans",

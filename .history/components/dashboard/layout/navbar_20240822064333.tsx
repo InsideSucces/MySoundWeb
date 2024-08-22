@@ -15,7 +15,7 @@ export const NavbarWrapper = (props: Props) => {
   const getActiveRoute = (routes: any) => {};
 
   return (
-    <Box className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden md:px-20">
+    <Box className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden px-20">
       <Navbar
         defaultValue={`Dashboard`}
         className="w-full pt-12 justify-between"
@@ -23,28 +23,19 @@ export const NavbarWrapper = (props: Props) => {
           wrapper: "w-full max-w-full",
         }}
       >
-        <NavbarContent justify="start" style={{ justifyItems: "center" }}>
+        <NavbarContent justify="start" style={{justifyItems: "center"}}>
           <Text
+            h1
             size={34}
             weight={"bold"}
-            className=""
-            css={{
-              fontFamily: "$sans",
-              color: "$white",
-              
-            }}
+            css={{ fontFamily: "$sans", color: "$white" }}
           >
             Discover{" "}
           </Text>
           <Text
-            // size={16}
+            size={16}
             weight={"medium"}
-            css={{
-              fontFamily: "$sans",
-              color: "$accents7",
-              textAlign: "center",
-              
-            }}
+            css={{ fontFamily: "$sans", color: "$accents7", textAlign:"center" }}
           >
             Recently Played
           </Text>
@@ -59,7 +50,7 @@ export const NavbarWrapper = (props: Props) => {
             <Flex css={{ gap: "10px" }}>
               <Flex css={{ flexDirection: "column" }}>
                 <Text
-                  size={16}
+                  size={14}
                   weight={"semibold"}
                   css={{
                     fontFamily: "$sans",

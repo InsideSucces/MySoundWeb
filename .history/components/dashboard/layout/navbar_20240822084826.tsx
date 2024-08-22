@@ -25,14 +25,15 @@ export const NavbarWrapper = (props: Props) => {
       >
         <NavbarContent justify="start" style={{ justifyItems: "center" }}>
           <Text
+            h1
             size={34}
             weight={"bold"}
-            className=""
-            css={{
-              fontFamily: "$sans",
-              color: "$white",
-              
-            }}
+            css={{ fontFamily: "$sans", color: "$white", '@sm': {
+        size: 28,
+      },
+      '@md': {
+        size: 24,
+      }, }}
           >
             Discover{" "}
           </Text>
@@ -43,7 +44,12 @@ export const NavbarWrapper = (props: Props) => {
               fontFamily: "$sans",
               color: "$accents7",
               textAlign: "center",
-              
+              "@sm": {
+                size: 14,
+              },
+              "@md": {
+                size: 12,
+              },
             }}
           >
             Recently Played
@@ -59,7 +65,7 @@ export const NavbarWrapper = (props: Props) => {
             <Flex css={{ gap: "10px" }}>
               <Flex css={{ flexDirection: "column" }}>
                 <Text
-                  size={16}
+                  size={14}
                   weight={"semibold"}
                   css={{
                     fontFamily: "$sans",
