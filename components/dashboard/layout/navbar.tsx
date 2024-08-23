@@ -27,8 +27,8 @@ export const NavbarWrapper = (props: Props) => {
           <BurguerButton />
         </NavbarContent>
         <NavbarContent justify="start" style={{ justifyItems: "center" }}>
-          <span className="">Discover </span>
-          <span>Recently Played</span>
+          {/* <span className="">Discover </span>
+          <span>Recently Played</span> */}
         </NavbarContent>
         <NavbarContent justify="end">
           <div className="flex flex-row align-center justify-center">

@@ -1,5 +1,5 @@
-import React from "react";
-export const ListeningHistory: React.FC<{ songData: any[] }> = ({
+import React, { FC } from "react";
+export const ListeningHistory: FC<{ songData: any[] }> = ({
     songData,
 }) => {
     return (
