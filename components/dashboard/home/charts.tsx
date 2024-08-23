@@ -69,8 +69,8 @@ export const Charts = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="overflow-x-auto  flex flex-nowrap">
-                        <div className="overflow-x-auto justify-center items-center gap-8 inline-flex">
+                    <div className="overflow-x-auto flex flex-row flex-nowrap">
+                        <div className="overflow-x-auto  gap-8 inline-flex">
                             <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
                                 <div className="w-32 h-[121px] justify-center items-center inline-flex">
                                     <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">

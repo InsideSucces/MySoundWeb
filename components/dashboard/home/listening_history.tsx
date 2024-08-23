@@ -3,7 +3,7 @@ export const ListeningHistory: React.FC<{ songData: any[] }> = ({
     songData,
 }) => {
     return (
-        <div className="w-full max-w-[744px] rounded-3xl p-6">
+        <div className="w-full max-w-[770px] rounded-3xl p-6">
             <div className="flex flex-row justify-between items-center">
                 <h2 className="text-white text-xl font-medium font-roboto mb-4">
                     Listening History
