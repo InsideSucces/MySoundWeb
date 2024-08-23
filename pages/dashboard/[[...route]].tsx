@@ -2,44 +2,46 @@ import DashboardLayoutNoSSR from "@/components/dashboard/layout";
 import { NextPageWithLayout } from "../_app";
 import { ReactElement } from "react";
 import { useRouter } from "next/router";
-
+import { Home } from "@/components/dashboard/home";
+import { Subscription } from "@/components/dashboard/subscription";
+import { Settings } from "@/components/dashboard/settings";
+import { Albums } from "@/components/dashboard/albums";
+import { Playlists } from "@/components/dashboard/playlists";
+import { LogOut } from "@/components/dashboard/logout";
+import { Following } from "@/components/dashboard/following";
+import { Likes } from "@/components/dashboard/likes";
+import { Search } from "@/components/dashboard/search";
 
 const Dashboard: NextPageWithLayout = () => {
-    const router = useRouter()
-    const route = (router.query.route as string[]) || []
-    console.log(route)
+    const router = useRouter();
+    const route = (router.query.route as string[]) || [];
+    console.log(route);
     switch (route[0]) {
         case "search":
-            return <h4>search</h4>
+            return <Search />;
         case "likes":
-            return <h4>likes</h4>
+            return <Likes />;
         case "playlists":
-            return <h4>playlists</h4>
+            return <Playlists />;
         case "albums":
-            return <h4>albums</h4>
+            return <Albums />;
 
         case "following":
-            return <h4>following</h4>
+            return <Following />;
         case "settings":
-            return <h4>settings</h4>
+            return <Settings />;
 
         case "subscription":
-            return <h4>subscription</h4>
+            return <Subscription />;
         case "logout":
-            return <h4>logout</h4>
+            return <LogOut />;
         default:
-            return <h4>Dashboard</h4>
+            return <Home />;
     }
-}
+};
 
-
-
-Dashboard.getLayout = function getLayout(page: ReactElement){
-    return (
-        <DashboardLayoutNoSSR>
-            {page}
-        </DashboardLayoutNoSSR>
-    )
-}
+Dashboard.getLayout = function getLayout(page: ReactElement) {
+    return <DashboardLayoutNoSSR>{page}</DashboardLayoutNoSSR>;
+};
 
 export default Dashboard;

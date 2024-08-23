@@ -33,7 +33,7 @@ export const SidebarItem = ({ icon, title, isActive, href, badge }: Props) => {
           onClick={handleClick}
         >
           {icon}
-          <span className={`text-[20px] font-semibold text-[#99938F] font-roboto ${isActive ? 'text-[#2ECFCF]' : ''}`}>{title}</span>
+          <span className={`text-[20px] font-semibold font-roboto ${isActive ? 'text-[#2ECFCF]' : 'text-[#99938F]'}`}>{title}</span>
           {badge && badge}
         </div>
       </Link>

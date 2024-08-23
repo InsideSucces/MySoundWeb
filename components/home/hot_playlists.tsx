@@ -12,8 +12,8 @@ export const HotPlaylists = ({ playlists }: HotPlaylistsProps) => {
       </h1>
       <div className="overflow-x-auto">
         <div className="flex flex-nowrap gap-8 pb-4">
-          {playlists.map((playlist) => (
-            <div className="flex-none w-60 md:w-80 bg-[#2dcece] rounded-lg">
+          {playlists.map((playlist, index) => (
+            <div key={`${index}-${playlist.id}`} className="flex-none w-60 md:w-80 bg-[#2dcece] rounded-lg">
               <img
                 src={playlist.image}
                 alt={playlist.name}
