@@ -24,7 +24,7 @@ export const SidebarItem = ({ icon, title, isActive, href, badge }: Props) => {
 
   return (
     <NextLink href={href} passHref shallow={true} legacyBehavior>
-      <Link className={`active:bg-none max-w-ful ${isActive ? 'border-r-5 border-[#2ECFCF]' : ''}`}>
+      <Link className={` active:bg-none max-w-ful ${isActive ? 'border-r-5 border-[#2ECFCF] text-[#2ECFCF]' : 'text-[#99938F]'}`}>
         <div
           className={clsx(
             isActive ? "[&_svg_path]:fill-[#2ECFCF]" : "hover:scale-[0.98]",
