@@ -23,7 +23,7 @@ export const Charts = () => {
     };
     return (
         <>
-            <div className="mx-auto max-w-full pl-6 py-[24.50px]  justify-start items-center inline-flex">
+            <div className="mx-auto max-w-full pl-2 py-[24.50px] justify-start items-center inline-flex">
                 <div className="self-stretch flex-col justify-start items-start gap-5 inline-flex w-full">
                     <div className="flex flex-row justify-between items-center inline-flex w-full">
                         <div className="text-white text-xl font-medium font-roboto leading-normal tracking-wide">Charts: Top 50</div>
