@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Flex } from "./styles";
-import { Input, Link, Text } from "@nextui-org/react";
+import { Input, Link } from "@nextui-org/react";
 import { BurguerButton } from "./burger-btn";
 import { Navbar, NavbarContent } from "@nextui-org/navbar";
 import Image from "next/image";
@@ -12,10 +12,10 @@ interface Props {
 export const NavbarWrapper = (props: Props) => {
   const router = useRouter();
   const route = (router.query.route as string[]) || [];
-  const getActiveRoute = (routes: any) => {};
+  const getActiveRoute = (routes: any) => { };
 
   return (
-    <Box className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden md:px-20">
+    <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden md:px-20">
       <Navbar
         defaultValue={`Dashboard`}
         className="w-full pt-12 justify-between"
@@ -23,71 +23,33 @@ export const NavbarWrapper = (props: Props) => {
           wrapper: "w-full max-w-full",
         }}
       >
+        <NavbarContent className="md:hidden">
+          <BurguerButton />
+        </NavbarContent>
         <NavbarContent justify="start" style={{ justifyItems: "center" }}>
-          <Text
-            size={34}
-            weight={"bold"}
-            className=""
-            css={{
-              fontFamily: "$sans",
-              color: "$white",
-              
-            }}
-          >
-            Discover{" "}
-          </Text>
-          <Text
-            // size={16}
-            weight={"medium"}
-            css={{
-              fontFamily: "$sans",
-              color: "$accents7",
-              textAlign: "center",
-              
-            }}
-          >
-            Recently Played
-          </Text>
+          <span className="">Discover </span>
+          <span>Recently Played</span>
         </NavbarContent>
         <NavbarContent justify="end">
-          <Flex css={{ gap: "17px", alignItems: "center" }}>
+          <div className="flex flex-row align-center justify-center">
             <img
               className="w-16 h-16 rounded-xl"
               src="/assets/artist_1.jpg"
               alt="User"
             />
-            <Flex css={{ gap: "10px" }}>
-              <Flex css={{ flexDirection: "column" }}>
-                <Text
-                  size={16}
-                  weight={"semibold"}
-                  css={{
-                    fontFamily: "$sans",
-                    color: "$white",
-                  }}
-                >
-                  Ola Ugo
-                </Text>
-                <Text
-                  size={12}
-                  weight={"medium"}
-                  css={{
-                    fontFamily: "$sans",
-                    color: "$accents5",
-                    marginTop: "5px",
-                  }}
-                >
-                  Premium
-                </Text>
-              </Flex>
+            <div >
+              <div className="flex flex-col text-center justify-center">
+                <span>Ola Ugo</span>
+                <span>Premium</span>
+              </div>
               <div className="w-4 h-4 justify-center items-center flex">
                 <div className="w-4 h-4 relative"></div>
               </div>
-            </Flex>
-          </Flex>
+            </div>
+          </div>
         </NavbarContent>
       </Navbar>
       {props.children}
-    </Box>
+    </div>
   );
 };

@@ -1,6 +1,12 @@
 // import img from "next/img";
 
-export const ArtistProfile = () => {
+import { ArtistData } from "@/types_models";
+
+type ArtistProfilePros = {
+  artist: ArtistData
+}
+
+export const ArtistProfile = ({ artist }: ArtistProfilePros) => {
   return (
     <div className="flex flex-col lg:flex-row justify-center items-center gap-4 p-4 lg:p-8">
       <div className="w-full lg:w-1/3 flex flex-col justify-start items-start gap-4">

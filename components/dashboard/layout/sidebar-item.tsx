@@ -1,88 +1,42 @@
-import { Text, Link } from '@nextui-org/react';
-import NextLink from 'next/link';
-import React from 'react';
-import { useSidebarContext } from './context';
-import { Flex } from './styles';
+import { Link } from "@nextui-org/react";
+import NextLink from "next/link";
+import React from "react";
+import { useSidebarContext } from "./context";
+import { Flex } from "./styles";
+import { clsx } from "clsx";
 
 interface Props {
-   title: string;
-   icon: React.ReactNode;
-   isActive?: boolean;
-   href?: any;
-   badge?: React.ReactNode;
+  title: string;
+  icon: React.ReactNode;
+  isActive?: boolean;
+  href?: any;
+  badge?: React.ReactNode;
 }
 
 export const SidebarItem = ({ icon, title, isActive, href, badge }: Props) => {
-   const { collapsed, setCollapsed } = useSidebarContext();
+  const { collapsed, setCollapsed } = useSidebarContext();
 
-   const handleClick = () => {
-      if (window.innerWidth < 868) {
-         setCollapsed();
-      }
-   };
+  const handleClick = () => {
+    if (window.innerWidth < 868) {
+      setCollapsed();
+    }
+  };
 
-   return (
-      <NextLink href={href} passHref shallow={true} legacyBehavior>
-         <Link
-            css={{
-               color: '#99938F',
-               maxWidth: '100%',
-               fontFamily: 'Roboto',
-               ...(isActive ? {
-                  borderRight: '5px solid #2ECFCF',
-               } : {})
-            }}
-         >
-            <Flex
-               onClick={handleClick}
-               css={{
-                  'gap': '$10',
-                  'width': '100%',
-                  'minHeight': '54px',
-                  'height': '100%',
-                  'alignItems': 'center',
-                  // 'px': '$7',
-                  'borderRadius': '8px',
-                  'cursor': 'pointer',
-                  'transition': 'all 0.15s ease',
-                  '&:active': {
-                     transform: 'scale(0.98)',
-                  },
-                  ...(isActive
-                     ? {
-                        'bg': '',
-                        'color': '#2ECFCF',
-                        // borderRight: '5px solid #2ECFCF',
-                        '& svg path': {
-                           fill: '#2ECFCF',
-                        },
-                     }
-                     : { '&:hover': { transform: 'scale(0.98)' } }),
-               }}
-               align={'center'}
-            >
-               {icon}
-               <Text
-                  
-                  b
-                  weight={'semibold'}
-                  // color='#2ECFCF'
-                  size={20}
-                  css={{
-                     fontFamily: "$sans",
-                     ...(isActive ? {
-                        color: '#2ECFCF', // Set color to #2ECFCF when active
-                     } : {
-                        color: '#99938F', // Default color
-                     }),
-                  }}
-                  className='text-white'
-               >
-                  {title}
-               </Text>
-               {badge && badge}
-            </Flex>
-         </Link>
-      </NextLink>
-   );
-}
+  return (
+    <NextLink href={href} passHref shallow={true} legacyBehavior>
+      <Link className={`active:bg-none max-w-ful ${isActive ? 'border-r-5 border-[#2ECFCF]' : ''}`}>
+        <div
+          className={clsx(
+            isActive ? "[&_svg_path]:fill-[#2ECFCF]" : "hover:scale-[0.98]",
+            "flex gap-9 w-full min-h-[54px] h-full items-center px-1.5 rounded-xl cursor-pointer transition-all duration-150 active:scale-[0.98]"
+          )}
+          onClick={handleClick}
+        >
+          {icon}
+          <span className={`text-[20px] font-semibold text-[#99938F] font-roboto ${isActive ? 'text-[#2ECFCF]' : ''}`}>{title}</span>
+          {badge && badge}
+        </div>
+      </Link>
+    </NextLink>
+  );
+};

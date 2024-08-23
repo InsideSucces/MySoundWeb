@@ -1,82 +1,28 @@
-import {styled} from '@nextui-org/react';
+import { tv } from '@nextui-org/react';
 
-export const SidebarWrapper = styled('div', {
-   'backgroundColor': '#000000',
-   'transition': 'transform 0.2s ease',
-   'height': '100%',
-   'position': 'fixed',
-   'transform': 'translateX(-100%)',
-   'width': '23.625rem',
-   'flexShrink': 0,
-   'zIndex': '202',
-   'overflowY': 'auto',
-   '&::-webkit-scrollbar': {
-      display: 'none',
-   },
-   'borderRight': '1px solid #2ECFCF',
-   'flexDirection': 'column',
-   'py': '$5',
-   // 'px': '$2',
-   '@md': {
-      marginLeft: '0',
-      display: 'flex',
-      position: 'static',
-      height: '100vh',
-      transform: 'translateX(0)',
-   },
-   'variants': {
+export const SidebarWrapper = tv({
+   base: "bg-background transition-transform h-full fixed -translate-x-full w-[350px] shrink-0 z-[202] overflow-y-auto border-r border-[#2ECFCF] flex-col py-6 pl-9 md:ml-0 md:flex md:static md:h-screen md:translate-x-0 ",
+   variants: {
       collapsed: {
-         true: {
-            display: 'inherit',
-            marginLeft: '0 ',
-            transform: 'translateX(0)',
-         },
+         true: "translate-x-0 ml-0 pt-20 [display:inherit]",
       },
    },
 });
 
-export const Overlay = styled('div', {
-   'backgroundColor': '',
-   'position': 'fixed',
-   'inset': 0,
-   'zIndex': '201',
-   'transition': 'opacity 0.3s ease',
-   'opacity': 0.8,
-   '@md': {
-      display: 'none',
-      zIndex: 'auto',
-      opacity: 1,
-   },
+export const Overlay = tv({
+   base: "bg-[rgb(15_23_42/0.3)] fixed inset-0 z-[201] opacity-80 transition-opacity md:hidden md:z-auto md:opacity-100",
 });
 
-export const Header = styled('div', {
-   display: 'flex',
-   gap: '$9',
-   alignItems: 'center',
-   'justifyContent': 'center',
-   px: '$10',
+export const Header = tv({
+   base: "flex gap-8 items-center justify-center px-9 pt-9 md:pt-0",
 });
 
-export const Body = styled('div', {
-   display: 'flex',
-   flexDirection: 'column',
-   gap: '$6',
-   mt: '$10',
-   // px: '$4',
+export const Body = tv({
+   base: "flex flex-col gap-6 mt-9 px-0",
 });
 
-export const Footer = styled('div', {
-   'display': 'flex',
-   'alignItems': 'center',
-   'justifyContent': 'center',
-   // 'gap': '$6',
-   'pt': '$18',
-   'pb': '$8',
-   // '@md': {
-   //    pt: 0,
-   //    pb: 0,
-   // },
-   px: '$4',
+export const Footer = tv({
+   base: "flex items-center justify-center gap-6 pt-10 pb-8 px-0",
 });
 
 export const Sidebar = Object.assign(SidebarWrapper, {

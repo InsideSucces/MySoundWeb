@@ -1,7 +1,3 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "Codegeex.SidebarUI.LanguagePreference": "English",
-  "Codegeex.CompletionDelay": 2,
-  "Codegeex.Chat.LanguagePreference": "English",
-  "Codegeex.Comment.LanguagePreference": "English"
 }

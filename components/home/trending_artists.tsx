@@ -13,8 +13,8 @@ export const TrendingArtistes = ({ artists }: TrendingArtistesProps) => {
       </h1>
       <div className="overflow-x-auto">
         <div className="flex flex-nowrap gap-8 py-8">
-          {artists.map((artist) => (
-            <div className="flex-none w-50">
+          {artists.map((artist, index) => (
+            <div key={`${index}-${artist.name}`} className="flex-none w-50">
               <img
                 className="w-40 h-40 rounded-full md:w-64 md:h-64"
                 src={artist.image}

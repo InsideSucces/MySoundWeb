@@ -25,31 +25,31 @@ export const Footer: FC<FooterType> = ({ className }) => {
                 src="/mysound-logo.png"
               />
             </Link>
-            <p className="w-80 text-[#0c0c0c]/80 text-lg font-normal font-['Poppins'] leading-loose">
+            <p className="w-80 text-[#0c0c0c]/80 text-lg font-normal font-poppins leading-loose">
               Transform the way you experience music
             </p>
           </div>
           <div className="flex flex-col items-start md:items-center lg:items-center">
-            <h3 className="text-[#0d0d0d] text-base font-semibold font-['Poppins'] mb-4">
+            <h3 className="text-[#0d0d0d] text-base font-semibold font-poppins mb-4">
               Explore
             </h3>
             <Link
               href="#"
-              className="text-[#0d0d0d] text-base font-normal font-['Poppins'] capitalize leading-9"
+              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
               prefetch={false}
             >
               Home
             </Link>
             <Link
               href="#"
-              className="text-[#0d0d0d] text-base font-normal font-['Poppins'] capitalize leading-9"
+              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
               prefetch={false}
             >
               Playlists
             </Link>
             <Link
               href="#"
-              className="text-[#0d0d0d] text-base font-normal font-['Poppins'] capitalize leading-9"
+              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
               prefetch={false}
             >
               Artists
@@ -57,26 +57,26 @@ export const Footer: FC<FooterType> = ({ className }) => {
           </div>
 
           <div className="flex flex-col items-start md:items-center lg:items-center">
-            <h3 className="text-[#0d0d0d] text-base font-semibold font-['Poppins'] mb-4">
+            <h3 className="text-[#0d0d0d] text-base font-semibold font-poppins mb-4">
               Contact Us
             </h3>
             <Link
               href="#"
-              className="text-[#0d0d0d] text-base font-normal font-['Poppins'] capitalize leading-9"
+              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
               prefetch={false}
             >
               Support
             </Link>
             <Link
               href="#"
-              className="text-[#0d0d0d] text-base font-normal font-['Poppins'] capitalize leading-9"
+              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
               prefetch={false}
             >
               FAQ
             </Link>
             <Link
               href="#"
-              className="text-[#0d0d0d] text-base font-normal font-['Poppins'] capitalize leading-9"
+              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
               prefetch={false}
             >
               Feedback
@@ -84,7 +84,7 @@ export const Footer: FC<FooterType> = ({ className }) => {
           </div>
 
           <div className="flex flex-col items-start md:items-center lg:items-center">
-            <h3 className="text-[#0d0d0d] text-base font-semibold font-['Poppins'] mb-4">
+            <h3 className="text-[#0d0d0d] text-base font-semibold font-poppins mb-4">
               Get In Touch
             </h3>
             <div className="flex space-x-4">

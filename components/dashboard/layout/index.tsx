@@ -25,10 +25,10 @@ const DashboardLayout = (props: Props) => {
                 setCollapsed: handleToggleSidebar,
             }}
         >
-            <WrapperLayout>
+            <section className='flex'>
                 <SidebarWrapper />
                 <NavbarWrapper>{props.children}</NavbarWrapper>
-            </WrapperLayout>
+            </section>
         </SidebarContext.Provider>
     );
 };

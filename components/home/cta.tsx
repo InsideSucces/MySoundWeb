@@ -2,7 +2,7 @@
 
 export const CTA = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 p-6 lg:p-12 bg-[#161616]/70 rounded-3xl">
+    <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 p-6 lg:p-12 bg-transparent rounded-3xl">
       <div className="relative w-full max-w-[302px] h-[462px]">
         <div className="absolute left-0 top-0 w-[177px] h-[366px]">
           <img

@@ -14,33 +14,30 @@ import {
   SearchIcon,
   SettingsIcon,
 } from "../assets/icons";
-import { Text } from "@nextui-org/react";
 
 export const SidebarWrapper = () => {
   const router = useRouter();
   const { collapsed, setCollapsed } = useSidebarContext();
 
   return (
-    <Box
-      as="aside"
-      css={{
-        height: "100vh",
-        zIndex: 202,
-        position: "sticky",
-        top: "0",
-      }}
-    >
-      {collapsed ? <Sidebar.Overlay onClick={setCollapsed} /> : null}
-      <Sidebar collapsed={collapsed}>
-        <Sidebar.Header>
+    <aside className="h-screen z-[20] sticky top-0">
+      {collapsed ? (
+        <div className={Sidebar.Overlay()} onClick={setCollapsed} />
+      ) : null}
+      <div
+        className={Sidebar({
+          collapsed: collapsed,
+        })}
+      >
+        <div className={Sidebar.Header()}>
           <img
             className="w-58 h-30"
             src="/assets/mysound_web-logo.png"
             alt="MySound Web Logo"
           />
-        </Sidebar.Header>
-        <Flex direction={"column"} justify={"between"} css={{ height: "100%" }}>
-          <Sidebar.Body className="body sidebar">
+        </div>
+        <div className="flex flex-col justify-between h-full">
+          <div className={Sidebar.Body()}>
             <SidebarMenu title="MENU">
               <SidebarItem
                 title="Home"
@@ -100,11 +97,11 @@ export const SidebarWrapper = () => {
                 href="/dashboard/logout"
               />
             </SidebarMenu>
-          </Sidebar.Body>
+          </div>
           <Sidebar.Footer>
             <SidebarMenu title="GET MOBILE APP">
-              <Flex
-                css={{
+              <div
+                style={{
                   gap: "20px",
                   alignItems: "center",
                   justifyContent: "center",
@@ -118,11 +115,9 @@ export const SidebarWrapper = () => {
                   className="w-28 h-10 rounded-md"
                   src="https://via.placeholder.com/115x39"
                 />
-              </Flex>
-              <Text
-                css={{
-                  fontFamily: "$sans",
-                }}
+              </div>
+              <span
+                className=""
               >
                 <div>
                   <span className="text-[#99938f] text-sm font-bold leading-tight tracking-tight">
@@ -140,11 +135,11 @@ export const SidebarWrapper = () => {
                     English (US)
                   </span>
                 </div>
-              </Text>
+              </span>
             </SidebarMenu>
           </Sidebar.Footer>
-        </Flex>
-      </Sidebar>
-    </Box>
+        </div>
+      </div>
+    </aside>
   );
 };
