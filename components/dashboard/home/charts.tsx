@@ -3,6 +3,8 @@ import React, { useRef, useState } from 'react';
 export const Charts = () => {
     const chartContainerRef = useRef<HTMLDivElement>(null);
     const [scrollPosition, setScrollPosition] = useState(0);
+    const [touchStart, setTouchStart] = useState(0);
+    const [touchEnd, setTouchEnd] = useState(0);
 
     const handleScroll = (direction: 'left' | 'right') => {
         const container = chartContainerRef.current;
@@ -21,9 +23,31 @@ export const Charts = () => {
             }
         }
     };
+
+    const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+        setTouchStart(event.targetTouches[0].clientX);
+    };
+
+    const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+        setTouchEnd(event.changedTouches[0].clientX);
+        handleSwipe();
+    };
+
+    const handleSwipe = () => {
+        if (touchStart - touchEnd > 50) {
+            handleScroll('right');
+        }
+
+        if (touchEnd - touchStart > 50) {
+            handleScroll('left');
+        }
+    };
     return (
         <>
-            <div className="mx-auto max-w-full pl-2 py-[24.50px] justify-start items-center inline-flex">
+            <div className="mx-auto max-w-full pl-2 py-[24.50px] justify-start items-center inline-flex"
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+            >
                 <div className="self-stretch flex-col justify-start items-start gap-5 inline-flex w-full">
                     <div className="flex flex-row justify-between items-center inline-flex w-full">
                         <div className="text-white text-xl font-medium font-roboto leading-normal tracking-wide">Charts: Top 50</div>
@@ -45,7 +69,7 @@ export const Charts = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-nowrap">
+                    <div className="overflow-x-auto  flex flex-nowrap">
                         <div className="overflow-x-auto justify-center items-center gap-8 inline-flex">
                             <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
                                 <div className="w-32 h-[121px] justify-center items-center inline-flex">
