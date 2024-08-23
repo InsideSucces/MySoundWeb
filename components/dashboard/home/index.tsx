@@ -55,14 +55,47 @@ const songData = [
     imageUrl: "https://via.placeholder.com/248x213",
     length: "3:21",
   },
+];
 
+const charts = [
+  {
+    id: 1,
+    title: "AI Music Genre",
+    description: "Top 50",
+    image: "https://via.placeholder.com/128x121",
+  },
 
-
-
-
-
-
-  // Add more song data as needed
+  {
+    id: 1,
+    title: "AI Music Genre",
+    description: "Top 50",
+    image: "https://via.placeholder.com/128x121",
+  }, {
+    id: 1,
+    title: "AI Music Genre",
+    description: "Top 50",
+    image: "https://via.placeholder.com/128x121",
+  }, {
+    id: 1,
+    title: "AI Music Genre",
+    description: "Top 50",
+    image: "https://via.placeholder.com/128x121",
+  }, {
+    id: 1,
+    title: "AI Music Genre",
+    description: "Top 50",
+    image: "https://via.placeholder.com/128x121",
+  }, {
+    id: 1,
+    title: "AI Music Genre",
+    description: "Top 50",
+    image: "https://via.placeholder.com/128x121",
+  }, {
+    id: 1,
+    title: "AI Music Genre",
+    description: "Top 50",
+    image: "https://via.placeholder.com/128x121",
+  },
 ];
 
 export const Home: NextPage = () => {
@@ -75,11 +108,10 @@ export const Home: NextPage = () => {
           </div>
           {/* ... (Your existing code for the buttons) */}
         </div>
-        <Charts />
+        <Charts charts={charts} />
       </div>
       <div className="flex flex-col md:flex-row justify-center">
         <div className="md:w-2/3 items-start">
-
           <ListeningHistory songData={songData} />
         </div>
         <div className="md:w-1/3 w-full flex justify-center mt-[90px] md:ml-[190px]">

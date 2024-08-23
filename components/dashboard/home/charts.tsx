@@ -1,6 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 
-export const Charts = () => {
+type ChartProps = {
+    charts: any[];
+}
+
+export const Charts: FC<ChartProps> = ({ charts }) => {
     const chartContainerRef = useRef<HTMLDivElement>(null);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [touchStart, setTouchStart] = useState(0);
@@ -48,214 +52,26 @@ export const Charts = () => {
             <div className="self-stretch flex-col justify-start items-start gap-5 inline-flex w-full">
                 <div
                     ref={chartContainerRef}
-                    className="flex flex-nowrap gap-8 py-8 overflow-x-auto" // Key classes for scrolling
+                    className="flex flex-nowrap gap-6 py-8 overflow-x-auto" // Key classes for scrolling
                 >
-                    <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-                        <div className="w-32 h-[121px] justify-center items-center inline-flex">
-                            <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-                                <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-                            </div>
-                        </div>
-                        <div className="flex-col justify-start items-start gap-2 flex">
-                            <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">Al Music Genre</div>
-                            <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-                        </div>
-                    </div>
-                    <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-                        <div className="w-32 h-[121px] justify-center items-center inline-flex">
-                            <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-                                <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-                            </div>
-                        </div>
-                        <div className="flex-col justify-start items-start gap-2 flex">
-                            <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">Pop</div>
-                            <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-                        </div>
-                    </div>
-                    <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-                        <div className="w-32 h-[121px] justify-center items-center inline-flex">
-                            <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-                                <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-                            </div>
-                        </div>
-                        <div className="flex-col justify-start items-start gap-2 flex">
-                            <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">Pop</div>
-                            <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-                        </div>
-                    </div><div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-                        <div className="w-32 h-[121px] justify-center items-center inline-flex">
-                            <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-                                <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-                            </div>
-                        </div>
-                        <div className="flex-col justify-start items-start gap-2 flex">
-                            <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">Pop</div>
-                            <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-                        </div>
-                    </div><div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-                        <div className="w-32 h-[121px] justify-center items-center inline-flex">
-                            <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-                                <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-                            </div>
-                        </div>
-                        <div className="flex-col justify-start items-start gap-2 flex">
-                            <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">Pop</div>
-                            <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-                        </div>
-                    </div><div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-                        <div className="w-32 h-[121px] justify-center items-center inline-flex">
-                            <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-                                <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-                            </div>
-                        </div>
-                        <div className="flex-col justify-start items-start gap-2 flex">
-                            <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">Pop</div>
-                            <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-                        </div>
-                    </div><div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-                        <div className="w-32 h-[121px] justify-center items-center inline-flex">
-                            <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-                                <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-                            </div>
-                        </div>
-                        <div className="flex-col justify-start items-start gap-2 flex">
-                            <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">Pop</div>
-                            <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-                        </div>
-                    </div>
 
-
-
-
+                    {charts.map((chart, index) => (
+                        <div key={`${index}-${chart.title}`}>
+                            <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex" onClick={()=> {}}>
+                                <div className="w-32 h-[121px] justify-center items-center inline-flex">
+                                    <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
+                                        <img className="w-32 h-[121px]" src={chart.image ?? "https://via.placeholder.com/128x121"} />
+                                    </div>
+                                </div>
+                                <div className="flex-col justify-start items-start gap-2 flex">
+                                    <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">{chart.title ?? "AI Music Genre"}</div>
+                                    <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">{chart.description ?? "Top 50"}</div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
-        // <>
-        //     <div className="mx-auto max-w-full pl-2 py-[24.50px] justify-start items-center inline-flex"
-        //         onTouchStart={handleTouchStart}
-        //         onTouchEnd={handleTouchEnd}
-        //     >
-        //         <div className="self-stretch flex-col justify-start items-start gap-5 inline-flex w-full">
-        //             <div className="flex flex-row justify-between items-center inline-flex w-full">
-        //                 <div className="text-white text-xl font-medium font-roboto leading-normal tracking-wide">Charts: Top 50</div>
-        //                 <div className="w-[92px] h-11 relative">
-        //                     <div className="w-[92px] h-11 left-0 top-0 absolute bg-[#2dcece]/25 rounded-[44px] blur-[150px]" />
-        //                     <div className="w-[52px] h-4 left-[20px] top-[14px] absolute">
-        //                         <button
-        //                             onClick={() => handleScroll('right')}
-        //                             className="w-4 h-4 right-2 top-1/2 transform -translate-y-1/2 absolute justify-center items-center inline-flex"
-        //                         >
-        //                             {'>'}
-        //                         </button>
-        //                         <button
-        //                             onClick={() => handleScroll('left')}
-        //                             className="w-4 h-4 left-2 top-1/2 transform -translate-y-1/2 absolute justify-center items-center inline-flex"
-        //                         >
-        //                             {'<'}
-        //                         </button>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             <div
-        //                 ref={chartContainerRef} // Added ref to the container that needs to scroll
-        //                 className="flex flex-row flex-nowrap gap-8"
-
-
-        //                     <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-        //                         <div className="w-32 h-[121px] justify-center items-center inline-flex">
-        //                             <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-        //                                 <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-        //                             </div>
-        //                         </div>
-        //                         <div className="flex-col justify-start items-start gap-2 flex">
-        //                             <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">Hip Hop</div>
-        //                             <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-        //                         </div>
-        //                     </div>
-        //                     <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-        //                         <div className="w-32 h-[121px] justify-center items-center inline-flex">
-        //                             <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-        //                                 <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-        //                             </div>
-        //                         </div>
-        //                         <div className="flex-col justify-start items-start gap-2 flex">
-        //                             <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">Rock</div>
-        //                             <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-        //                         </div>
-        //                     </div>
-        //                     <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-        //                         <div className="w-32 h-[121px] justify-center items-center inline-flex">
-        //                             <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-        //                                 <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-        //                             </div>
-        //                         </div>
-        //                         <div className="flex-col justify-start items-start gap-2 flex">
-        //                             <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">R&B Soul</div>
-        //                             <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-        //                         </div>
-        //                     </div>
-        //             </div>
-        //             {/* <div className="overflow-x-auto flex flex-row flex-nowrap">
-        //                 <div className="overflow-x-auto  gap-8 inline-flex">
-
-
-        //                     <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-        //                         <div className="w-32 h-[121px] justify-center items-center inline-flex">
-        //                             <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-        //                                 <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-        //                             </div>
-        //                         </div>
-        //                         <div className="flex-col justify-start items-start gap-2 flex">
-        //                             <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">R&B Soul</div>
-        //                             <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-        //                         </div>
-        //                     </div>
-        //                     <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-        //                         <div className="w-32 h-[121px] justify-center items-center inline-flex">
-        //                             <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-        //                                 <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-        //                             </div>
-        //                         </div>
-        //                         <div className="flex-col justify-start items-start gap-2 flex">
-        //                             <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">R&B Soul</div>
-        //                             <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-        //                         </div>
-        //                     </div>
-        //                     <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-        //                         <div className="w-32 h-[121px] justify-center items-center inline-flex">
-        //                             <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-        //                                 <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-        //                             </div>
-        //                         </div>
-        //                         <div className="flex-col justify-start items-start gap-2 flex">
-        //                             <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">R&B Soul</div>
-        //                             <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-        //                         </div>
-        //                     </div>
-        //                     <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-        //                         <div className="w-32 h-[121px] justify-center items-center inline-flex">
-        //                             <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-        //                                 <img className="w-32 h-[121px]" src="https://via.placeholder.com/128x121" />
-        //                             </div>
-        //                         </div>
-        //                         <div className="flex-col justify-start items-start gap-2 flex">
-        //                             <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">R&B Soul</div>
-        //                             <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-        //                         </div>
-        //                     </div>
-        //                     <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex">
-        //                         <div className="w-32 h-[121px] justify-center items-center inline-flex">
-        //                             <img className="w-32 h-[121px] rounded-[15px]" src="https://via.placeholder.com/128x121" />
-        //                         </div>
-        //                         <div className="flex-col justify-start items-start gap-2 flex">
-        //                             <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">Country</div>
-        //                             <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">Top 50</div>
-        //                         </div>
-        //                     </div>
-        //                 </div>
-        //             </div> */}
-        //         </div>
-        //     </div>
-        // </>
     );
 };

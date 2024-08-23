@@ -18,7 +18,7 @@ export const NavbarWrapper = (props: Props) => {
     <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden md:px-20">
       <Navbar
         defaultValue={`Dashboard`}
-        className="w-full pt-12 justify-between"
+        className="w-full pt-12 justify-between sticky"
         classNames={{
           wrapper: "w-full max-w-full",
         }}
