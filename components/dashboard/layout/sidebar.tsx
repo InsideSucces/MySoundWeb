@@ -98,7 +98,7 @@ export const SidebarWrapper = () => {
               />
             </SidebarMenu>
           </div>
-          <Sidebar.Footer>
+          <div className={Sidebar.Footer()}>
             <SidebarMenu title="GET MOBILE APP">
               <div
                 style={{
@@ -137,7 +137,7 @@ export const SidebarWrapper = () => {
                 </div>
               </span>
             </SidebarMenu>
-          </Sidebar.Footer>
+          </div>
         </div>
       </div>
     </aside>
