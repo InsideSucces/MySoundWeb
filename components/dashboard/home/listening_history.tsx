@@ -37,7 +37,7 @@ export const ListeningHistory: FC<{ songData: any[] }> = ({
                                         {song.artist}
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-6 ml-auto">
+                                <div className="flex items-center gap-3 md:gap-6 ml-auto">
                                     <div className="w-20 h-9 rounded-lg border border-[#2dcece] flex items-center justify-center">
                                         <div className="flex justify-between">
                                             <CgMusicNote color="#99938f" className="font-semibold" />
