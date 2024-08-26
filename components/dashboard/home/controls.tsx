@@ -144,10 +144,10 @@ export const Controls: FC = () => {
                 onLoadedMetadata={onLoadedMetadata}
             />
             <button onClick={handlePrevious}>
-                <BsSkipStartFill size={20} />
+                <BsSkipStartFill size={20} color="#2dcece" />
             </button>
             <button onClick={skipBackward}>
-                <BsFillRewindFill size={20} />
+                <BsFillRewindFill size={20} color="#2dcece" />
             </button>
 
             <button
@@ -179,10 +179,10 @@ export const Controls: FC = () => {
                 )}
             </button>
             <button onClick={skipForward}>
-                <BsFillFastForwardFill size={20} />
+                <BsFillFastForwardFill size={20} color="#2dcece" />
             </button>
             <button onClick={handleNext}>
-                <BsSkipEndFill size={20} />
+                <BsSkipEndFill size={20} color="#2dcece"/>
             </button>
         </div>
     )
