@@ -114,7 +114,7 @@ export const Home: NextPage = () => {
         <div className="md:w-2/3 items-start">
           <ListeningHistory songData={songData} />
         </div>
-        <div className="md:w-1/3 w-full flex justify-center mt-[90px] md:ml-[190px]">
+        <div className="md:w-1/3 w-full flex justify-center mt-[90px] mb-[90px] md:ml-[190px]">
           <MusicPlayer song={{}} />
         </div>
       </div>
