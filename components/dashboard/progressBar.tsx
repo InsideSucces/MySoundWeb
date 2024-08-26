@@ -43,7 +43,7 @@ export const ProgressBar: FC = () => {
     return (
         <div className="flex flex-column items-center justify-center gap-5 w-full">
             <input
-                className="w-full bg-gray-300 text-white"
+                className="w-full bg-gray-300 text-[#2dcece]"
                 ref={progressBarRef}
                 type="range"
                 defaultValue="0"

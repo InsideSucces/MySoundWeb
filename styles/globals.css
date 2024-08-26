@@ -10,3 +10,27 @@ body {
 * {
   box-sizing: border-box;
 } */
+
+/* Target WebKit browsers (Chrome, Safari, Opera) */
+input[type="range"].custom-progress-bar::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #2dcece var(--range-progress), #99938f 0%); /* Your custom gradient */
+  height: 5px; /* Adjust height as needed */
+  border-radius: 10px; /* Adjust border-radius as needed */
+  color: transparent; /* Hide the default track */
+}
+
+/* Target Firefox */
+input[type="range"].custom-progress-bar::-moz-range-track {
+  background: linear-gradient(to right, #2dcece var(--range-progress), #99938f 0%); /* Your custom gradient */
+  height: 5px; /* Adjust height as needed */
+  border-radius: 10px; /* Adjust border-radius as needed */
+  color: transparent; /* Hide the default track */
+}
+
+/* Target IE and Edge */
+input[type="range"].custom-progress-bar::-ms-track {
+  background: linear-gradient(to right, #2dcece var(--range-progress), #99938f 0%); /* Your custom gradient */
+  height: 5px; /* Adjust height as needed */
+  border-radius: 10px; /* Adjust border-radius as needed */
+  color: transparent; /* Hide the default track */
+}

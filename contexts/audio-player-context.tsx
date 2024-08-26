@@ -67,7 +67,6 @@ export const AudioPlayerProvider = ({ children }: { children: ReactNode; }) => {
         setListeningHistory(prevHistory => {
             // Prevent duplicates, add to the beginning
             const uniqueHistory = prevHistory.filter(t => t.id !== track.id);
-
             // Limit history to 10 items
             const limitedHistory = [track, ...uniqueHistory].slice(0, 10); 
 
