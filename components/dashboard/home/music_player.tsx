@@ -49,7 +49,7 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ song }) => {
                         {/* Replace with previous song icon */}
                     </button>
                     <button
-                        onClick={handlePlayPause}
+                        onClick={() => setIsPlaying((prev) => !prev)}
                         className="w-14 h-14 rounded-full bg-[#2dcece] flex items-center justify-center shadow-md"
                     >
                         {isPlaying ? (
