@@ -52,7 +52,7 @@ const settings: SettingsData[] = [
 export const Settings: NextPage = () => {
   const pathname = usePathname();
   return (
-    <div className="h-full md:h-96 lg:px-6 m-9">
+    <div className="h-full w-full lg:px-6 m-9">
       <div className="flex items-center justify-center flex-wrap max-w-[910rem] mx-auto w-full rounded-[8.643px] bg-[#121212] shadow-[0px_0px_25.93px_0px_rgba(170,170,170,0.16),_0px_8.643px_17.287px_0px_rgba(194,194,194,0.16)]">
         <Tabs
           aria-label="MySound Settings"
@@ -60,7 +60,7 @@ export const Settings: NextPage = () => {
           variant="underlined"
           fullWidth
           classNames={{
-            tabList: "gap-6 w-full relative itmes-center justify-center rounded-none p-0 border-b border-divider",
+            tabList: "w-full relative items-center justify-start rounded-none px-9 border-b border-divider overflow-x-auto",
             cursor: "w-full bg-[#2ECFCF]",
             tab: "max-w-fit px-10 h-12 data-[selected=true]:text-[#2ECFCF]",
             tabContent: "group-data-[selected=true]:text-[#2ECFCF]",
@@ -76,7 +76,7 @@ export const Settings: NextPage = () => {
                 </div>
               }
             >
-              <div className="container mx-auto w-full">
+              <div className="container mx-auto w-full relative">
                 {value.content}
               </div>
             </Tab>

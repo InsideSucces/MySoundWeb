@@ -94,7 +94,7 @@ export const PlaybackAndDownloads: FC = () => {
                                 {playback.description}
                             </p>
                         </div>
-                        <div className="mx-[1rem] md:mx-[14rem]"></div>
+                        <div className="mx-[1rem] md:mx-[14rem] lg:mx-[14rem]"></div>
                         {typeof playback.value === "boolean" ? (
                             <label
                                 htmlFor={`${playback.title}-toggle`}
