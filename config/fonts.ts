@@ -1,4 +1,4 @@
-import { Fira_Code as FontMono, Inter, Poppins, Roboto as FontSans } from "next/font/google";
+import { Fira_Code as FontMono, Inter, Poppins, Roboto as FontSans, Urbanist } from "next/font/google";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -22,4 +22,8 @@ export const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
   weight: "100"
+});
+
+export const urbanist = Urbanist({
+  subsets: ["latin"],
 });

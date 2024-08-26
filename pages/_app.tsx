@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 
-import { fontSans, fontMono, inter, poppins } from "@/config/fonts";
+import { fontSans, fontMono, inter, poppins, urbanist } from "@/config/fonts";
 import "@/styles/globals.css";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -36,4 +36,5 @@ export const fonts = {
   mono: fontMono.style.fontFamily,
   inter: inter.style.fontFamily,
   poppins: poppins.style.fontFamily,
+  urbanist: urbanist.style.fontFamily,
 };

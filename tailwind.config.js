@@ -15,6 +15,7 @@ module.exports = {
       },
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif'],
+        'urbanist': ['Urbanist'],
       },
     },
     keyframes: {

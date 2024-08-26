@@ -11,6 +11,7 @@ import { LogOut } from "@/components/dashboard/logout";
 import { Following } from "@/components/dashboard/following";
 import { Likes } from "@/components/dashboard/likes";
 import { Search } from "@/components/dashboard/search";
+import { Head } from "@/layouts/head";
 
 const Dashboard: NextPageWithLayout = () => {
     const router = useRouter();
@@ -41,7 +42,12 @@ const Dashboard: NextPageWithLayout = () => {
 };
 
 Dashboard.getLayout = function getLayout(page: ReactElement) {
-    return <DashboardLayoutNoSSR>{page}</DashboardLayoutNoSSR>;
+    return <>
+        <Head />
+        <DashboardLayoutNoSSR>
+            {page}
+        </DashboardLayoutNoSSR>
+    </>;
 };
 
 export default Dashboard;

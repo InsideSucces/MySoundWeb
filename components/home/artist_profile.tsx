@@ -3,7 +3,7 @@
 import { ArtistData } from "@/types_models";
 
 type ArtistProfilePros = {
-  artist: ArtistData
+  artist?: ArtistData
 }
 
 export const ArtistProfile = ({ artist }: ArtistProfilePros) => {
@@ -11,22 +11,18 @@ export const ArtistProfile = ({ artist }: ArtistProfilePros) => {
     <div className="flex flex-col lg:flex-row justify-center items-center gap-4 p-4 lg:p-8">
       <div className="w-full lg:w-1/3 flex flex-col justify-start items-start gap-4">
         <h1 className="text-[#2dcece] text-4xl lg:text-6xl xl:text-7xl font-extrabold font-roboto capitalize">
-          Gilly Mu
+         {artist?.name ?? ""}
         </h1>
         <p className="text-white/70 text-base lg:text-xl font-normal font-roboto">
-          Music Artist from South London with roots in Uganda, looking to bridge
-          the gap between the UK & East Africa through music. Gilly Muwanga who
-          is known by his stage name as Gilly Mu is a Ugandan Dancer, music
-          artist, singer and songwriter who is one of the fast rising music
-          artists in diaspora representing Uganda.
+          {artist?.bio ?? ""}
         </p>
       </div>
 
       <div className="w-full lg:w-1/3 flex justify-center">
         <img
           className="w-full max-w-[354px] h-auto"
-          src="https://via.placeholder.com/354x384"
-          alt="Gilly Mu"
+          src={artist?.image! ?? ""}
+          alt={artist?.name ?? ""}
         />
       </div>
 

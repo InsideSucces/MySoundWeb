@@ -88,7 +88,7 @@ export default function IndexPage() {
       <AnimatedCarousel images={images} />
       <HotPlaylists playlists={hot_playlists} />
       <TrendingArtistes artists={trending_artists} />
-      <ArtistProfile artist={trending_artists[3]} />
+      <ArtistProfile artist={trending_artists.find(artist => artist.id === 6)} />
       <CTA />
       <CustomAccordion items={faqItems} />
     </DefaultLayout>

@@ -243,7 +243,7 @@ export const InstagramIcon = ({
 );
 
 export const ArrowIcon = ({
-  size = 24,
+  size,
   width,
   height,
   color,
