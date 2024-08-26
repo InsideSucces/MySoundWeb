@@ -85,12 +85,12 @@ export const PlaybackAndDownloads: FC = () => {
         <div className="w-full md:w-full p-6">
             <div className="flex flex-col gap-6 -mx-6">
                 {playbackAndDownloadsContents.map((playback, index) => (
-                    <div className="flex justify-between items-center px-6">
+                    <div className="flex justify-between items-center py-3 px-6 hover:bg-[#252525] transition duration-300">
                         <div className="flex flex-col gap-1.5 gap-1.5">
-                            <h2 className="text-white text-2xl font-semibold font-roboto capitalize">
+                            <h2 className="text-white text-xl md:text-2xl font-semibold font-roboto capitalize">
                                 {playback.title}
                             </h2>
-                            <p className="text-[#7e8389] text-xl font-medium font-roboto leading-tight break-words max-w-[480px]">
+                            <p className="text-[#7e8389] text-xl font-semibold font-roboto leading-tight break-words max-w-[480px]">
                                 {playback.description}
                             </p>
                         </div>

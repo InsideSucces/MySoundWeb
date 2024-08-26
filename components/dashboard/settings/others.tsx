@@ -30,19 +30,19 @@ const othersData = [
 
 export const Others: FC = () => {
     return (
-        <div className="w-full p-4">
-            <div className="flex flex-col gap-4">
+        <div className="w-full p-6">
+            <div className="flex flex-col gap-4 -mx-6">
                 {othersData.map((item, index) => (
                     <div
                         key={index}
                         className="flex justify-between items-center py-3 px-4 rounded-lg hover:bg-[#252525] transition duration-300"
                     >
                         <div className="flex flex-col gap-1">
-                            <h3 className="text-white text-lg font-medium font-roboto">
+                            <h3 className="text-white text-xl md:text-2xl font-semibold font-roboto capitalize">
                                 {item.title}
                             </h3>
                             {item.description && (
-                                <p className="text-[#7e8389] text-sm font-medium font-roboto">
+                                <p className="text-[#7e8389] text-xl font-semibold font-roboto">
                                     {item.description}
                                 </p>
                             )}

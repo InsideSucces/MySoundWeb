@@ -71,7 +71,7 @@ export const Settings: NextPage = () => {
             <Tab
               key={value.key}
               title={
-                <div className="flex items-center text-[18.287px] md:text-[20.287px] font-bold">
+                <div className="flex items-center text-[18.287px] md:text-[25.287px] font-bold">
                   <span>{value.name}</span>
                 </div>
               }
