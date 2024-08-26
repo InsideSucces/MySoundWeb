@@ -16,7 +16,7 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ song }) => {
         <div className="w-full max-w-[300px] items-center justify-center  md:w-72 relative rounded-3xl p-6">
             <div className="w-full h-52 rounded-2xl overflow-hidden mb-6">
                 <img
-                    className="w-full h-full object-cover"
+                    className="w-full h-full"
                     src={currentTrack.cover_image}
                     alt={currentTrack.title || 'Album Art'}
                 />
