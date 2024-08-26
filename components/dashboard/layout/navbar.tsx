@@ -15,10 +15,10 @@ export const NavbarWrapper = (props: Props) => {
   const getActiveRoute = (routes: any) => { };
 
   return (
-    <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden md:px-20">
+    <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden md:px-20 min-h-screen">
       <Navbar
         defaultValue={`Dashboard`}
-        className="w-full pt-12 justify-between sticky"
+        className="w-full pt-12 justify-between sticky top-0 z-50"
         classNames={{
           wrapper: "w-full max-w-full",
         }}

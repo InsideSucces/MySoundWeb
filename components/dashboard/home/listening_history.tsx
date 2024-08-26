@@ -1,3 +1,7 @@
+import { FaHeart } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa6";
+import { CgMusicNote } from "react-icons/cg";
+
 import React, { FC } from "react";
 export const ListeningHistory: FC<{ songData: any[] }> = ({
     songData,
@@ -34,9 +38,19 @@ export const ListeningHistory: FC<{ songData: any[] }> = ({
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-6 ml-auto">
-                                    <div className="w-20 h-9 rounded-lg border border-[#2dcece]" />
-                                    <div className="w-8 h-9 rounded-lg border border-[#2dcece]" />
-                                    <div className="w-8 h-9 rounded-lg border border-[#2dcece]" />
+                                    <div className="w-20 h-9 rounded-lg border border-[#2dcece] flex items-center justify-center">
+                                        <div className="flex justify-between">
+                                            <CgMusicNote color="#99938f" className="font-semibold" />
+                                            <div className="mx-1 "/>
+                                            <span className="text-[#99938f] text-xs font-semibold font-['Roboto'] tracking-wide">120k</span>
+                                        </div>
+                                    </div>
+                                    <div className="w-8 h-9 rounded-lg border border-[#2dcece] flex items-center justify-center" onClick={()=> {}}>
+                                        <FaPlus color="#99938f" />
+                                    </div>
+                                    <div className="w-8 h-9 rounded-lg border border-[#2dcece] flex items-center justify-center" onClick={()=> {}}>
+                                        <FaHeart color="#2dcece" />
+                                    </div>
                                 </div>
                             </div>
                         </li>
