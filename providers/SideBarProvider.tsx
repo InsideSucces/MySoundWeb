@@ -1,5 +1,5 @@
 'use client';
-import { createContext, ReactNode, useState, useContext, useEffect } from 'react';
+import React, { createContext, ReactNode, useState, useContext, useEffect } from 'react';
 
 
 export interface SidebarContextInterface {

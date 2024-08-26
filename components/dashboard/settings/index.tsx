@@ -60,22 +60,25 @@ export const Settings: NextPage = () => {
           variant="underlined"
           fullWidth
           classNames={{
-            tabList: "gap-6 w-full relative rounded-none p-0 border-b border-divider",
+            tabList: "gap-6 w-full relative itmes-center justify-center rounded-none p-0 border-b border-divider",
             cursor: "w-full bg-[#2ECFCF]",
             tab: "max-w-fit px-10 h-12 data-[selected=true]:text-[#2ECFCF]",
-            tabContent: "group-data-[selected=true]:text-[#2ECFCF]"
+            tabContent: "group-data-[selected=true]:text-[#2ECFCF]",
+            base: "container mx-auto w-full",
           }}
         >
           {settings.map((value) => (
             <Tab
               key={value.key}
               title={
-                <div className="flex items-center space-x-2 text-[19.287px] font-semibold">
+                <div className="flex items-center text-[18.287px] md:text-[20.287px] font-bold">
                   <span>{value.name}</span>
                 </div>
               }
             >
-              {value.content}
+              <div className="container mx-auto w-full">
+                {value.content}
+              </div>
             </Tab>
           ))}
         </Tabs>

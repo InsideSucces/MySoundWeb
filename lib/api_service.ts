@@ -5,7 +5,7 @@ class ApiService {
 
   constructor() {
     this.instance = axios.create({
-      baseURL: "http://185.158.107.161:3000",
+      baseURL: "https://service.mysounduk.co.uk",
       timeout: 50000,
     });
 
