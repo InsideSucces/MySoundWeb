@@ -40,7 +40,7 @@ export const PrivacyAndSecurity: FC = () => {
                         </div>
                         <div className="mx-[1rem] md:mx-[16rem]"></div>
                         {item.type === "arrow" ? (
-                            <div className="w-12 h-12 relative">
+                            <div className="w-12 h-12 relative ml-auto">
                                 <div className="w-12 h-12 left-0 top-1 bg-[#0d0d0d] rounded-full shadow flex items-center justify-center">
                                     <ArrowIcon color={"#29baba"} size={30} />
                                 </div>
@@ -48,7 +48,7 @@ export const PrivacyAndSecurity: FC = () => {
                         ) : item.type === "toggle" ? (
                             <label
                                 htmlFor={`${item.title}-toggle`}
-                                className="relative inline-block w-11 h-7"
+                                className="relative inline-block w-11 h-7 ml-auto"
                             >
                                 <input
                                     type="checkbox"

@@ -1,5 +1,6 @@
 // import img from "next/img";
 
+import { truncateString } from "@/helpers";
 import { ArtistData } from "@/types_models";
 
 type ArtistProfilePros = {
@@ -11,10 +12,10 @@ export const ArtistProfile = ({ artist }: ArtistProfilePros) => {
     <div className="flex flex-col lg:flex-row justify-center items-center gap-4 p-4 lg:p-8">
       <div className="w-full lg:w-1/3 flex flex-col justify-start items-start gap-4">
         <h1 className="text-[#2dcece] text-4xl lg:text-6xl xl:text-7xl font-extrabold font-roboto capitalize">
-         {artist?.name ?? ""}
+          {artist?.name ?? ""}
         </h1>
         <p className="text-white/70 text-base lg:text-xl font-normal font-roboto">
-          {artist?.bio ?? ""}
+          {truncateString(500, artist?.bio!) ?? ""}
         </p>
       </div>
 
@@ -39,12 +40,12 @@ export const ArtistProfile = ({ artist }: ArtistProfilePros) => {
             <div className="flex items-center gap-4">
               <img
                 className="w-12 h-12 rounded-[9.06px]"
-                src="https://via.placeholder.com/48x48"
+                src="https://service.mysounduk.co.uk/uploads/artists/1724232263870-gilly-mu.jpeg"
                 alt="Album cover"
               />
               <div>
                 <p className="text-white text-base font-medium font-roboto">
-                  Sweet & Sour
+                  Strip
                 </p>
                 <p className="text-[#99938f] text-sm font-medium font-roboto">
                   Gilly Mu
@@ -62,12 +63,12 @@ export const ArtistProfile = ({ artist }: ArtistProfilePros) => {
             <div className="flex items-center gap-4">
               <img
                 className="w-12 h-12 rounded-[9.06px]"
-                src="https://via.placeholder.com/48x48"
+                src="https://service.mysounduk.co.uk/uploads/artists/1724232207450-gilly-mu.jpeg"
                 alt="Album cover"
               />
               <div>
                 <p className="text-white text-base font-medium font-roboto">
-                  Sweet & Sour
+                  Baby
                 </p>
                 <p className="text-[#99938f] text-sm font-medium font-roboto">
                   Gilly Mu
@@ -85,12 +86,12 @@ export const ArtistProfile = ({ artist }: ArtistProfilePros) => {
             <div className="flex items-center gap-4">
               <img
                 className="w-12 h-12 rounded-[9.06px]"
-                src="https://via.placeholder.com/48x48"
+                src="https://service.mysounduk.co.uk/uploads/artists/1724232157641-gilly-mu.jpeg"
                 alt="Album cover"
               />
               <div>
                 <p className="text-white text-base font-medium font-roboto">
-                  Sweet & Sour
+                  Scheming
                 </p>
                 <p className="text-[#99938f] text-sm font-medium font-roboto">
                   Gilly Mu
@@ -108,7 +109,7 @@ export const ArtistProfile = ({ artist }: ArtistProfilePros) => {
             <div className="flex items-center gap-4">
               <img
                 className="w-12 h-12 rounded-[9.06px]"
-                src="https://via.placeholder.com/48x48"
+                src="https://service.mysounduk.co.uk/uploads/artists/1724232037477-gilly-mu.jpeg"
                 alt="Album cover"
               />
               <div>

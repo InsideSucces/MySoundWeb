@@ -6,6 +6,7 @@ import { Sidebar } from "./sidebar-styles";
 import { Box, Flex } from "./styles";
 import { SidebarMenu } from "./sidebar-menu";
 import { SidebarItem } from "./sidebar-item";
+import { TbLogout } from "react-icons/tb";
 import {
   AlbumsIcon,
   HomeIcon,
@@ -92,7 +93,7 @@ export const SidebarWrapper = () => {
               />
               <SidebarItem
                 title="Log out"
-                icon={<HomeIcon />}
+                icon={<TbLogout width={31} height={31} />}
                 isActive={router.asPath === "/dashboard/logout"}
                 href="/dashboard/logout"
               />

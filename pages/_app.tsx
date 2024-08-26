@@ -5,6 +5,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { useRouter } from "next/router";
 import { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
+import { AudioPlayerProvider } from '@/contexts/audio-player-context';
 
 import { fontSans, fontMono, inter, poppins, urbanist } from "@/config/fonts";
 import "@/styles/globals.css";
@@ -25,7 +26,9 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <NextUIProvider navigate={router.push}>
       <NextThemesProvider>
-        {getLayout(<Component {...pageProps} />)}
+        <AudioPlayerProvider>
+          {getLayout(<Component {...pageProps} />)}
+        </AudioPlayerProvider>
       </NextThemesProvider>
     </NextUIProvider>
   );

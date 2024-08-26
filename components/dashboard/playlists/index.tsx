@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 
-
+import { CiMicrophoneOn } from "react-icons/ci";
+import { MdMicNone } from "react-icons/md";
 interface PlaylistData {
     id: number;
     name: string;
@@ -58,8 +59,10 @@ export const Playlists: NextPage = () => {
             <div className="flex justify-center gap-4 xl:gap-6 pt-3 px-4 lg:px-0 flex-wrap xl:flex-nowrap sm:pt-10 max-w-[910rem] mx-auto w-full">
                 <div className="h-full p-5 bg-white/5 rounded-tr-3xl rounded-br-3xl shadow shadow-inner backdrop-blur-[100px] flex flex-col gap-6">
                     <div className="flex flex-col gap-4">
-                        <div className="w-full h-9 px-2 bg-[#0c0c0c]/10 rounded-[10px] shadow-inner flex items-center">
-                            <div className="w-4 h-4 mr-1" />
+                        <div className="w-full h-9 px-2 bg-[#0c0c0c]/10 rounded-[10px] border border-[#7e8389] shadow-inner flex items-center">
+                            <div className="w-4 h-4 mr-1">
+                                <MdMicNone onClick={() => { }} />
+                            </div>
                             <input
                                 type="text"
                                 placeholder="Search in Albums"
@@ -68,24 +71,27 @@ export const Playlists: NextPage = () => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {playlists.map((playlist) => (
                             <div
                                 key={playlist.id}
-                                className="flex flex-col items-center gap-2"
+                                className="flex flex-col items-start gap-2"
                             >
                                 <img
                                     className="w-[194px] h-[194px] rounded-lg object-cover"
                                     src={playlist.imageUrl}
                                     alt={playlist.name}
                                 />
-                                <div className="text-[#f9f9f9] text-sm font-semibold font-roboto capitalize mt-3">
+                                <div className="text-[#f9f9f9] text-sm font-semibold font-roboto capitalize m-1">
                                     {playlist.name}
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
+            </div>
+            <div className="player">
+
             </div>
         </div>
     );

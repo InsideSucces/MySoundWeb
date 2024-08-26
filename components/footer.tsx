@@ -38,22 +38,44 @@ export const Footer: FC<FooterType> = ({ className }) => {
               className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
               prefetch={false}
             >
-              Home
+              Charts
             </Link>
             <Link
               href="#"
               className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
               prefetch={false}
             >
-              Playlists
+              Trending
             </Link>
             <Link
               href="#"
               className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
               prefetch={false}
             >
-              Artists
+              Sounds
             </Link>
+            <Link
+              href="#"
+              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
+              prefetch={false}
+            >
+              New
+            </Link>
+             <Link
+              href="#"
+              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
+              prefetch={false}
+            >
+              Releases
+            </Link>
+            <Link
+              href="#"
+              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
+              prefetch={false}
+            >
+              Playlist
+            </Link>
+
           </div>
 
           <div className="flex flex-col items-start md:items-center lg:items-center">
@@ -65,21 +87,29 @@ export const Footer: FC<FooterType> = ({ className }) => {
               className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
               prefetch={false}
             >
-              Support
+              Account
             </Link>
             <Link
               href="#"
               className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
               prefetch={false}
             >
-              FAQ
+              Customer services
             </Link>
             <Link
               href="#"
               className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
               prefetch={false}
             >
-              Feedback
+              Accesbility
+            </Link>
+
+            <Link
+              href="#"
+              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
+              prefetch={false}
+            >
+              Privacy policy
             </Link>
           </div>
 

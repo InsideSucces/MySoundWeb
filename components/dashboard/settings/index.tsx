@@ -52,7 +52,7 @@ const settings: SettingsData[] = [
 export const Settings: NextPage = () => {
   const pathname = usePathname();
   return (
-    <div className="h-full w-full lg:px-6 m-9">
+    <div className="h-full lg:px-6 m-9">
       <div className="flex items-center justify-center flex-wrap max-w-[910rem] mx-auto w-full rounded-[8.643px] bg-[#121212] shadow-[0px_0px_25.93px_0px_rgba(170,170,170,0.16),_0px_8.643px_17.287px_0px_rgba(194,194,194,0.16)]">
         <Tabs
           aria-label="MySound Settings"
@@ -71,7 +71,7 @@ export const Settings: NextPage = () => {
             <Tab
               key={value.key}
               title={
-                <div className="flex items-center text-[18.287px] md:text-[25.287px] font-bold">
+                <div className="flex items-center text-[18.287px] md:text-[22.287px] font-semibold">
                   <span>{value.name}</span>
                 </div>
               }

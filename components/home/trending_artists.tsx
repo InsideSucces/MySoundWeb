@@ -11,7 +11,7 @@ export const TrendingArtistes = ({ artists }: TrendingArtistesProps) => {
       <h1 className="text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold font-roboto capitalize mb-8">
         Trending Artistes
       </h1>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto scrollbar-hide">
         <div className="flex flex-nowrap gap-8 py-8">
           {artists.map((artist, index) => (
             <div key={`${index}-${artist.name}`} className="flex-none w-50">

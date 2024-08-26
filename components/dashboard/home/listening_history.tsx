@@ -13,7 +13,7 @@ export const ListeningHistory: FC<{ songData: any[] }> = ({
                 </button>
             </div>
 
-            <div className="max-h-[500px] overflow-y-auto">
+            <div className="max-h-[500px] overflow-y-auto scrollbar-hide">
                 <ul className="space-y-4">
                     {songData.map((song, index) => (
                         <li key={`${index}-${song.id}`} className="mb-4">
@@ -34,7 +34,9 @@ export const ListeningHistory: FC<{ songData: any[] }> = ({
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-6 ml-auto">
-                                    {/* ... (Your existing code for the buttons) */}
+                                    <div className="w-20 h-9 rounded-lg border border-[#2dcece]" />
+                                    <div className="w-8 h-9 rounded-lg border border-[#2dcece]" />
+                                    <div className="w-8 h-9 rounded-lg border border-[#2dcece]" />
                                 </div>
                             </div>
                         </li>
