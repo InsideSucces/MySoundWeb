@@ -2,7 +2,7 @@ import { FC, useCallback, useEffect, useRef, useState } from "react";
 
 import { tracks } from "@/data/tracks";
 import { Track, useAudioPlayerContext } from "@/contexts/audio-player-context";
-import { BsFillFastForwardFill, BsFillRewindFill, BsSkipEndFill, BsSkipStartFill } from "react-icons/bs";
+import { BsFillFastForwardFill, BsFillRewindFill, BsRepeat, BsShuffle, BsSkipEndFill, BsSkipStartFill } from "react-icons/bs";
 
 export const Controls: FC = () => {
     const {
@@ -24,9 +24,9 @@ export const Controls: FC = () => {
     const [isRepeat, setIsRepeat] = useState<boolean>(false);
     const [shuffledTrackList, setShuffledTrackList] = useState<Track[]>([]);
 
-    const shuffleTracks = (tracks: Track[]): Track[] => {
+    const shuffleTracks = (trackss: Track[]): Track[] => {
         // Create a copy of the array to avoid mutating the original
-        const shuffledTracks = [...tracks];
+        const shuffledTracks = [...trackss];
 
         // Fisher-Yates Shuffle Algorithm
         for (let i = shuffledTracks.length - 1; i > 0; i--) {
@@ -66,6 +66,7 @@ export const Controls: FC = () => {
     useEffect(() => {
         if (isPlaying) {
             audioRef.current?.play();
+            // audioRef.current?.autoplay
             startAnimation();
         } else {
             audioRef.current?.pause();
@@ -82,6 +83,10 @@ export const Controls: FC = () => {
             }
         };
     }, [isPlaying, startAnimation, updateProgress, audioRef]);
+
+    // useEffect(() => {
+    //     updateListeningHistory(currentTrack);
+    // }, [currentTrack, updateListeningHistory]);
 
     const onLoadedMetadata = () => {
         const seconds = audioRef.current?.duration;
@@ -115,7 +120,7 @@ export const Controls: FC = () => {
                     ? tracks.length - 1
                     : prev - 1;
             setCurrentTrack(tracks[newIndex]);
-            updateListeningHistory(tracks[newIndex]);
+            // updateListeningHistory(tracks[newIndex]);
             return newIndex;
         });
     }, [isShuffle, setCurrentTrack, setTrackIndex]);
@@ -128,7 +133,7 @@ export const Controls: FC = () => {
                     ? 0
                     : prev + 1;
             setCurrentTrack(tracks[newIndex]);
-            updateListeningHistory(tracks[newIndex]);
+            // updateListeningHistory(tracks[newIndex]);
             return newIndex;
         });
     }, [isShuffle, setCurrentTrack, setTrackIndex]);
@@ -154,11 +159,9 @@ export const Controls: FC = () => {
         };
     }, [isRepeat, handleNext, audioRef]);
 
-    // useEffect(() => {
-    //     // Shuffle the tracks when the component mounts
-    //     const shuffled = shuffleTracks(tracks);
-    //     setShuffledTrackList(shuffled);
-    // }, []);
+    useEffect(() => {
+        updateListeningHistory(currentTrack);
+    }, [currentTrack, updateListeningHistory]);
 
     return (
         <div className="flex gap-4 items-center">
@@ -167,6 +170,12 @@ export const Controls: FC = () => {
                 ref={audioRef}
                 onLoadedMetadata={onLoadedMetadata}
             />
+            <button onClick={() => setIsShuffle((prev) => !prev)}>
+                <BsShuffle
+                    size={20}
+                    className={isShuffle ? 'text-[#2dcece]' : 'text-[#99938f]'}
+                />
+            </button>
             <button onClick={handlePrevious}>
                 <BsSkipStartFill size={20} color="#2dcece" />
             </button>
@@ -208,6 +217,13 @@ export const Controls: FC = () => {
             <button onClick={handleNext}>
                 <BsSkipEndFill size={20} color="#2dcece" />
             </button>
+            <button onClick={() => setIsRepeat((prev) => !prev)}>
+                <BsRepeat
+                    size={20}
+                    className={isRepeat ? 'text-[#2dcece]' : 'text-[#99938f]'}
+                />
+            </button>
+
         </div>
     )
 }

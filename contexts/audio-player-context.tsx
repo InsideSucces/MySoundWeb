@@ -36,7 +36,7 @@ interface AudioPlayerContextType {
     isPlaying: boolean;
     setIsPlaying: Dispatch<SetStateAction<boolean>>;
     listeningHistory: Track[];
-    updateListeningHistory: (track: Track) => void;
+    updateListeningHistory: (track: Track) => void 
 }
 
 const AudioPlayerContext = createContext<AudioPlayerContextType | undefined>(undefined);
@@ -67,7 +67,11 @@ export const AudioPlayerProvider = ({ children }: { children: ReactNode; }) => {
         setListeningHistory(prevHistory => {
             // Prevent duplicates, add to the beginning
             const uniqueHistory = prevHistory.filter(t => t.id !== track.id);
-            return [track, ...uniqueHistory];
+
+            // Limit history to 10 items
+            const limitedHistory = [track, ...uniqueHistory].slice(0, 10); 
+
+            return limitedHistory;
         });
     };
 

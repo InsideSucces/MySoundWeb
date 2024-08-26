@@ -43,14 +43,11 @@ export const ProgressBar: FC = () => {
     return (
         <div className="flex flex-column items-center justify-center gap-5 w-full">
             <input
-                className="w-full bg-gray-300"
+                className="w-full bg-gray-300 text-white"
                 ref={progressBarRef}
                 type="range"
                 defaultValue="0"
                 onChange={handleProgressChange}
-                // style={{
-                //     background: `linear-gradient(to right, #2dcece 0%, #2dcece ${(timeProgress / duration) * 100}%, #d1d5db ${(timeProgress / duration) * 100}%, #d1d5db 100%)`,
-                // }}
             />
         </div>
     );
