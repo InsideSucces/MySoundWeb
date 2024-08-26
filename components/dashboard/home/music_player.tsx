@@ -1,4 +1,7 @@
+import { useAudioPlayerContext } from '@/contexts/audio-player-context';
 import React, { useState, useRef } from 'react';
+import { ProgressBar } from '../progressBar';
+import { formatTime } from '@/helpers';
 
 interface MusicPlayerProps {
     song?: any; // Define the structure of your song object
@@ -6,9 +9,7 @@ interface MusicPlayerProps {
 }
 
 export const MusicPlayer: React.FC<MusicPlayerProps> = ({ song }) => {
-    const [isPlaying, setIsPlaying] = useState(false);
-    const audioRef = useRef<HTMLAudioElement>(null);
-
+    const {setIsPlaying, audioRef, currentTrack, isPlaying, timeProgress, duration} = useAudioPlayerContext();
     const handlePlayPause = () => {
         if (audioRef.current) {
             if (isPlaying) {
@@ -25,22 +26,22 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ song }) => {
             <div className="w-full h-52 rounded-2xl overflow-hidden mb-6">
                 <img
                     className="w-full h-full object-cover"
-                    src={song?.imageUrl || 'https://via.placeholder.com/248x213'}
-                    alt={song?.title || 'Album Art'}
+                    src={currentTrack.cover_image || 'https://via.placeholder.com/248x213'}
+                    alt={currentTrack.title || 'Album Art'}
                 />
             </div>
 
             <div className="flex flex-col items-center text-center">
                 <h3 className="text-white text-lg font-medium font-roboto mb-2">
-                    {song?.title || 'Song Title'}
+                    {currentTrack.title || 'Song Title'}
                 </h3>
                 <p className="text-[#99938f] text-sm font-medium mb-4">
                     {song?.artist || 'Artist Name'}
                 </p>
-
+                <ProgressBar />
                 <div className="flex items-center justify-center gap-52 w-full mb-6">
-                    <span className="text-[#847d79] text-xs font-medium">1:21</span>
-                    <span className="text-[#847d79] text-xs font-medium">-2:36</span>
+                    <span className="text-[#847d79] text-xs font-medium">{formatTime(timeProgress)}</span>
+                    <span className="text-[#847d79] text-xs font-medium">-{formatTime(duration)}</span>
                 </div>
 
                 <div className="flex items-center justify-center gap-6 mb-4">
