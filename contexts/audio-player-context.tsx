@@ -42,7 +42,7 @@ const AudioPlayerContext = createContext<AudioPlayerContextType | undefined>(und
 export const AudioPlayerProvider = ({ children }: { children: ReactNode; }) => {
     const [trackIndex, setTrackIndex] = useState<number>(0);
 
-  const [currentTrack, setCurrentTrack] = useState<Track>(tracks[0]);
+  const [currentTrack, setCurrentTrack] = useState<Track>(tracks[trackIndex]);
   const [timeProgress, setTimeProgress] = useState<number>(0);
   const [duration, setDuration] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
