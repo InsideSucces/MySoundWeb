@@ -2,7 +2,7 @@ import { useAudioPlayerContext } from '@/contexts/audio-player-context';
 import React, { useState, useRef } from 'react';
 import { ProgressBar } from '../progressBar';
 import { formatTime } from '@/helpers';
-import { Controls } from './controls';
+import { Controls } from '../controls';
 
 interface MusicPlayerProps {
     song?: any; // Define the structure of your song object
@@ -17,7 +17,7 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ song }) => {
             <div className="w-full h-52 rounded-2xl overflow-hidden mb-6">
                 <img
                     className="w-full h-full object-cover"
-                    src={currentTrack.cover_image || 'https://via.placeholder.com/248x213'}
+                    src={currentTrack.cover_image}
                     alt={currentTrack.title || 'Album Art'}
                 />
             </div>

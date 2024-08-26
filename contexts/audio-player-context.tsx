@@ -7,6 +7,7 @@ import {
     SetStateAction,
     RefObject,
     useRef,
+    useEffect,
 } from 'react';
 
 import { tracks } from '@/data/tracks';
@@ -34,35 +35,57 @@ interface AudioPlayerContextType {
     progressBarRef: RefObject<HTMLInputElement>;
     isPlaying: boolean;
     setIsPlaying: Dispatch<SetStateAction<boolean>>;
+    listeningHistory: Track[];
+    updateListeningHistory: (track: Track) => void;
 }
 
 const AudioPlayerContext = createContext<AudioPlayerContextType | undefined>(undefined);
-
+const LOCAL_STORAGE_KEY = 'audio-player.listeningHistory';
 
 export const AudioPlayerProvider = ({ children }: { children: ReactNode; }) => {
     const [trackIndex, setTrackIndex] = useState<number>(0);
 
-  const [currentTrack, setCurrentTrack] = useState<Track>(tracks[trackIndex]);
-  const [timeProgress, setTimeProgress] = useState<number>(0);
-  const [duration, setDuration] = useState<number>(0);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+    const [currentTrack, setCurrentTrack] = useState<Track>(tracks[trackIndex]);
+    const [timeProgress, setTimeProgress] = useState<number>(0);
+    const [duration, setDuration] = useState<number>(0);
+    const [isPlaying, setIsPlaying] = useState<boolean>(false);
+    const [listeningHistory, setListeningHistory] = useState<Track[]>(
+        typeof window !== 'undefined' // Check if running on the client-side
+            ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]')
+            : []
+    );
 
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const progressBarRef = useRef<HTMLInputElement>(null);
+    const audioRef = useRef<HTMLAudioElement>(null);
+    const progressBarRef = useRef<HTMLInputElement>(null);
 
-  const contextValue = {
-    currentTrack,
-    setCurrentTrack,
-    audioRef,
-    progressBarRef,
-    timeProgress,
-    setTimeProgress,
-    duration,
-    setDuration,
-    setTrackIndex,
-    isPlaying,
-    setIsPlaying,
-  };
+    useEffect(() => {
+        // Update local storage whenever listeningHistory changes
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(listeningHistory));
+    }, [listeningHistory]);
+
+    const updateListeningHistory = (track: Track) => {
+        setListeningHistory(prevHistory => {
+            // Prevent duplicates, add to the beginning
+            const uniqueHistory = prevHistory.filter(t => t.id !== track.id);
+            return [track, ...uniqueHistory];
+        });
+    };
+
+    const contextValue = {
+        currentTrack,
+        setCurrentTrack,
+        updateListeningHistory,
+        audioRef,
+        progressBarRef,
+        timeProgress,
+        setTimeProgress,
+        duration,
+        setDuration,
+        setTrackIndex,
+        isPlaying,
+        setIsPlaying,
+        listeningHistory,
+    };
     return (
         <AudioPlayerContext.Provider value={contextValue}>
             {children}
