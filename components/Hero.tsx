@@ -16,10 +16,10 @@ export const HeroSection = () => {
       </div>
 
       <div className="absolute inset-0 flex flex-col justify-center items-center z-20 overflow-hidden">
-        <div className="text-[#FEFEFE] text-[29vw]  lg:text-[570px] font-bold opacity-10 mt-20 leading-none">
+        <div className="text-[#FEFEFE] text-[39vw]  lg:text-[570px] font-bold opacity-10 mt-20 leading-none">
           MUSIC
         </div>
-        <div className="text-[#FEFEFE] text-[29vw]  lg:text-[570px] font-bold opacity-10 mt-10 leading-none">
+        <div className="text-[#FEFEFE] text-[39vw]  lg:text-[570px] font-bold opacity-10 mt-10 leading-none">
           MYSOUND
         </div>
       </div>
@@ -40,7 +40,7 @@ export const HeroSection = () => {
                 onClick={() => {
                   console.log("Listen Now Clicked!!!!");
                 }}
-                className="px-8 py-3 bg-gradient-to-tl from-teal-300 to-sky-500 rounded-3xl text-neutral-900 font-bold hover:opacity-90 transition duration-300 z-50"
+                className="px-28 md:px-8 py-3 bg-gradient-to-tl from-teal-300 to-sky-500 rounded-3xl text-neutral-900 font-bold hover:opacity-90 transition duration-300 z-50"
               >
                 Listen Now
               </button>
@@ -48,7 +48,7 @@ export const HeroSection = () => {
             <Link href={"/auth/signUp"}>
               <button
                 type="button"
-                className="px-8 py-3 bg-transparent text-white border-2 border-[#61C1C9] font-bold rounded-3xl hover:bg-opacity-80 transition duration-300"
+                className="px-28 md:px-8 py-3 bg-transparent text-white border-2 border-[#61C1C9] font-bold rounded-3xl hover:bg-opacity-80 transition duration-300"
               >
                 Sign Up
               </button>
