@@ -5,7 +5,7 @@ import { CgMusicNote } from "react-icons/cg";
 import React, { FC } from "react";
 import { useAudioPlayerContext } from "@/contexts/audio-player-context";
 export const ListeningHistory: FC = () => {
-    const { currentTrack, setCurrentTrack, listeningHistory } = useAudioPlayerContext();
+    const { currentTrack, setCurrentTrack, listeningHistory, setIsPlaying, isPlaying } = useAudioPlayerContext();
     return (
         <div className="w-full max-w-[770px] rounded-3xl p-6">
             <div className="flex flex-row justify-between items-center">
@@ -16,7 +16,6 @@ export const ListeningHistory: FC = () => {
                     See All
                 </button>
             </div>
-
             <div className="max-h-[500px] overflow-y-auto scrollbar-hide">
                 {listeningHistory && listeningHistory.length >= 1 ? (
                     <ul className="space-y-4">
@@ -24,7 +23,7 @@ export const ListeningHistory: FC = () => {
                             <li
                                 key={`${index}-${song?.id || 'no-id'}`}
                                 className="mb-4"
-                                onClick={() => setCurrentTrack(song)}
+                                onClick={() => { setCurrentTrack(song); isPlaying ? null : setIsPlaying(true); }}
                             >
                                 <div className="w-full h-[116px] relative flex items-center">
                                     <div className="w-[84px] h-[84px] rounded-2xl shadow justify-center items-center flex mr-6">

@@ -7,6 +7,7 @@ export const ProgressBar: FC = () => {
         progressBarRef,
         audioRef,
         timeProgress,
+        progressBarRefForDiv,
         duration,
         setTimeProgress,
     } = useAudioPlayerContext();
@@ -26,29 +27,47 @@ export const ProgressBar: FC = () => {
         }
     };
 
-    const formatTime = (time: number | undefined): string => {
-        if (typeof time === 'number' && !isNaN(time)) {
-            const minutes = Math.floor(time / 60);
-            const seconds = Math.floor(time % 60);
+    const handleProgressChangeForDiv = () => {
+        if (audioRef.current && progressBarRefForDiv.current) {
+            const newTime = Number(progressBarRefForDiv.current.nodeValue);
+            audioRef.current.currentTime = newTime;
 
-            // Convert to string and pad with leading zeros if necessary
-            const formatMinutes = minutes.toString().padStart(2, '0');
-            const formatSeconds = seconds.toString().padStart(2, '0');
-
-            return `${formatMinutes}:${formatSeconds}`;
+            setTimeProgress(newTime);
+            // if progress bar changes while audio is on pause
+            progressBarRefForDiv.current.style.setProperty(
+                'width',
+                `${(newTime / duration) * 100}%`
+            );
         }
-        return '00:00';
     };
 
+    const progressPercentage = (timeProgress / duration) * 100;
+
     return (
-        <div className="flex flex-column items-center justify-center gap-5 w-full">
-            <input
-                className="w-full bg-gray-300 text-[#2dcece]"
-                ref={progressBarRef}
-                type="range"
-                defaultValue="0"
-                onChange={handleProgressChange}
-            />
-        </div>
+
+        <>
+            <div className="flex flex-column items-center justify-center gap-5 w-full">
+                <input
+                    className="w-full bg-gray-300 text-[#2dcece] hidden"
+                    ref={progressBarRef}
+                    type="range"
+                    defaultValue="0"
+                    onChange={handleProgressChange}
+                />
+            </div>
+            <div className="flex items-center">
+                <div className="h-[4] w-[304] rounded-full bg-[#1C1C1C]">
+                    <div
+                        ref={progressBarRefForDiv}
+                        onChange={handleProgressChangeForDiv}
+                        onPlay={handleProgressChangeForDiv}
+                        className="h-[4] rounded-full bg-[#2dcece] shadow-md transition-all relative"
+                        style={{ width: `${progressPercentage}%` }}
+                    >
+                        <div className="absolute top-1/2 -translate-y-1/2 right-0 w-2 h-2 bg-[#2dcece] rounded-full shadow-md"></div>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 };

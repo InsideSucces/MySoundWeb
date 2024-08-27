@@ -3,6 +3,7 @@ import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { tracks } from "@/data/tracks";
 import { Track, useAudioPlayerContext } from "@/contexts/audio-player-context";
 import { BsFillFastForwardFill, BsFillRewindFill, BsRepeat, BsShuffle, BsSkipEndFill, BsSkipStartFill } from "react-icons/bs";
+import {Spinner} from "@nextui-org/react";
 
 export const Controls: FC = () => {
     const {
@@ -12,39 +13,42 @@ export const Controls: FC = () => {
         duration,
         setTimeProgress,
         progressBarRef,
+        progressBarRefForDiv,
         setTrackIndex,
         setCurrentTrack,
         isPlaying,
         setIsPlaying,
-        // setListeningHistory,
-        updateListeningHistory,
+        isLoading,
+        setIsLoading,
+        setListeningHistory,
+        isShuffle, 
+        setIsShuffle,
+        isRepeat, 
+        setIsRepeat
     } = useAudioPlayerContext();
 
-    const [isShuffle, setIsShuffle] = useState<boolean>(false);
-    const [isRepeat, setIsRepeat] = useState<boolean>(false);
-    const [shuffledTrackList, setShuffledTrackList] = useState<Track[]>([]);
-
     const shuffleTracks = (trackss: Track[]): Track[] => {
-        // Create a copy of the array to avoid mutating the original
         const shuffledTracks = [...trackss];
-
         // Fisher-Yates Shuffle Algorithm
         for (let i = shuffledTracks.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [shuffledTracks[i], shuffledTracks[j]] = [shuffledTracks[j], shuffledTracks[i]];
         }
-
         return shuffledTracks;
     };
-
 
     const playAnimationRef = useRef<number | null>(null);
 
     const updateProgress = useCallback(() => {
-        if (audioRef.current && progressBarRef.current && duration) {
+        if (audioRef.current && progressBarRef.current && progressBarRefForDiv.current && duration) {
             const currentTime = audioRef.current.currentTime;
             setTimeProgress(currentTime);
 
+            progressBarRefForDiv.current.nodeValue = currentTime.toString();
+            progressBarRefForDiv.current?.style.setProperty(
+                'width',
+                `${(currentTime / duration) * 100}%`
+            );
             progressBarRef.current.value = currentTime.toString();
             progressBarRef.current.style.setProperty(
                 '--range-progress',
@@ -54,22 +58,22 @@ export const Controls: FC = () => {
     }, [duration, setTimeProgress, audioRef, progressBarRef]);
 
     const startAnimation = useCallback(() => {
-        if (audioRef.current && progressBarRef.current && duration) {
+        if (audioRef.current && progressBarRef.current && progressBarRefForDiv.current && duration) {
             const animate = () => {
                 updateProgress();
                 playAnimationRef.current = requestAnimationFrame(animate);
             };
             playAnimationRef.current = requestAnimationFrame(animate);
         }
-    }, [updateProgress, duration, audioRef, progressBarRef]);
+    }, [updateProgress, duration, audioRef, progressBarRef, progressBarRefForDiv]);
 
     useEffect(() => {
         if (isPlaying) {
             audioRef.current?.play();
-            // audioRef.current?.autoplay
             startAnimation();
         } else {
             audioRef.current?.pause();
+            setIsLoading(false);
             if (playAnimationRef.current !== null) {
                 cancelAnimationFrame(playAnimationRef.current);
                 playAnimationRef.current = null;
@@ -82,18 +86,15 @@ export const Controls: FC = () => {
                 cancelAnimationFrame(playAnimationRef.current);
             }
         };
-    }, [isPlaying, startAnimation, updateProgress, audioRef]);
-
-    // useEffect(() => {
-    //     updateListeningHistory(currentTrack);
-    // }, [currentTrack, updateListeningHistory]);
+    }, [isPlaying, startAnimation, updateProgress, audioRef, setIsLoading]);
 
     const onLoadedMetadata = () => {
         const seconds = audioRef.current?.duration;
         if (seconds !== undefined) {
             setDuration(seconds);
-            if (progressBarRef.current) {
+            if (progressBarRef.current && progressBarRefForDiv.current) {
                 progressBarRef.current.max = seconds.toString();
+                progressBarRefForDiv.current.ariaValueMax = seconds.toString();
             }
         }
     }
@@ -120,7 +121,6 @@ export const Controls: FC = () => {
                     ? tracks.length - 1
                     : prev - 1;
             setCurrentTrack(tracks[newIndex]);
-            // updateListeningHistory(tracks[newIndex]);
             return newIndex;
         });
     }, [isShuffle, setCurrentTrack, setTrackIndex]);
@@ -133,7 +133,6 @@ export const Controls: FC = () => {
                     ? 0
                     : prev + 1;
             setCurrentTrack(tracks[newIndex]);
-            // updateListeningHistory(tracks[newIndex]);
             return newIndex;
         });
     }, [isShuffle, setCurrentTrack, setTrackIndex]);
@@ -160,8 +159,52 @@ export const Controls: FC = () => {
     }, [isRepeat, handleNext, audioRef]);
 
     useEffect(() => {
-        updateListeningHistory(currentTrack);
-    }, [currentTrack, updateListeningHistory]);
+        const currentAudioRef = audioRef.current;
+    
+        if (currentAudioRef) {
+          const handlePlaying = () => {
+            console.log("Audio has started playing");
+            setIsLoading(false); // Audio has started playing
+          };
+    
+          const handleWaiting = () => {
+            console.log("Audio is buffering");
+            setIsLoading(true); // Audio is buffering
+          };
+    
+          currentAudioRef.addEventListener('playing', handlePlaying);
+          currentAudioRef.addEventListener('waiting', handleWaiting);
+          currentAudioRef.addEventListener("seeking", handleWaiting);
+          currentAudioRef.addEventListener('pause', () => {
+            console.log("Audio has stopped playing");
+            setIsLoading(false); // Audio has stopped playing
+          });
+          currentAudioRef.addEventListener('stalled', () => {
+            console.log("Audio has stopped buffering");
+            setIsLoading(true); // Audio has stopped buffering
+          });
+    
+          // Cleanup on component unmount or when audioRef changes
+          return () => {
+            currentAudioRef.removeEventListener('playing', handlePlaying);
+            currentAudioRef.removeEventListener('waiting', handleWaiting);
+            currentAudioRef.removeEventListener('seeking', handleWaiting);
+            currentAudioRef.removeEventListener('pause', handleWaiting);
+            currentAudioRef.removeEventListener('stalled', handleWaiting);
+            // currentAudioRef.removeEventListener('seeking', handleWaiting);
+          };
+        }
+      }, [audioRef, setIsLoading]);
+
+    useEffect(() => {
+        setListeningHistory(prevHistory => {
+            // Prevent duplicates, add to the beginning
+            const uniqueHistory = prevHistory.filter(t => t.id !== currentTrack.id);
+            // Limit history to 10 items
+            const limitedHistory = [currentTrack, ...uniqueHistory].slice(0, 10);
+            return limitedHistory;
+        });
+    }, [currentTrack, setListeningHistory]);
 
     return (
         <div className="flex gap-4 items-center">
@@ -184,10 +227,12 @@ export const Controls: FC = () => {
             </button>
 
             <button
-                onClick={() => setIsPlaying((prev) => !prev)}
+                onClick={() => {setIsPlaying((prev) => !prev); isPlaying ? null : setIsPlaying(true)} }
                 className="w-14 h-14 rounded-full bg-[#2dcece] flex items-center justify-center shadow-md"
             >
-                {isPlaying ? (
+                {isLoading ? (
+                    <Spinner color="white" className="text-[#99938f]"/>
+                ) : isPlaying ? (
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"

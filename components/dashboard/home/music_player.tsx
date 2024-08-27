@@ -30,7 +30,7 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ song }) => {
                     {currentTrack.artist_name || 'Artist Name'}
                 </p>
                 <ProgressBar />
-                <div className="flex items-center justify-center gap-52 w-full mb-6">
+                <div className="flex items-center justify-center gap-56 w-full mt-1 mb-6">
                     <span className="text-[#847d79] text-xs font-medium">{formatTime(timeProgress)}</span>
                     <span className="text-[#847d79] text-xs font-medium">-{formatTime(duration - timeProgress)}</span>
                 </div>
