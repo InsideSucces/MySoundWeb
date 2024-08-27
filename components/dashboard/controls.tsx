@@ -206,6 +206,32 @@ export const Controls: FC = () => {
         });
     }, [currentTrack, setListeningHistory]);
 
+    navigator.mediaSession.setActionHandler('play', () =>{
+        return audioRef.current?.play();
+    })
+
+    navigator.mediaSession.setActionHandler('pause', () =>{
+        return audioRef.current?.pause();
+    })
+
+    navigator.mediaSession.setActionHandler('nexttrack', () =>{
+        return handleNext();
+    })
+
+    navigator.mediaSession.setActionHandler('previoustrack', () =>{
+        return handlePrevious();
+    })
+
+    navigator.mediaSession.setActionHandler('seekforward', () =>{
+        return skipForward();
+    })
+
+    navigator.mediaSession.setActionHandler('seekbackward', () =>{
+        return skipBackward();
+    })
+
+    
+
     return (
         <div className="flex gap-4 items-center">
             <audio
