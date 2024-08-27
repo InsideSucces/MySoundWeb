@@ -56,15 +56,17 @@ export const ProgressBar: FC = () => {
                 />
             </div>
             <div className="flex items-center">
-                <div className="h-[4] w-[304] rounded-full bg-[#1C1C1C]">
+                <div className="md:h-[4x] w-[304] rounded-full bg-[#1C1C1C]">
                     <div
-                        ref={progressBarRefForDiv}
+                        ref={progressBarRefForDiv || progressBarRef}
                         onChange={handleProgressChangeForDiv}
                         onPlay={handleProgressChangeForDiv}
-                        className="h-[4] rounded-full bg-[#2dcece] shadow-md transition-all relative"
+                        itemType="range"
+                        defaultValue={0}
+                        className="md:h-[4px] h-1 rounded-full bg-[#2dcece] shadow-md transition-all relative"
                         style={{ width: `${progressPercentage}%` }}
                     >
-                        <div className="absolute top-1/2 -translate-y-1/2 right-0 w-2 h-2 bg-[#2dcece] rounded-full shadow-md"></div>
+                        <div className="absolute top-1/2 -translate-y-1/2 right-0 w-2 h-2 bg-[#2dcece] rounded-full shadow-md hover:bg-[#fff]"></div>
                     </div>
                 </div>
             </div>

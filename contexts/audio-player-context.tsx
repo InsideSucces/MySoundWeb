@@ -150,6 +150,20 @@ export const AudioPlayerProvider = ({ children }: { children: ReactNode; }) => {
     }, [trackIndex, currentTrack, timeProgress, duration, isPlaying])
 
 
+    useEffect(() => {
+        if (currentTrack) {
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: currentTrack.title,
+                artist: currentTrack.artist_name,
+                // album: 'Album Name',
+                artwork: [
+                    { src: currentTrack.cover_image, sizes: '96x96', type: 'image/png' },
+                ],
+            })
+        }
+    }, [currentTrack])
+
+
     const contextValue = {
         currentTrack,
         setCurrentTrack,

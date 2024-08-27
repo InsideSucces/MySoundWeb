@@ -13,6 +13,7 @@ import { Likes } from "@/components/dashboard/likes";
 import { Search } from "@/components/dashboard/search";
 import { Head } from "@/layouts/head";
 import { FooterMusicPlayer } from "@/components/dashboard/footerPlayer";
+import { useAudioPlayerContext } from "@/contexts/audio-player-context";
 
 const Dashboard: NextPageWithLayout = () => {
     const router = useRouter();
@@ -46,7 +47,7 @@ const Dashboard: NextPageWithLayout = () => {
 Dashboard.getLayout = function getLayout(page: ReactElement) {
     return (
         <>
-            <Head />
+            <Head title="Listen Now - MySound" />
             <DashboardLayoutNoSSR>
                 {page}
             </DashboardLayoutNoSSR>
