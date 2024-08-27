@@ -26,8 +26,8 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ song }) => {
                 <h3 className="text-white text-lg font-medium font-roboto mb-2">
                     {currentTrack.title || 'Song Title'}
                 </h3>
-                <p className="text-[#99938f] text-sm font-medium mb-4">
-                    {song?.artist || 'Artist Name'}
+                <p className="text-[#99938f] text-sm font-medium mb-4" onClick={() => {}}>
+                    {currentTrack.artist_name || 'Artist Name'}
                 </p>
                 <ProgressBar />
                 <div className="flex items-center justify-center gap-52 w-full mb-6">

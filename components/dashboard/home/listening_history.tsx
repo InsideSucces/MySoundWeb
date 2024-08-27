@@ -18,7 +18,7 @@ export const ListeningHistory: FC = () => {
             </div>
 
             <div className="max-h-[500px] overflow-y-auto scrollbar-hide">
-                {listeningHistory.length >= 1 ? (
+                {listeningHistory && listeningHistory.length >= 1 ? (
                     <ul className="space-y-4">
                         {listeningHistory.map((song, index) => (
                             <li
@@ -39,7 +39,7 @@ export const ListeningHistory: FC = () => {
                                             {song?.title || 'Album Art'}
                                         </div>
                                         <div className="text-[#99938f] text-sm font-medium font-['Roboto'] leading-[16.80px] tracking-tight">
-                                            {"Artist Name"}
+                                            {song?.artist_name || 'Artist Name'}
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-3 md:gap-6 ml-auto">

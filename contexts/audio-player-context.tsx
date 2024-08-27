@@ -21,6 +21,7 @@ export interface Track {
     file: string;
     release_date: null;
     cover_image: string;
+    artist_name: string;
 }
 
 interface AudioPlayerContextType {
