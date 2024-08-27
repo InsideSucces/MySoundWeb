@@ -1,6 +1,6 @@
 import DashboardLayoutNoSSR from "@/components/dashboard/layout";
 import { NextPageWithLayout } from "../_app";
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement } from "react";
 import { useRouter } from "next/router";
 import { Home } from "@/components/dashboard/home";
 import { Subscription } from "@/components/dashboard/subscription";
@@ -16,13 +16,7 @@ import { FooterMusicPlayer } from "@/components/dashboard/footerPlayer";
 
 const Dashboard: NextPageWithLayout = () => {
     const router = useRouter();
-    const [route, setRoute] = useState((router.query.route as string[]) || []); // State to store the route
-
-    useEffect(() => {
-        // Update the route state whenever the query parameter changes
-        setRoute(router.query.route as string[] || []);
-    }, [router.query.route]);
-
+    const route = (router.query.route as string[]) || [];
     console.log(route);
 
     switch (route[0]) {

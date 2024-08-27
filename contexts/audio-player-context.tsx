@@ -68,6 +68,8 @@ export const AudioPlayerProvider = ({ children }: { children: ReactNode; }) => {
             duration: 0,
             isPlaying: false,
         };
+
+    
     const [trackIndex, setTrackIndex] = useState<number>(initialState.trackIndex);
     const [currentTrack, setCurrentTrack] = useState<Track>(initialState.currentTrack);
     const [timeProgress, setTimeProgress] = useState<number>(initialState.timeProgress);
@@ -93,6 +95,20 @@ export const AudioPlayerProvider = ({ children }: { children: ReactNode; }) => {
     const audioRef = useRef<HTMLAudioElement>(null);
     const progressBarRef = useRef<HTMLInputElement>(null);
     const progressBarRefForDiv = useRef<HTMLDivElement>(null);
+
+    const shuffleTracks = (trackss: Track[]): Track[] => {
+        const shuffledTracks = [...trackss];
+        // Fisher-Yates Shuffle Algorithm
+        for (let i = shuffledTracks.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledTracks[i], shuffledTracks[j]] = [shuffledTracks[j], shuffledTracks[i]];
+        }
+        return shuffledTracks;
+    };
+
+    useEffect(() => {
+        const shuffledTracks = shuffleTracks([...tracks]);
+    },[shuffleTracks])
 
     useEffect(() => {
         // Update local storage whenever listeningHistory changes
