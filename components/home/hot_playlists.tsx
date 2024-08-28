@@ -6,7 +6,7 @@ type HotPlaylistsProps = {
 };
 export const HotPlaylists = ({ playlists }: HotPlaylistsProps) => {
   return (
-    <div className="mx-auto max-w-full p-6 xl:p-12">
+    <div className="mx-auto max-w-9xl p-6 xl:p-12">
       <h1 className="text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold font-roboto capitalize mb-8">
         Hot Playlists
       </h1>

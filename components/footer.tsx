@@ -6,11 +6,28 @@ import { FacebookIcon, TwitterIcon, InstagramIcon } from "./icons";
 export type FooterType = {
   className?: string;
 };
+
+const LINKS = [
+  {
+    title: "Explore",
+    items: ["Charts", "Trending Sounds", "New Release", "Playlist"],
+  },
+  {
+    title: "Contact Us",
+    items: ["A", "Careers", "Press", "News"],
+  },
+  {
+    title: "Resource",
+    items: ["Blog", "Newsletter", "Events", "Help center"],
+  },
+];
+
+const currentYear = new Date().getFullYear();
 export const Footer: FC<FooterType> = ({ className }) => {
   return (
     <footer
       className={[
-        "bg-[#2dcece] text-foreground py-12 md:py-16 lg:py-20",
+        "bg-[#0f5881] text-foreground py-12 md:py-16 lg:py-20",
         className,
       ].join(" ")}
     >
@@ -139,26 +156,10 @@ export const Footer: FC<FooterType> = ({ className }) => {
             </div>
           </div>
         </div>
-        <div className="mt-12 md:mt-16 lg:mt-20 border-t border-muted pt-6 md:pt-8 lg:pt-10 flex flex-col md:flex-row justify-between items-center">
+        <div className="mt-12 md:mt-16 lg:mt-20 pt-6 md:pt-8 lg:pt-10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; 2024 MySound. All rights reserved.
+            &copy; {currentYear} MySound. All rights reserved.
           </p>
-          <div className="flex items-center space-x-4 mt-4 md:mt-0">
-            <Link
-              href="#"
-              className="text-sm hover:text-primary transition-colors"
-              prefetch={false}
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="#"
-              className="text-sm hover:text-primary transition-colors"
-              prefetch={false}
-            >
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

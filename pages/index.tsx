@@ -86,11 +86,13 @@ export default function IndexPage() {
     <DefaultLayout>
       <HeroSection />
       <AnimatedCarousel images={images} />
+      <div className="max-w-9xl">
       <HotPlaylists playlists={hot_playlists} />
       <TrendingArtistes artists={trending_artists} />
       <ArtistProfile artist={trending_artists.find(artist => artist.id === 6)} />
       <CTA />
       <CustomAccordion items={faqItems} />
+      </div>
     </DefaultLayout>
   );
 }
