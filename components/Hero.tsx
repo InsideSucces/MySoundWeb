@@ -44,7 +44,7 @@ export const HeroSection = () => {
             Sounds For <br /> Every Moment
           </h1>
           <p className="text-4xl md:text-6xl lg:text-[80px] text-white mb-8 font-bold leading-tight">
-            <span className="text-[#61C1C9]"><TextTransition inline springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition></span>  Your Favorite
+            <span className="text-[#61C1C9]"><TextTransition inline springConfig={presets.gentle}>{TEXTS[index % TEXTS.length]}</TextTransition></span> &nbsp; Your Favorite
             Sounds
           </p>
           <div className="flex flex-col md:flex-row items-center px-3 gap-4 md:gap-8 mt-12 md:mt-24">
