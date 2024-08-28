@@ -439,7 +439,7 @@ export const tracks: Track[] = [
         "file": "https://service.mysounduk.co.uk/uploads/songs/1724074075667-zoom-jayz-montana-mp3cut.net-1-1.mp3",
         "release_date": null,
         "cover_image": "https://service.mysounduk.co.uk/uploads/artists/1724074075669-whatsapp-image-2024-08-19-at-14.22.29.jpeg",
-        "artist_name": 'Jayz Montana'
+        "artist_name": "Jayz Montana"
     },
     {
         "id": "b4a36d32-a5d4-4195-a6cb-534771d4def8",
@@ -650,4 +650,4 @@ export const tracks: Track[] = [
         "cover_image": "https://service.mysounduk.co.uk/uploads/artists/1724232572027-mikel-the-energy.jpg",
         "artist_name": "Mikel The Energy"
     }
-];
+]

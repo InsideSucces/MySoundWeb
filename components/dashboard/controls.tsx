@@ -189,7 +189,7 @@ export const Controls: FC = () => {
             currentAudioRef.removeEventListener('playing', handlePlaying);
             currentAudioRef.removeEventListener('waiting', handleWaiting);
             currentAudioRef.removeEventListener('seeking', handleWaiting);
-            currentAudioRef.removeEventListener('pause', handleWaiting);
+            currentAudioRef.removeEventListener('pause', handlePlaying);
             currentAudioRef.removeEventListener('stalled', handleWaiting);
             // currentAudioRef.removeEventListener('seeking', handleWaiting);
           };
@@ -229,8 +229,6 @@ export const Controls: FC = () => {
     navigator.mediaSession.setActionHandler('seekbackward', () =>{
         return skipBackward();
     })
-
-    
 
     return (
         <div className="flex gap-4 items-center">
