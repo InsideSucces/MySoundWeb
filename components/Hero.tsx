@@ -1,7 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
+import React from 'react';
+import TextTransition, { presets } from 'react-text-transition';
+
+const TEXTS = ['Discover', 'Stream', 'Share', 'Enjoy'];
 
 export const HeroSection = () => {
+  const [index, setIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const intervalId = setInterval(
+      () => setIndex((index) => index + 1),
+      2000, // every 3 seconds
+    );
+    return () => clearTimeout(intervalId);
+  }, []);
+
   return (
     <section className="relative lg:min-h-screen flex items-center overflow-hidden py-20">
       <div className="absolute inset-0 bg-gradient-to-br from-[#0f5881] via-[#0a4d74] to-[#2fabf3] z-10"></div>
@@ -30,7 +44,7 @@ export const HeroSection = () => {
             Sounds For <br /> Every Moment
           </h1>
           <p className="text-4xl md:text-6xl lg:text-[80px] text-white mb-8 font-bold leading-tight">
-            <span className="text-[#61C1C9]">Discover</span> Your Favorite
+            <span className="text-[#61C1C9]"><TextTransition inline springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition></span>  Your Favorite
             Sounds
           </p>
           <div className="flex flex-col md:flex-row items-center px-3 gap-4 md:gap-8 mt-12 md:mt-24">
