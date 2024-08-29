@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { Charts } from "./charts";
 import { ListeningHistory } from "./listening_history";
 import { MusicPlayer } from "./music_player";
+import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 
 const songData = [
   {
@@ -106,7 +107,20 @@ export const Home: NextPage = () => {
           <div className="text-white text-xl font-medium font-roboto leading-normal tracking-wide">
             Charts: Top 50
           </div>
-          {/* ... (Your existing code for the buttons) */}
+          <div className='flex gap-x-2 items-center'>
+          <button
+            onClick={() => {}}
+            className='rounded-full bg-black flex items-center justify-center hover:opacity-75 transition'
+          >
+            <RxCaretLeft className='text-white' size={35} />
+          </button>
+          <button
+            onClick={() => {}}
+            className='rounded-full bg-black flex items-center justify-center hover:opacity-75 transition'
+          >
+            <RxCaretRight className='text-white' size={35} />
+          </button>
+        </div>
         </div>
         <Charts charts={charts} />
       </div>

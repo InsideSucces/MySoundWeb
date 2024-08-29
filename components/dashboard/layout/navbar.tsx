@@ -38,7 +38,7 @@ export const NavbarWrapper = (props: Props) => {
               alt="User"
             />
             <div >
-              <div className="flex flex-col text-center justify-center">
+              <div className="flex flex-col items-center justify-center">
                 <span>Ola Ugo</span>
                 <span>Premium</span>
               </div>

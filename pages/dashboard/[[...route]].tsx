@@ -1,6 +1,6 @@
 import DashboardLayoutNoSSR from "@/components/dashboard/layout";
 import { NextPageWithLayout } from "../_app";
-import { ReactElement } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Home } from "@/components/dashboard/home";
 import { Subscription } from "@/components/dashboard/subscription";
@@ -14,11 +14,23 @@ import { Search } from "@/components/dashboard/search";
 import { Head } from "@/layouts/head";
 import { FooterMusicPlayer } from "@/components/dashboard/footerPlayer";
 import { useAudioPlayerContext } from "@/contexts/audio-player-context";
+import { ArtistProfile } from "@/components/dashboard/artist_profile";
 
 const Dashboard: NextPageWithLayout = () => {
     const router = useRouter();
     const route = (router.query.route as string[]) || [];
-    console.log(route);
+    const [isRouteReady, setIsRouteReady] = useState(false);
+
+    useEffect(() => {
+        console.log(route);
+        const timer = setTimeout(() => {
+            setIsRouteReady(true);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, [router.query.route]);
+
+    if (!isRouteReady) return null; // Or a loading indicator
 
     switch (route[0]) {
         case "search":
@@ -39,6 +51,9 @@ const Dashboard: NextPageWithLayout = () => {
             return <Subscription />;
         case "logout":
             return <LogOut />;
+
+        case "artists":
+            return <ArtistProfile artist_id={route[1]} />;
         default:
             return <Home />;
     }

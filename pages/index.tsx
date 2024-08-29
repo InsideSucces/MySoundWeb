@@ -12,6 +12,7 @@ import { TrendingArtistes } from "@/components/home/trending_artists";
 import { ArtistProfile } from "@/components/home/artist_profile";
 import { CTA } from "@/components/home/cta";
 import { ArtistData, PlaylistData } from "@/types_models";
+import { Track } from "@/contexts/audio-player-context";
 
 const images = [
   "/assets/artist_1.jpg",
@@ -48,6 +49,7 @@ const faqItems = [
 export default function IndexPage() {
   const [trending_artists, setTrendingArtist] = useState<ArtistData[]>([]);
   const [hot_playlists, setHotPlaylists] = useState<PlaylistData[]>([]);
+  const [artist_tracks, setArtistTracks] = useState<Track[]>([]);
 
   useEffect(() => {
     fetch("/api/fetchArtists")
@@ -65,6 +67,7 @@ export default function IndexPage() {
         console.error("Error fetching artists:", error);
       });
   }, []);
+
   useEffect(() => {
     fetch("/api/fetchPlaylists")
       .then((response) => {
@@ -82,6 +85,23 @@ export default function IndexPage() {
       });
   }, []);
 
+  useEffect(() => {
+    fetch(`/api/fetchTracksByArtist?artist_id=${6}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setArtistTracks(data[0]);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching playlists:", error);
+      });
+  }, []);
+
   return (
     <DefaultLayout>
       <HeroSection />
@@ -89,7 +109,7 @@ export default function IndexPage() {
       <div className="max-w-9xl">
       <HotPlaylists playlists={hot_playlists} />
       <TrendingArtistes artists={trending_artists} />
-      <ArtistProfile artist={trending_artists.find(artist => artist.id === 6)} />
+      <ArtistProfile artist={trending_artists.find(artist => artist.id === 6)} tracks={artist_tracks} />
       <CTA />
       <CustomAccordion items={faqItems} />
       </div>
