@@ -44,19 +44,17 @@ export const ArtistProfile: NextPage<ArtistProfileProps> = ({ artist_id }) => {
     },[])
 
     return (
-        <div className="bg-gray-900 text-white min-h-screen mt-36 mb-9">
+        <div className="bg-transparent text-white min-h-screen mt-36 md:mt-52 mb-9">
         {/* Header */}
         <div
           className="relative h-64 bg-cover bg-center"
           style={{ backgroundImage: `url(${artistProfile?.image})` }}
         >
-          <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay */}
+          <div className="absolute inset-0 bg-black opacity-60"></div> {/* Overlay */}
           <div className="absolute bottom-10 left-10 z-10">
-            <Image
+            <img
               src={artistProfile?.image!}
               alt={artistProfile?.name!}
-              width={200}
-              height={200}
               className="w-40 h-40 rounded-full md:w-64 md:h-64"
             />
             <h1 className="text-4xl font-bold mt-4">{artistProfile?.name}</h1>
@@ -71,7 +69,7 @@ export const ArtistProfile: NextPage<ArtistProfileProps> = ({ artist_id }) => {
           {/* Overview */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4">Overview</h2>
-            <p className="text-gray-400">{artistProfile?.bio}</p>
+            <p className="text-gray-400 md:text-xl text-semibold">{artistProfile?.bio}</p>
             {/* Genres, Related Artists */}
           </div>
   
@@ -88,12 +86,10 @@ export const ArtistProfile: NextPage<ArtistProfileProps> = ({ artist_id }) => {
                     setIsPlaying(true);
                   }}
                 >
-                  <Image
+                  <img
                     src={track.cover_image}
                     alt={track.title}
-                    width={50}
-                    height={50}
-                    className="rounded-md mr-4"
+                    className="w-[80px] h-[80px] rounded-md mr-4"
                   />
                   <div>
                     <p className="font-bold">{track.title}</p>
