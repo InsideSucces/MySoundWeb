@@ -45,7 +45,7 @@ export const Search: NextPage<SearchProps> = ({ search }) => {
             <Link 
               key={category.id} 
               href={`/dashboard/search/${category.name.toLowerCase()}`} // Update with your actual search route
-              className="bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transform transition duration-300 ease-in-out hover:scale-105"
+              className="bg-gray-800 max-w-62 rounded-lg overflow-hidden shadow-md hover:shadow-lg transform transition duration-300 ease-in-out hover:scale-105"
             >
               <div className="relative">
                 <img 

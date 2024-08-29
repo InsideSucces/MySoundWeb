@@ -38,10 +38,9 @@ const Dashboard: NextPageWithLayout = () => {
         case "likes":
             return <Likes />;
         case "playlists":
-            return <Playlists />;
+            return <Playlists playlistId={route[1]} />;
         case "albums":
             return <Albums />;
-
         case "following":
             return <Following />;
         case "settings":
