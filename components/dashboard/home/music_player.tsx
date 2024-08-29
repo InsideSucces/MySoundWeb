@@ -27,7 +27,6 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ song }) => {
                     alt={currentTrack.title || 'Album Art'}
                 />
             </div>
-
             <div className="flex flex-col items-center text-center">
                 <h3 className="text-white text-lg font-medium font-roboto mb-2">
                     {currentTrack.title || 'Song Title'}

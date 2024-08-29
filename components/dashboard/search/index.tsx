@@ -33,10 +33,13 @@ export const Search: NextPage<SearchProps> = ({ search }) => {
           placeholder="Search..."
           value={searchQuery}
           onChange={handleInputChange}
+          classNames={{
+            input: "h-20", // Target the input element and apply the h-20 class
+            inputWrapper: "rounded-xl px-4 py-2 bg-white text-gray-800", 
+          }}
         // ... other styling props
         />
       </div>
-
       {/* Explore Grid Section */}
       <div className="mt-10">
         <h2 className="text-2xl font-bold text-white mb-4 px-4 lg:px-0">Explore</h2>
@@ -45,7 +48,7 @@ export const Search: NextPage<SearchProps> = ({ search }) => {
             <Link 
               key={category.id} 
               href={`/dashboard/search/${category.name.toLowerCase()}`} // Update with your actual search route
-              className="bg-gray-800 max-w-62 rounded-lg overflow-hidden shadow-md hover:shadow-lg transform transition duration-300 ease-in-out hover:scale-105"
+              className="bg-gray-800 max-w-62 h-62 rounded-lg overflow-hidden shadow-md hover:shadow-lg transform transition duration-300 ease-in-out hover:scale-105"
             >
               <div className="relative">
                 <img 
@@ -53,7 +56,7 @@ export const Search: NextPage<SearchProps> = ({ search }) => {
                   alt={category.name} 
                   className="w-full h-32 object-cover" 
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2">
+                <div className="bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2">
                   <h3 className="text-white text-lg font-semibold text-center truncate">
                     {category.name}
                   </h3>

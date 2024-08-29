@@ -34,3 +34,27 @@ input[type="range"].custom-progress-bar::-ms-track {
   border-radius: 10px; /* Adjust border-radius as needed */
   color: transparent; /* Hide the default track */
 }
+
+.artist-name { /* Or however you target the artist name span */
+  max-width: 100px; /* Adjust this value as needed */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds "..." to truncate text */
+  white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+.artist-name-container { /* Target the parent container of the artist name */
+  flex-shrink: 1; 
+}
+
+.custom-search-input input { /* Target the input element within the component */
+  height: 180px; /* Set the desired height (h-20 in Tailwind is 80px) */
+}
+
+.footer-wrapper { 
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+}

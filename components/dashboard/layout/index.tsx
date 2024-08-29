@@ -5,6 +5,7 @@ import { SidebarContext } from "./context";
 import { WrapperLayout } from "./styles";
 import { SidebarWrapper } from "./sidebar";
 import { NavbarWrapper } from "./navbar";
+import { FooterMusicPlayer } from "../footerPlayer";
 
 interface Props {
     children: React.ReactNode;
@@ -25,10 +26,15 @@ const DashboardLayout = (props: Props) => {
                 setCollapsed: handleToggleSidebar,
             }}
         >
-            <section className='flex'>
-                <SidebarWrapper />
-                <NavbarWrapper>{props.children}</NavbarWrapper>
-            </section>
+            <div className="flex flex-col min-h-screen">
+                <section className="flex flex-grow"> 
+                    <SidebarWrapper />
+                    <NavbarWrapper>
+                        {props.children}
+                    </NavbarWrapper>
+                </section>
+                <FooterMusicPlayer /> {/* Footer is now outside other components */}
+            </div>
         </SidebarContext.Provider>
     );
 };

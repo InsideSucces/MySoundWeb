@@ -129,7 +129,7 @@ export const Home: NextPage = () => {
           <ListeningHistory />
         </div>
         <div className="md:w-1/3 w-full flex justify-center mt-[90px] mb-[90px] md:ml-[190px]">
-          <MusicPlayer song={{}} />
+          {/* <MusicPlayer song={{}} /> */}
         </div>
       </div>
     </div>
