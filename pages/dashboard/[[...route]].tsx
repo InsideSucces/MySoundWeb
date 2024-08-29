@@ -34,7 +34,7 @@ const Dashboard: NextPageWithLayout = () => {
 
     switch (route[0]) {
         case "search":
-            return <Search />;
+            return <Search search={route[1]} />;
         case "likes":
             return <Likes />;
         case "playlists":
