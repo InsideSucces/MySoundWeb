@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import { ProgressBar } from '../progressBar';
 import { formatTime } from '@/helpers';
 import { Controls } from '../controls';
+import { useRouter } from 'next/router';
 
 interface MusicPlayerProps {
     song?: any; // Define the structure of your song object
@@ -11,6 +12,11 @@ interface MusicPlayerProps {
 
 export const MusicPlayer: React.FC<MusicPlayerProps> = ({ song }) => {
     const {currentTrack, timeProgress, duration} = useAudioPlayerContext();
+
+    const router = useRouter();
+    const handleOpenArtistProfile = (artist_id: any) => {
+        router.push(`/dashboard/artists/${artist_id}`, undefined, { shallow: true });
+    };
 
     return (
         <div className="w-full max-w-[300px] items-center justify-center  md:w-72 relative rounded-3xl p-6">
@@ -26,7 +32,7 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ song }) => {
                 <h3 className="text-white text-lg font-medium font-roboto mb-2">
                     {currentTrack.title || 'Song Title'}
                 </h3>
-                <p className="text-[#99938f] text-sm font-medium mb-4" onClick={() => {}}>
+                <p className="text-[#99938f] text-sm font-medium mb-4 cursor-pointer hover:shadow-lg transform transition duration-300 ease-in-out hover:scale-105" onClick={() => handleOpenArtistProfile(currentTrack.artist_id)}>
                     {currentTrack.artist_name || 'Artist Name'}
                 </p>
                 <ProgressBar />
