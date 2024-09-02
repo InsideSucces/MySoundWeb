@@ -90,7 +90,7 @@ export default function IndexPage() {
         return response.json();
       })
       .then((data) => {
-        setArtistTracks(data[0]);
+        setArtistTracks(data);
         console.log(data);
       })
       .catch((error) => {

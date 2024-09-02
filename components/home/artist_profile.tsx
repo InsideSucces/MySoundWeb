@@ -38,7 +38,7 @@ export const ArtistProfile = ({ artist, tracks }: ArtistProfilePros) => {
 
         <div className="w-full flex flex-col gap-4">
           {tracks && tracks.length > 0 ? tracks.map((track, index) => (
-            <div className="flex justify-between items-center">
+            <div key={`${index}-${track.id}`} className="flex justify-between items-center">
               <div className="flex items-center gap-4">
                 <img
                   className="w-12 h-12 rounded-[9.06px]"
