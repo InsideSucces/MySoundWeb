@@ -48,7 +48,7 @@ export const Playlists: NextPage<PlaylistProps> = ({ playlistId }) => {
                     <div className="flex flex-col gap-4">
                         <div className="w-full h-9 px-2 bg-[#0c0c0c]/10 rounded-[10px] border border-[#7e8389] shadow-inner flex items-center">
                             <div className="w-4 h-4 mr-1">
-                                <MdMicNone onClick={() => { }} />
+                                <MdMicNone onClick={() => {}} />
                             </div>
                             <input
                                 type="text"
