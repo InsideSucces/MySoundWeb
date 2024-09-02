@@ -43,10 +43,10 @@ export const HeroSection = () => {
           <h1 className="text-6xl md:text-7xl lg:text-9xl font-bold text-white mb-6 leading-tight">
             Sounds For <br /> Every Moment
           </h1>
-          <p className="text-4xl md:text-6xl lg:text-[80px] text-white mb-8 font-bold leading-tight">
+          <div className="text-4xl md:text-6xl lg:text-[80px] text-white mb-8 font-bold leading-tight">
             <span className="text-[#61C1C9]"><TextTransition inline springConfig={presets.gentle}>{TEXTS[index % TEXTS.length]}</TextTransition></span> Your Favorite
             Sounds
-          </p>
+          </div>
           <div className="flex flex-col md:flex-row items-center px-3 gap-4 md:gap-8 mt-12 md:mt-24">
             <Link href={"/dashboard"}>
               <button
