@@ -30,7 +30,7 @@ export const HeroSection = () => {
       </div>
 
       <div className="absolute inset-0 flex flex-col justify-center items-center z-20 overflow-hidden">
-        <div className="text-[#FEFEFE] text-[39vw]  lg:text-[570px] font-bold opacity-10 mt-20 leading-none">
+        <div className="text-[#FEFEFE] text-[39vw]  lg:text-[570px] font-bold opacity-10 mt-10 leading-none">
           MUSIC
         </div>
         <div className="text-[#FEFEFE] text-[39vw]  lg:text-[570px] font-bold opacity-10 mt-10 leading-none">
@@ -38,7 +38,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-16 z-40 relative md:px-16 lg:px-20">
+      <div className="container mx-auto px-9 z-40 relative md:px-16 lg:px-20">
         <div className="text-left max-w-[1200px]">
           <h1 className="text-6xl md:text-7xl lg:text-9xl font-bold text-white mb-6 leading-tight">
             Sounds For <br /> Every Moment
