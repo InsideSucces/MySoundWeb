@@ -44,7 +44,11 @@ interface AudioPlayerContextType {
     setIsPlaying: Dispatch<SetStateAction<boolean>>;
     setIsLoading: Dispatch<SetStateAction<boolean>>;
     listeningHistory: Track[];
-    setListeningHistory: Dispatch<SetStateAction<Track[]>>
+    setListeningHistory: Dispatch<SetStateAction<Track[]>>;
+    isMuted: boolean;
+    setIsMuted: Dispatch<SetStateAction<boolean>>;
+    volume: number;
+    setVolume: Dispatch<SetStateAction<number>>;
 }
 
 const AudioPlayerContext = createContext<AudioPlayerContextType | undefined>(undefined);
@@ -91,6 +95,9 @@ export const AudioPlayerProvider = ({ children }: { children: ReactNode; }) => {
             ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_LHISTORY_KEY) || '[]')
             : []
     );
+
+    const [isMuted, setIsMuted] = useState(false);
+    const [volume, setVolume] = useState(100);
 
     const audioRef = useRef<HTMLAudioElement>(null);
     const progressBarRef = useRef<HTMLInputElement>(null);
@@ -163,6 +170,12 @@ export const AudioPlayerProvider = ({ children }: { children: ReactNode; }) => {
         }
     }, [currentTrack])
 
+    useEffect(() => {
+        if (audioRef.current) {
+          audioRef.current.volume = isMuted ? 0 : volume / 100;
+        }
+      }, [volume, audioRef]); 
+
 
     const contextValue = {
         currentTrack,
@@ -185,6 +198,10 @@ export const AudioPlayerProvider = ({ children }: { children: ReactNode; }) => {
         isRepeat, 
         setIsRepeat,
         listeningHistory,
+        isMuted, 
+        setIsMuted,
+        volume, 
+        setVolume,
     };
     return (
         <AudioPlayerContext.Provider value={contextValue}>

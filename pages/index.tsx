@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from "react";
-
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
 import { HeroSection } from "@/components/Hero";
 import AnimatedCarousel from "@/components/carousel_images";
