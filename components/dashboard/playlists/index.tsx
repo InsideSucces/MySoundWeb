@@ -4,55 +4,29 @@ import { useRouter } from "next/router";
 
 import { CiMicrophoneOn } from "react-icons/ci";
 import { MdMicNone } from "react-icons/md";
-interface PlaylistData {
-    id: number;
+export interface PlaylistData {
+    id: string;
+    user_id: string;
     name: string;
-    imageUrl: string;
+    description: string;
+    image: string;
 };
 
 const playlists: PlaylistData[] = [
     {
-        id: 1,
-        name: "Back in Time",
-        imageUrl: "https://via.placeholder.com/174x174/000000/FFFFFF/?text=Giddy1Billion",
+        "id": "93a2ec63-141b-4b97-8395-684b0b13fe2a",
+        "user_id": "55",
+        "name": "Top 100",
+        "description": "top 100 hot songs",
+        "image": "http://185.158.107.161:3000/uploads/others/1723832315163-7ucky-pg-22-23-293x300.jpg"
     },
     {
-        id: 2,
-        name: "Cool Vibes",
-        imageUrl: "https://via.placeholder.com/174x174/000000/FFFFFF/?text=Giddy1Billion",
-    },
-    {
-        id: 3,
-        name: "Afrobeats 2024",
-        imageUrl: "https://via.placeholder.com/174x174/000000/FFFFFF/?text=Giddy1Billion",
-    },
-    {
-        id: 4,
-        name: "Party Time",
-        imageUrl: "https://via.placeholder.com/174x174/000000/FFFFFF/?text=Giddy1Billion",
-    },
-    {
-        id: 5,
-        name: "Global Mix",
-        imageUrl: "https://via.placeholder.com/174x174/000000/FFFFFF/?text=Giddy1Billion",
-    },
-    {
-        id: 6,
-        name: "Hot New Releases",
-        imageUrl:
-            "https://via.placeholder.com/87x87/000000/FFFFFF/?text=Giddy1Billion",
-    },
-    {
-        id: 7,
-        name: "We Love R&B",
-        imageUrl:
-            "https://via.placeholder.com/87x87/000000/FFFFFF/?text=Giddy1Billion",
-    },
-    {
-        id: 8,
-        name: "Gym Beats",
-        imageUrl: "https://via.placeholder.com/174x174/000000/FFFFFF/?text=Giddy1Billion",
-    },
+        "id": "f758a197-3673-4890-8304-2e511f9c7662",
+        "user_id": "55",
+        "name": "Afrobeats Today",
+        "description": "Afrobeats Today",
+        "image": "http://185.158.107.161:3000/uploads/others/1725019402245-afrobeats1.png"
+    }
 ];
 
 interface PlaylistProps {
@@ -94,7 +68,7 @@ export const Playlists: NextPage<PlaylistProps> = ({ playlistId }) => {
                             >
                                 <img
                                     className="w-[194px] h-[194px] rounded-lg object-cover"
-                                    src={playlist.imageUrl}
+                                    src={playlist.image}
                                     alt={playlist.name}
                                 />
                                 <div className="text-[#f9f9f9] text-sm font-semibold font-roboto capitalize m-1">
@@ -104,9 +78,6 @@ export const Playlists: NextPage<PlaylistProps> = ({ playlistId }) => {
                         ))}
                     </div>
                 </div>
-            </div>
-            <div className="player">
-
             </div>
         </div>
     );
