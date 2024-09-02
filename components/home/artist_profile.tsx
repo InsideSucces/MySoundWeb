@@ -37,7 +37,7 @@ export const ArtistProfile = ({ artist, tracks }: ArtistProfilePros) => {
         </div>
 
         <div className="w-full flex flex-col gap-4">
-          {tracks.map((track, index) => (
+          {tracks && tracks.length > 0 ? tracks.map((track, index) => (
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-4">
                 <img
@@ -61,7 +61,9 @@ export const ArtistProfile = ({ artist, tracks }: ArtistProfilePros) => {
                 </button>
               </div>
             </div>
-          ))}
+          )) : (
+            <div>Loading tracks...</div>
+          )}
         </div>
 
         <button className="w-full max-w-[169px] h-[30px] bg-gradient-to-r from-[#61c1c8] to-[#11a8fd] rounded-full text-[#121212] text-xl font-extrabold font-roboto capitalize">
