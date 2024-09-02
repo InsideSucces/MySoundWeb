@@ -24,7 +24,7 @@ export const VolumeControl: FC = () => {
     const [previousVolume, setPreviousVolume] = useState(100); // Store the volume before muting
 
     return (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 w-full">
             <button onClick={toggleMute} className="text-zinc-400 hover:text-[#2dcece] transform transition duration-300 ease-in-out hover:scale-125">
                 {isMuted ? <BiVolumeMute size={20} /> : <BiVolumeFull size={20} />}
             </button>
