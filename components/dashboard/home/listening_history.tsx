@@ -16,9 +16,9 @@ export const ListeningHistory: FC = () => {
                     See All
                 </button>
             </div>
-            <div className="max-h-[500px] overflow-y-auto scrollbar-hide">
+            <div className="max-h-[500px] overflow-y-auto scrollbar-hide mb-20">
                 {listeningHistory && listeningHistory.length >= 1 ? (
-                    <ul className="space-y-4">
+                    <ul className="space-y-4 mb-9">
                         {listeningHistory.map((song, index) => (
                             <li
                                 key={`${index}-${song?.id || 'no-id'}`}
@@ -28,7 +28,7 @@ export const ListeningHistory: FC = () => {
                                 <div className="w-full h-[116px] relative flex items-center">
                                     <div className="w-[84px] h-[84px] rounded-2xl shadow justify-center items-center flex mr-6">
                                         <img
-                                            className="w-[84px] h-[84px] rounded-2xl"
+                                            className="w-[80px] h-[80px] rounded-2xl"
                                             src={song?.cover_image ?? 'https://via.placeholder.com/248x213'}
                                             alt={song?.title || 'Album Art'}
                                         />
@@ -42,7 +42,7 @@ export const ListeningHistory: FC = () => {
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-3 md:gap-6 ml-auto">
-                                        <div className="w-20 h-9 rounded-lg border border-[#2dcece] flex items-center justify-center">
+                                        <div className="w-20 h-9 sd:flex md:flex rounded-lg border border-[#2dcece] flex items-center justify-center hidden">
                                             <div className="flex justify-between">
                                                 <CgMusicNote
                                                     color="#99938f"
@@ -73,7 +73,7 @@ export const ListeningHistory: FC = () => {
                     </ul>
                 ) : (
                     <div className="flex justify-center items-center h-full">
-                        <p className="text-gray-400 font-semibold">No Listening History Yet</p>
+                        <p className="text-gray-400 font-semibold">No Listening History Yet. Listen Now!</p>
                     </div>
                 )}
             </div>
