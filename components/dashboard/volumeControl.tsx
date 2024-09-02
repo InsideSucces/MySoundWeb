@@ -32,6 +32,7 @@ export const VolumeControl: FC = () => {
                 size="sm"
                 maxValue={100}
                 minValue={0}
+                className="w-[109px] gap-9"
                 color="foreground"
                 step={1}
                 defaultValue={volume}
@@ -40,7 +41,7 @@ export const VolumeControl: FC = () => {
                 onChange={handleVolumeChange}
                 showTooltip={true}
                 classNames={{
-                    base: "w-[99] gap-9",
+                    base: "w-[109px] gap-9",
                     filler: "before:bg-gradient-to-r before:from-[#2dcece] before:to-[#2dcece] bg-gradient-to-r from-[#2dcece] to-[#2dcece] dark:from-[#2dcece] dark:[#2dcece]",
                     value: "font-bold text-default-500 text-small",
                     step: "data-[in-range=true]:bg-black/30 dark:data-[in-range=true]:bg-white/50"
