@@ -19,7 +19,7 @@ const albums: Album[] = [
     "artist_id": "2",
     "name": "Bagge",
     "description": "Bagge's album",
-    "image": "http://185.158.107.161:3000/uploads/albums/1724953729454-bagge.jpeg",
+    "image": "http://185.158.107.161:3000/uploads/album/1724953729454-bagge.jpeg",
     "price_ngn": 20000,
     "price_usd": 9.99
   },
@@ -28,7 +28,7 @@ const albums: Album[] = [
     "artist_id": "1",
     "name": "7ucky",
     "description": "7ucky's album",
-    "image": "http://185.158.107.161:3000/uploads/albums/1724953460180-7ucky-pg-22-23-293x300.jpg",
+    "image": "http://185.158.107.161:3000/uploads/album/1724953460180-7ucky-pg-22-23-293x300.jpg",
     "price_ngn": 20000,
     "price_usd": 9.99
   }
