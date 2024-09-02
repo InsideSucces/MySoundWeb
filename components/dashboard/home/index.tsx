@@ -125,7 +125,7 @@ export const Home: NextPage = () => {
         <Charts charts={charts} />
       </div>
       <div className="flex flex-col md:flex-row justify-center">
-        <div className="md:w-2/3 items-start">
+        <div className="md:w-2/3 items-start mb-9">
           <ListeningHistory />
         </div>
         <div className="md:w-1/3 w-full flex justify-center mt-[90px] mb-[90px] md:ml-[190px]">
