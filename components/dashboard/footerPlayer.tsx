@@ -31,7 +31,7 @@ export const FooterMusicPlayer: FC = () => {
                         <span className="text-[#847d79] text-xs font-medium">-{formatTime(duration - timeProgress)}</span>
                     </div>
                 </div>
-                <div className="flex items-center justify-center gap-4 md:ml-9 m-9">
+                <div className="flex items-center justify-center">
                     {/* <button className="text-zinc-400 hover:text-[#2dcece] transform transition duration-300 ease-in-out hover:scale-125">
                         <svg className="w-4 h-4 text-current fill-current" viewBox="0 0 16 16">
                             <path d="M11.196 8 6 5v6l5.196-3z"></path>

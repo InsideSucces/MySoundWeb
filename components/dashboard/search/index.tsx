@@ -26,7 +26,7 @@ export const Search: NextPage<SearchProps> = ({ search }) => {
   ];
 
   return (
-    <div className="h-full lg:px-6">
+    <div className="h-full lg:px-6 mb-20">
       <div className="flex justify-center gap-4 xl:gap-6 pt-3 px-4 lg:px-0  flex-wrap xl:flex-nowrap sm:pt-10 max-w-[90rem] mx-auto w-full">
         <Input
           type="text"
@@ -43,7 +43,7 @@ export const Search: NextPage<SearchProps> = ({ search }) => {
       {/* Explore Grid Section */}
       <div className="mt-10">
         <h2 className="text-2xl font-bold text-white mb-4 px-4 lg:px-0">Explore</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 lg:px-0">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 lg:px-0 mb-20">
           {exploreCategories.map((category) => (
             <Link 
               key={category.id} 
