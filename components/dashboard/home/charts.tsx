@@ -1,3 +1,4 @@
+import { truncateString } from '@/helpers';
 import React, { FC, useRef, useState } from 'react';
 
 type Chart = {
@@ -57,7 +58,7 @@ export const Charts: FC<ChartProps> = ({ charts }) => {
     };
     return (
 
-        <div className="mx-auto max-w-full  justify-start items-center inline-flex overflow-x-auto">
+        <div className="mx-auto max-w-full justify-start items-center inline-flex overflow-x-auto">
             <div className="self-stretch flex-col justify-start items-start gap-5 inline-flex w-full">
                 <div
                     ref={chartContainerRef}
@@ -66,14 +67,14 @@ export const Charts: FC<ChartProps> = ({ charts }) => {
                     {charts.map((chart, index) => (
                         <div key={`${index}-${chart.id}`}>
                             <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex" onClick={()=> {}}>
-                                <div className="w-32 h-[121px] justify-center items-center inline-flex">
+                                <div className="w-36 h-[121px] justify-center items-center inline-flex">
                                     <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
-                                        <img className="w-32 h-[121px]" src={chart.image ?? "https://via.placeholder.com/128x121"} />
+                                        <img className="w-32 h-[121px] object-cover" src={chart.image ?? "https://via.placeholder.com/128x121"} />
                                     </div>
                                 </div>
                                 <div className="flex-col justify-start items-start gap-2 flex">
-                                    <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">{chart.name ?? "AI Music Genre"}</div>
-                                    <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">{chart.description ?? "Top 50"}</div>
+                                    <div className="w-[120px] text-white text-base font-medium font-semibold font-roboto tracking-tight truncate">{chart.name ?? "AI Music Genre"}</div>
+                                    <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight truncate">{ chart.description ?? "Top 50"}</div>
                                 </div>
                             </div>
                         </div>
