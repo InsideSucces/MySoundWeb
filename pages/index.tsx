@@ -97,7 +97,6 @@ export default function IndexPage() {
         console.error("Error fetching playlists:", error);
       });
   }, []);
-
   return (
     <DefaultLayout>
       <HeroSection />

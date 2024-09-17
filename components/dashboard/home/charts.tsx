@@ -1,7 +1,17 @@
 import React, { FC, useRef, useState } from 'react';
 
+type Chart = {
+    id: string;
+    user_id: string;
+    name: string;
+    description: string;
+    image: string;
+    type: string;
+  };
+  
+
 type ChartProps = {
-    charts: any[];
+    charts: Chart[];
 }
 
 export const Charts: FC<ChartProps> = ({ charts }) => {
@@ -14,7 +24,6 @@ export const Charts: FC<ChartProps> = ({ charts }) => {
         const container = chartContainerRef.current;
         if (container) {
             const scrollAmount = container.offsetWidth * 0.8; // Adjust scroll amount as needed
-
             if (direction === 'left') {
                 setScrollPosition(Math.max(scrollPosition - scrollAmount, 0));
             } else {
@@ -54,9 +63,8 @@ export const Charts: FC<ChartProps> = ({ charts }) => {
                     ref={chartContainerRef}
                     className="flex flex-nowrap gap-6 py-8 overflow-x-auto" // Key classes for scrolling
                 >
-
                     {charts.map((chart, index) => (
-                        <div key={`${index}-${chart.title}`}>
+                        <div key={`${index}-${chart.id}`}>
                             <div className="px-4 pt-4 pb-3 rounded-2xl border border-[#2dcece] flex-col justify-start items-center gap-3 inline-flex" onClick={()=> {}}>
                                 <div className="w-32 h-[121px] justify-center items-center inline-flex">
                                     <div className="grow shrink basis-0 self-stretch rounded-xl justify-center items-center inline-flex">
@@ -64,7 +72,7 @@ export const Charts: FC<ChartProps> = ({ charts }) => {
                                     </div>
                                 </div>
                                 <div className="flex-col justify-start items-start gap-2 flex">
-                                    <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">{chart.title ?? "AI Music Genre"}</div>
+                                    <div className="w-[120px] text-white text-base font-medium font-roboto tracking-tight">{chart.name ?? "AI Music Genre"}</div>
                                     <div className="w-[105px] text-[#99938f] text-sm font-medium font-roboto tracking-tight">{chart.description ?? "Top 50"}</div>
                                 </div>
                             </div>

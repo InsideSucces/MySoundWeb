@@ -35,9 +35,8 @@ export const ArtistProfile = ({ artist, tracks }: ArtistProfilePros) => {
             Album: GILLY
           </h2>
         </div>
-
         <div className="w-full flex flex-col gap-4">
-          {tracks && tracks.length > 0 ? tracks.map((track, index) => (
+          {tracks && tracks.length > 0 ? tracks.slice(0, 5).map((track, index) => (
             <div key={`${index}-${track.id}`} className="flex justify-between items-center">
               <div className="flex items-center gap-4">
                 <img

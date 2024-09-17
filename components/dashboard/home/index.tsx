@@ -3,103 +3,19 @@ import { Charts } from "./charts";
 import { ListeningHistory } from "./listening_history";
 import { MusicPlayer } from "./music_player";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
-
-const songData = [
-  {
-    id: 1,
-    title: "Good Days",
-    artist: "SZA",
-    imageUrl: "https://via.placeholder.com/248x213",
-    length: "3:21",
-  },
-
-  {
-    id: 1,
-    title: "Good Days",
-    artist: "SZA",
-    imageUrl: "https://via.placeholder.com/248x213",
-    length: "3:21",
-  }, {
-    id: 1,
-    title: "Good Days",
-    artist: "SZA",
-    imageUrl: "https://via.placeholder.com/248x213",
-    length: "3:21",
-  }, {
-    id: 1,
-    title: "Good Days",
-    artist: "SZA",
-    imageUrl: "https://via.placeholder.com/248x213",
-    length: "3:21",
-  }, {
-    id: 1,
-    title: "Good Days",
-    artist: "SZA",
-    imageUrl: "https://via.placeholder.com/248x213",
-    length: "3:21",
-  }, {
-    id: 1,
-    title: "Good Days",
-    artist: "SZA",
-    imageUrl: "https://via.placeholder.com/248x213",
-    length: "3:21",
-  }, {
-    id: 1,
-    title: "Good Days",
-    artist: "SZA",
-    imageUrl: "https://via.placeholder.com/248x213",
-    length: "3:21",
-  }, {
-    id: 1,
-    title: "Good Days",
-    artist: "SZA",
-    imageUrl: "https://via.placeholder.com/248x213",
-    length: "3:21",
-  },
-];
-
-const charts = [
-  {
-    id: 1,
-    title: "AI Music Genre",
-    description: "Top 50",
-    image: "https://via.placeholder.com/128x121",
-  },
-
-  {
-    id: 1,
-    title: "AI Music Genre",
-    description: "Top 50",
-    image: "https://via.placeholder.com/128x121",
-  }, {
-    id: 1,
-    title: "AI Music Genre",
-    description: "Top 50",
-    image: "https://via.placeholder.com/128x121",
-  }, {
-    id: 1,
-    title: "AI Music Genre",
-    description: "Top 50",
-    image: "https://via.placeholder.com/128x121",
-  }, {
-    id: 1,
-    title: "AI Music Genre",
-    description: "Top 50",
-    image: "https://via.placeholder.com/128x121",
-  }, {
-    id: 1,
-    title: "AI Music Genre",
-    description: "Top 50",
-    image: "https://via.placeholder.com/128x121",
-  }, {
-    id: 1,
-    title: "AI Music Genre",
-    description: "Top 50",
-    image: "https://via.placeholder.com/128x121",
-  },
-];
+import { useEffect, useState } from "react";
 
 export const Home: NextPage = () => {
+  const [charts, setCharts] = useState([]);
+  useEffect(() => {
+    // Fetch chart data here
+    const fetchCharts = async () => {
+      const response = await fetch("/api/fetchCharts");
+      const data = await response.json();
+      setCharts(data);
+    };
+    fetchCharts();
+  },[]);
   return (
     <div className="h-full px-9 lg:px-6">
       <div className="py-[24.50px]">

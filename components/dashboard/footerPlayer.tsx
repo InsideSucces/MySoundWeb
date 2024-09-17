@@ -16,7 +16,7 @@ export const FooterMusicPlayer: FC = () => {
     return (
         <footer className="footer-wrapper items-center justify-center md:ml-[150] ">
             <div className="md:flex items-center justify-center z-50 bg-black px-6 py-4 mb-[30]">
-                <div className="flex items-center justify-center gap-9 mx-60 md:mx-20">
+                <div className="flex items-center justify-center gap-9 mx-20">
                     <img className="w-14 h-14" src={currentTrack.cover_image} width={56} height={56} alt="Foto do álbum" />
                     <div className="flex flex-col flex-grow">
                         <span className="font-normal">{currentTrack.title}</span>
@@ -38,8 +38,6 @@ export const FooterMusicPlayer: FC = () => {
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </footer>
     )

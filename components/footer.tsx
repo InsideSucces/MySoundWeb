@@ -14,11 +14,7 @@ const LINKS = [
   },
   {
     title: "Contact Us",
-    items: ["A", "Careers", "Press", "News"],
-  },
-  {
-    title: "Resource",
-    items: ["Blog", "Newsletter", "Events", "Help center"],
+    items: ["Account", "Customer services", "Accesbility", "Privacy policy"],
   },
 ];
 
@@ -33,130 +29,65 @@ export const Footer: FC<FooterType> = ({ className }) => {
     >
       <div className={"container text-white mx-auto px-4 md:px-6 lg:px-8"}>
         <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"}>
-          <div className="flex flex-col items-start md:items-center mr-24">
-            <Link href="#" className="w-44 h-20 mb-4" prefetch={false}>
+          <div className="flex flex-col items-start mr-24">
+            <Link href="#" className="mb-6" prefetch={false}>
               <img
                 className={styles.mysoundNewLogo8}
                 loading="lazy"
-                alt=""
+                alt="MySound Logo" 
                 src="/mysound-logo.png"
+                width={150} // Adjust width as needed
+                height={75}  // Adjust height as needed
               />
             </Link>
-            <p className="w-80 text-[#0c0c0c]/80 text-lg font-normal font-poppins leading-loose">
+            <p className="w-80 text-lg font-semibold font-poppins leading-loose">
               Transform the way you experience music
             </p>
           </div>
+
+          {/* Dynamically render link sections */}
+          {LINKS.map((section) => (
+            <div key={section.title} className="flex flex-col md:ml-24">
+              <h3 className="text-base font-bold font-poppins mb-4">
+                {section.title}
+              </h3>
+              <ul>
+                {section.items.map((item) => (
+                  <li key={item}>
+                    <Link
+                      href="#"
+                      className="text-base font-semibold font-poppins capitalize leading-9 hover:underline"
+                      prefetch={false}
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          {/* Social Media Links */}
           <div className="flex flex-col items-start md:items-center lg:items-center">
-            <h3 className="text-[#0d0d0d] text-base font-semibold font-poppins mb-4">
-              Explore
-            </h3>
-            <Link
-              href="#"
-              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
-              prefetch={false}
-            >
-              Charts
-            </Link>
-            <Link
-              href="#"
-              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
-              prefetch={false}
-            >
-              Trending
-            </Link>
-            <Link
-              href="#"
-              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
-              prefetch={false}
-            >
-              Sounds
-            </Link>
-            <Link
-              href="#"
-              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
-              prefetch={false}
-            >
-              New
-            </Link>
-             <Link
-              href="#"
-              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
-              prefetch={false}
-            >
-              Releases
-            </Link>
-            <Link
-              href="#"
-              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
-              prefetch={false}
-            >
-              Playlist
-            </Link>
-
-          </div>
-
-          <div className="flex flex-col items-start md:items-center lg:items-center">
-            <h3 className="text-[#0d0d0d] text-base font-semibold font-poppins mb-4">
-              Contact Us
-            </h3>
-            <Link
-              href="#"
-              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
-              prefetch={false}
-            >
-              Account
-            </Link>
-            <Link
-              href="#"
-              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
-              prefetch={false}
-            >
-              Customer services
-            </Link>
-            <Link
-              href="#"
-              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
-              prefetch={false}
-            >
-              Accesbility
-            </Link>
-
-            <Link
-              href="#"
-              className="text-[#0d0d0d] text-base font-normal font-poppins capitalize leading-9"
-              prefetch={false}
-            >
-              Privacy policy
-            </Link>
-          </div>
-
-          <div className="flex flex-col items-start md:items-center lg:items-center">
-            <h3 className="text-[#0d0d0d] text-base font-semibold font-poppins mb-4">
+            <h3 className="text-base font-bold font-poppins mb-4">
               Get In Touch
             </h3>
             <div className="flex space-x-4">
-              <Link
-                href="#"
-                className="text-white hover:text-primary transition-colors"
-              >
-                <FacebookIcon className="w-6 h-6" />
+              <Link href="#" aria-label="Connect on Facebook" target="_blank" rel="noopener noreferrer">
+                <FacebookIcon className="w-6 h-6  hover:text-primary transition-colors" />
               </Link>
-              <Link
-                href="#"
-                className="text-white hover:text-primary transition-colors"
-              >
-                <TwitterIcon className="w-6 h-6" />
+              <Link href="#" aria-label="Connect on Twitter" target="_blank" rel="noopener noreferrer">
+                <TwitterIcon className="w-6 h-6  hover:text-primary transition-colors" />
               </Link>
-              <Link
-                href="#"
-                className="text-white hover:text-primary transition-colors"
-              >
-                <InstagramIcon className="w-6 h-6" />
+              <Link href="#" aria-label="Connect on Instagram" target="_blank" rel="noopener noreferrer">
+                <InstagramIcon className="w-6 h-6  hover:text-primary transition-colors" />
               </Link>
             </div>
           </div>
         </div>
-        <div className="mt-12 md:mt-16 lg:mt-20 pt-6 md:pt-8 lg:pt-10 flex flex-col md:flex-row justify-between items-center">
+
+        {/* Copyright */}
+        <div className="mt-12 md:mt-16 lg:mt-20 pt-6 md:pt-8 lg:pt-10 text-center">
           <p className="text-sm text-muted-foreground">
             &copy; {currentYear} MySound. All rights reserved.
           </p>
